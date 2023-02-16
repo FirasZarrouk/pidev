@@ -1,0 +1,7 @@
+com\mycompany\projetpidev\ProjetPIDEV.class
+Services\ServiceEquipe.class
+Services\ServiceProjet.class
+Model\Projet.class
+Model\Equipe.class
+Util\MaConnection.class
+Interfaces\Interface_IService.class
