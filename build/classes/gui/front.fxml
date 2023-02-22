@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="gui.FrontController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="176.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@331939313_908136223642012_3641689149527626504_n.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Button fx:id="acceuilR" layoutX="300.0" layoutY="108.0" mnemonicParsing="false" onAction="#acceuilR" prefHeight="51.0" prefWidth="158.0" text="REUNION" textFill="#18448c">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="acceuilP" layoutX="300.0" layoutY="186.0" mnemonicParsing="false" onAction="#acceuilP" prefHeight="51.0" prefWidth="158.0" text="PV" textFill="#18448c">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="acceuilRA" layoutX="300.0" layoutY="260.0" mnemonicParsing="false" onAction="#acceuilRA" prefHeight="51.0" prefWidth="158.0" text="RAPPEL" textFill="#18448c">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="324.0" layoutY="26.0" prefHeight="51.0" prefWidth="110.0" text="ACCEUIL" textFill="#2bb56b" wrapText="true">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
