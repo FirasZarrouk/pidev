@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifierEquipeController">
+   <children>
+      <VBox layoutY="-4.0" prefHeight="536.0" prefWidth="134.0" style="-fx-background-color: #172948;" />
+      <TextField fx:id="ModifierMembre" layoutX="323.0" layoutY="281.0" prefHeight="46.0" prefWidth="270.0" />
+      <TextField fx:id="ModifierTache" layoutX="323.0" layoutY="355.0" prefHeight="46.0" prefWidth="270.0" />
+      <TextField fx:id="ModifierEquipe" layoutX="323.0" layoutY="110.0" prefHeight="46.0" prefWidth="270.0" />
+      <TextField fx:id="ModifierDesription" layoutX="323.0" layoutY="190.0" prefHeight="46.0" prefWidth="270.0" />
+      <Label layoutX="202.0" layoutY="125.0" text="Nom D'equipe" textFill="#2bb56b" />
+      <Label layoutX="218.0" layoutY="205.0" text="Description" textFill="#2bb56b" />
+      <Label layoutX="154.0" layoutY="296.0" text="Membre De L'equipe" textFill="#2bb56b" />
+      <Label layoutX="197.0" layoutY="370.0" text="Tâche à réaliser" textFill="#2bb56b" />
+      <Label layoutX="324.0" layoutY="47.0" prefHeight="37.0" prefWidth="203.0" text="Modifier L'equipe" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="Modifier_Equipe" layoutX="593.0" layoutY="423.0" mnemonicParsing="false" onAction="#Modifier_Equipe" prefHeight="26.0" prefWidth="94.0" text="Modifier" />
+      <Button fx:id="Annuler" layoutX="426.0" layoutY="423.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="26.0" prefWidth="94.0" text="Annuler" />
+   </children>
+</AnchorPane>
