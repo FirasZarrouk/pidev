@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Formation_accueilController">
+   <children>
+      <Label layoutX="215.0" layoutY="29.0" text="Accueil Formation" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ListView fx:id="list" layoutX="57.0" layoutY="118.0" prefHeight="200.0" prefWidth="487.0" />
+      <Button fx:id="Ajouter_Formation0" layoutX="46.0" layoutY="328.0" mnemonicParsing="false" onAction="#Ajouter_Formation0" text="Ajouter" />
+      <Button fx:id="Modifier_Formation" layoutX="139.0" layoutY="328.0" mnemonicParsing="false" onAction="#Modifier_Formation" text="Modifier" />
+      <Button fx:id="Supprimer_Formation" layoutX="247.0" layoutY="328.0" mnemonicParsing="false" onAction="#Supprimer_Formation" text="Supprimer" />
+      <Button fx:id="Quitter_Formation" layoutX="371.0" layoutY="328.0" mnemonicParsing="false" onAction="#Quitter_Formation" text="Quitter" />
+      <TextField fx:id="rechercheText" layoutX="57.0" layoutY="73.0" prefHeight="25.0" prefWidth="256.0" />
+      <Button fx:id="Rechercher_Formation" layoutX="360.0" layoutY="73.0" mnemonicParsing="false" onAction="#Rechercher_Formation" text="Rechercher" />
+      <ImageView fitHeight="82.0" fitWidth="135.0" layoutX="512.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/331939313_908136223642012_3641689149527626504_n.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
