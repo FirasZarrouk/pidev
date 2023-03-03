@@ -10,7 +10,7 @@ public class Equipe {
     private String Nom_Equipe ;
     private String Description ;
     private String Membre;
-    private String Tache ;
+    
     
     
     
@@ -19,20 +19,20 @@ public class Equipe {
         
     }
 
-    public Equipe(int Id_Equipe, String Nom_Equipe, String Description, String Membre, String Tache) {
+    public Equipe(int Id_Equipe, String Nom_Equipe, String Description, String Membre) {
         this.Id_Equipe = Id_Equipe;
         this.Nom_Equipe = Nom_Equipe;
         this.Description = Description;
         this.Membre = Membre;
-        this.Tache = Tache;
+        
         
     }
 
-    public Equipe(String Nom_Equipe, String Description, String Membre, String Tache) {
+    public Equipe(String Nom_Equipe, String Description, String Membre) {
         this.Nom_Equipe = Nom_Equipe;
         this.Description = Description;
         this.Membre = Membre;
-        this.Tache = Tache;
+        
         
     }
 
@@ -42,9 +42,7 @@ public class Equipe {
         return Membre;
     }
 
-    public String getTache() {
-        return Tache;
-    }
+    
     
     
 
@@ -75,14 +73,14 @@ public class Equipe {
         this.Membre = Membre;
     }
 
-    public void setTache(String Tache) {
-        this.Tache = Tache;
-    }
-
     @Override
     public String toString() {
-        return "Equipe{" + "Id_Equipe=" + Id_Equipe + ", Nom_Equipe=" + Nom_Equipe + ", Description=" + Description + ", Membre=" + Membre + ", Tache=" + Tache + '}';
+        return "Equipe{" + "Id_Equipe=" + Id_Equipe + ", Nom_Equipe=" + Nom_Equipe + ", Description=" + Description + ", Membre=" + Membre + '}';
     }
+
+    
+
+    
 
     
     public String getDescription() {

@@ -35,8 +35,6 @@ public class AjouterEquipeController implements Initializable {
     @FXML
     private TextArea txtnomEquipe;
     @FXML
-    private TextArea txtTache;
-    @FXML
     private TextArea txtMembre;
     @FXML
     private Button AjouterE;
@@ -54,30 +52,36 @@ public class AjouterEquipeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+     private boolean Validechamp(TextArea T){
+         if(T.getText().isEmpty() | T.getLength() <2 ){
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur de champ");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez vérifier votre saisie s'il vous plait!!");
+            alert.showAndWait();
+      return false;
+    }return true;
+}
 
     @FXML
     private void Ajouter_Equipe(ActionEvent event) {
         
-        if (txtnomEquipe.getText().length() == 0||txtDescription.getText().length() == 0||txtMembre.getText().length() == 0||txtTache.getText().length() == 0) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur");
-            alert.setHeaderText("Erreur de saisie !");
-            alert.setContentText("Please remplir tous les champs"+ "");
-            alert.show();
-            
-        }else{
+        
+            if (Validechamp(txtnomEquipe) &&Validechamp(txtDescription) &&Validechamp(txtMembre)){
+        
             
             try {
                 Equipe E= new Equipe();
                 E.setNom_Equipe(txtnomEquipe.getText());
                 E.setDescription(txtDescription.getText());
                 E.setMembre(txtMembre.getText());
-                E.setTache(txtTache.getText());
+                
                 
                 serviceEquipe.ajouter(E);
                 
                 
-                FXMLLoader loader= new FXMLLoader(getClass().getResource("ListeEquipe.fxml"));
+                FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
                 Parent view_2=loader.load();
                 
                 Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -87,15 +91,15 @@ public class AjouterEquipeController implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(AjouterEquipeController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-        }
+            }
+        
     }
 
     @FXML
     private void RetourE(ActionEvent event) {
         
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("ListeEquipe.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
             Parent view_2=loader.load();
             
             Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();

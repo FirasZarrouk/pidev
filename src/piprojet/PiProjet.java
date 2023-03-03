@@ -71,7 +71,9 @@ public class PiProjet {
             
 //            psP.supprimer(7);
 
-           System.out.println(psP.sortBy("Nom_Projet","DESC"));
+           //System.out.println(psP.sortBy("Nom_Projet","DESC"));
+           System.out.println(psP.readById(27));
+           System.out.println(psE.sortBy("Nom_Equipe", "DESC"));
             
             
 

@@ -15,8 +15,10 @@ public class Projet {
     private String Nom_Projet ;
     private String Description ;
     private String Technologie ;
+    private String Tache_de_projet ; 
     private Date Date_creation ;
     private String categorie;
+    
     private Equipe Id_Equipe;
     
     
@@ -27,24 +29,35 @@ public class Projet {
         
     }
 
-    public Projet(int Id_Projet, String Nom_Projet, String Description, String Technologie, Date Date_creation, String categorie, Equipe Id_Equipe) {
+    public Projet(int Id_Projet, String Nom_Projet, String Description, String Technologie, String Tache_de_projet, Date Date_creation, String categorie,Equipe Id_Equipe) {
         this.Id_Projet = Id_Projet;
         this.Nom_Projet = Nom_Projet;
         this.Description = Description;
         this.Technologie = Technologie;
+        this.Tache_de_projet = Tache_de_projet;
         this.Date_creation = Date_creation;
         this.categorie = categorie;
+        
         this.Id_Equipe = Id_Equipe;
     }
 
-    public Projet(String Nom_Projet, String Description, String Technologie, Date Date_creation, String categorie, Equipe Id_Equipe) {
+    public Projet(String Nom_Projet, String Description, String Technologie, String Tache_de_projet, Date Date_creation, String categorie,Equipe Id_Equipe) {
         this.Nom_Projet = Nom_Projet;
         this.Description = Description;
         this.Technologie = Technologie;
+        this.Tache_de_projet = Tache_de_projet;
         this.Date_creation = Date_creation;
         this.categorie = categorie;
+        
         this.Id_Equipe = Id_Equipe;
     }
+
+    
+    
+    
+    
+
+    
 
     public void setId_Equipe(Equipe Id_Equipe) {
         this.Id_Equipe = Id_Equipe;
@@ -53,6 +66,18 @@ public class Projet {
     public Equipe getId_Equipe() {
         return Id_Equipe;
     }
+
+    public String getTache_de_projet() {
+        return Tache_de_projet;
+    }
+
+    public void setTache_de_projet(String Tache_de_projet) {
+        this.Tache_de_projet = Tache_de_projet;
+    }
+
+    
+
+    
 
     
 
@@ -116,8 +141,13 @@ public class Projet {
 
     @Override
     public String toString() {
-        return "Projet{" + "Id_Projet=" + Id_Projet + ", Nom_Projet=" + Nom_Projet + ", Description=" + Description + ", Technologie=" + Technologie + ", Date_creation=" + Date_creation + ", categorie=" + categorie + ", Id_Equipe=" + Id_Equipe + '}';
+        return "Projet{" + "Id_Projet=" + Id_Projet + ", Nom_Projet=" + Nom_Projet + ", Description=" + Description + ", Technologie=" + Technologie + ", Tache_de_projet=" + Tache_de_projet + ", Date_creation=" + Date_creation + ", categorie=" + categorie + ", Id_Equipe=" + Id_Equipe + '}';
     }
+
+    
+
+    
+    
 
     
 

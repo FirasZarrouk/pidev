@@ -6,31 +6,38 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterEquipeController">
+<AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterEquipeController">
    <children>
-      <VBox prefHeight="507.0" prefWidth="134.0" style="-fx-background-color: #172948;" />
-      <TextArea fx:id="txtnomEquipe" layoutX="326.0" layoutY="102.0" prefHeight="45.0" prefWidth="234.0" />
-      <TextArea fx:id="txtTache" layoutX="326.0" layoutY="358.0" prefHeight="77.0" prefWidth="234.0" />
-      <TextArea fx:id="txtMembre" layoutX="326.0" layoutY="256.0" prefHeight="77.0" prefWidth="234.0" />
-      <TextArea fx:id="txtDescription" layoutX="326.0" layoutY="179.0" prefHeight="46.0" prefWidth="234.0" />
-      <Label layoutX="203.0" layoutY="116.0" text="Nom D'equipe" textFill="#2bb56b" />
-      <Label layoutX="219.0" layoutY="194.0" text="Description" textFill="#2bb56b" />
-      <Label layoutX="169.0" layoutY="286.0" text="Membre De L'equipe" textFill="#2bb56b" />
-      <Label layoutX="201.0" layoutY="388.0" text="Tâche à réaliser" textFill="#2bb56b" />
-      <Button fx:id="AjouterE" layoutX="550.0" layoutY="452.0" mnemonicParsing="false" onAction="#Ajouter_Equipe" text="Ajouter Equipe" />
-      <ImageView fx:id="imglogo" fitHeight="133.0" fitWidth="123.0" layoutX="599.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+      <TextArea fx:id="txtnomEquipe" layoutX="129.0" layoutY="104.0" prefHeight="45.0" prefWidth="270.0" promptText="Entrer Nom D'equipe">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+      <TextArea fx:id="txtMembre" layoutX="129.0" layoutY="230.0" prefHeight="111.0" prefWidth="270.0" promptText="Les Membres D'equipes">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+      <TextArea fx:id="txtDescription" layoutX="129.0" layoutY="166.0" prefHeight="46.0" prefWidth="270.0" promptText="Entrer La Description ">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+      <Button fx:id="AjouterE" layoutX="315.0" layoutY="364.0" mnemonicParsing="false" onAction="#Ajouter_Equipe" text="Ajouter Equipe" />
+      <ImageView fx:id="imglogo" fitHeight="133.0" fitWidth="123.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/logo%20ontej.png" />
          </image>
       </ImageView>
-      <Button fx:id="RetourE" layoutX="395.0" layoutY="452.0" mnemonicParsing="false" onAction="#RetourE" prefHeight="26.0" prefWidth="95.0" text="Retour" />
-      <Label layoutX="326.0" layoutY="54.0" prefHeight="35.0" prefWidth="260.0" text="Ajouter Equipe">
+      <Button fx:id="RetourE" layoutX="129.0" layoutY="364.0" mnemonicParsing="false" onAction="#RetourE" prefHeight="26.0" prefWidth="95.0" text="Retour" />
+      <Label layoutX="134.0" layoutY="44.0" prefHeight="35.0" prefWidth="260.0" text="Ajouter Equipe">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
+      <ImageView fitHeight="208.0" fitWidth="359.0" layoutX="129.0" layoutY="405.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/démissionner-et-devenir-freelance.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

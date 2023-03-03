@@ -30,7 +30,7 @@ public class NewFXMain extends Application {
                     Parent root;
 
         try {            
-            root = FXMLLoader.load(getClass().getResource("../GUI/FXML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("../GUI/AceuilProjet.fxml"));
 
             Scene scene = new Scene(root);
             primaryStage.setTitle("Gestion de Produit");

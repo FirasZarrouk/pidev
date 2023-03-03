@@ -13,6 +13,7 @@ import java.util.List;
     public void modifier (T t);
     public List <T> afficher();
     T readById(int id);
+    T readByName(String nom);
     ArrayList<T> sortBy(String nom_column,String Asc_Dsc);
     
     

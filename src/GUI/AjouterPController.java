@@ -24,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -58,6 +59,8 @@ public class AjouterPController implements Initializable {
     private TextField Id_Equipe;
     @FXML
     private Button Retour;
+    @FXML
+    private TextField txtTache;
 
     /**
      * Initializes the controller class.
@@ -67,25 +70,40 @@ public class AjouterPController implements Initializable {
         // TODO
     }    
     
-    
+    private boolean Validechamp(TextArea T){
+         if(T.getText().isEmpty() | T.getLength() <2 ){
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur de champ");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez vérifier votre saisie s'il vous plait!!");
+            alert.showAndWait();
+      return false;
+    }return true;
+}
+    private boolean ValidDate() {
+         
+        if (txtdate.getValue().compareTo(LocalDate.now()) < 0 ){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur de champ");
+            alert.setHeaderText(null);
+            alert.setContentText("La date ne doit pas etre fixer avant la date actuelle");
+            alert.showAndWait();
+            return false;
+        } return true ;
+     }
 
     @FXML
     private void AjouterProjet(ActionEvent event) {
         
-        if (txtnom.getText().length() == 0||txtdescription.getText().length() == 0||txttechnologie.getText().length() == 0||txtcategorie.getText().length() == 0||txtdate.getValue().equals("")) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur");
-            alert.setHeaderText("Erreur de saisie !");
-            alert.setContentText("Please remplir tous les champs"+ "");
-            alert.show();
-            
-        }else {
+         if (Validechamp(txtnom) && Validechamp(txtdescription) && Validechamp(txttechnologie) && ValidDate()
+                 && Validechamp(txtcategorie)){
             try {
                 Projet P=new Projet();
                 P.setNom_Projet(txtnom.getText());
                 P.setDescription(txtdescription.getText());
                 P.setTechnologie(txttechnologie.getText());
                 P.setCategorie(txtcategorie.getText());
+                P.setTache_de_projet(txtTache.getText());
                 LocalDate D=txtdate.getValue();
                 P.setDate_creation(java.sql.Date.valueOf(D));
                 Equipe E = new Equipe() ;
@@ -95,7 +113,7 @@ public class AjouterPController implements Initializable {
                 
                 ServiceProjet.ajouter(P);
                 
-                FXMLLoader loader= new FXMLLoader(getClass().getResource("listeP.fxml"));
+                FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilProjet.fxml"));
                 Parent view_2=loader.load();
                 
                 Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -106,7 +124,7 @@ public class AjouterPController implements Initializable {
                 Logger.getLogger(AjouterPController.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-        }
+         }
         
     }
 
@@ -114,7 +132,7 @@ public class AjouterPController implements Initializable {
     private void RetourA(ActionEvent event) {
         
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("ListeP.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilProjet.fxml"));
             Parent view_2=loader.load();
             
             Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();

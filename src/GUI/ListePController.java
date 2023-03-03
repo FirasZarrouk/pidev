@@ -24,9 +24,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -66,6 +69,8 @@ public class ListePController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+                 
+
     }    
     
     @FXML
@@ -142,9 +147,9 @@ public class ListePController implements Initializable {
     @FXML
     private void Rechercher_Projet(ActionEvent event) {
         
-        int Id_Projet = Integer.parseInt(Idrechercher.getText());
+        String Nom_Projet = (Idrechercher.getText());
         
-        Projet Projetrecherche = (Projet) ServiceProjet.readById(Id_Projet);
+        Projet Projetrecherche = (Projet) ServiceProjet.readByName(Nom_Projet);
         
         if(Projetrecherche != null) {
             
@@ -152,7 +157,7 @@ public class ListePController implements Initializable {
         Afficher.setItems(Projets);
             
         }else {
-            System.out.println("Pack non trouvé");
+            System.out.println("projet non trouvé");
         }
     }
 
@@ -173,6 +178,9 @@ public class ListePController implements Initializable {
         
         
     }
+    
+   
+ 
          
     
     

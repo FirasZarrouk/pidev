@@ -24,7 +24,7 @@ public class ServiceEquipe implements Interface_IService<Equipe> {
     public void ajouter(Equipe E) {
     
             try {
-                String req = "INSERT INTO `equipe`(`Nom_Equipe`,`Description`,`Membre`,`Tache`) VALUES ('"+E.getNom_Equipe()+"','"+E.getDescription()+"','"+E.getMembre()+"','"+E.getTache()+"')";
+                String req = "INSERT INTO `equipe`(`Nom_Equipe`,`Description`,`Membre`) VALUES ('"+E.getNom_Equipe()+"','"+E.getDescription()+"','"+E.getMembre()+"')";
                 Statement st = cnx.createStatement();
                 st.executeUpdate(req);
                 System.out.println("Equipe ajouter avec succes");
@@ -48,7 +48,7 @@ public class ServiceEquipe implements Interface_IService<Equipe> {
     @Override
     public void modifier(Equipe E) {
             try {
-                String req="UPDATE equipe SET `Nom_Equipe`='"+E.getNom_Equipe()+"',`Description`='"+E.getDescription()+"',`Membre`='"+E.getMembre()+"',`Tache`='"+E.getTache()+"' WHERE (`Id_Equipe`='"+E.getId_Equipe()+"' )";
+                String req="UPDATE equipe SET `Nom_Equipe`='"+E.getNom_Equipe()+"',`Description`='"+E.getDescription()+"',`Membre`='"+E.getMembre()+"' WHERE (`Id_Equipe`='"+E.getId_Equipe()+"' )";
                 Statement st = cnx.createStatement();
                 st.executeUpdate(req);
                 System.out.println("Equipe modifie avec succes");
@@ -73,7 +73,7 @@ public class ServiceEquipe implements Interface_IService<Equipe> {
                     E.setNom_Equipe(res.getString(2));
                     E.setDescription(res.getString(3));
                     E.setMembre(res.getString(4));
-                    E.setTache(res.getString(5));
+                   
                     
                     
                     
@@ -103,7 +103,7 @@ public class ServiceEquipe implements Interface_IService<Equipe> {
                     E.setNom_Equipe(res.getString(2));
                     E.setDescription(res.getString(3));
                     E.setMembre(res.getString(4));
-                    E.setTache(res.getString(5));
+                    
                     
                     
                     
@@ -130,7 +130,7 @@ public class ServiceEquipe implements Interface_IService<Equipe> {
                     E.setNom_Equipe(res.getString(2));
                     E.setDescription(res.getString(3));
                     E.setMembre(res.getString(4));
-                    E.setTache(res.getString(5));
+                    
                     
                     li.add(E);    }
             } catch (SQLException ex) {
@@ -138,10 +138,46 @@ public class ServiceEquipe implements Interface_IService<Equipe> {
             }
                  return (ArrayList<Equipe>) li; }
 
+    @Override
+    public Equipe readByName(String nom) {
+            Equipe E = new Equipe();
 
+        
+        try {
+            
+            
+            String req="SELECT * FROM Equipe WHERE `Nom_Equipe`='"+nom+"'";
+            Statement ste = cnx.createStatement();
+            ResultSet res=ste.executeQuery(req);
+            while(res.next()){
+                
+                
+                E.setId_Equipe(res.getInt(1));
+                E.setNom_Equipe(res.getString(2));
+                E.setMembre(res.getString(3));
+                E.setDescription(res.getString(4));
+                
+               
+                
+            }
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceProjet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return E ;
+    }   
 
-    
-
-    
-    
 }
+
+    
+
+
+
+    
+
+    
+    
+

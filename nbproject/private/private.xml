@@ -3,8 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/piprojet/NewFXMain.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/Util/MaConnection.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/Model/Projet.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/ModifierPController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/ListeEquipeController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/ItemsEquipeController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/Services/ServiceProjet.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/AjouterPController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/Items.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/ListePController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/AceuilEquipeController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/StatController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/ModifierEquipeController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/Model/Equipe.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/AceuilProjetController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/Test/NewFXMain.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/Services/ServiceEquipe.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/ItemsEquipe.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/AjouterEquipeController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/AceuilEquipe.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/ItemsController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/Interfaces/Interface_IService.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/PiProjet/src/GUI/DetailsController.java</file>
         </group>
     </open-files>
 </project-private>
