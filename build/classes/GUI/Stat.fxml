@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" fx:id="ChartNode" prefHeight="534.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StatController">
    <children>
       <AnchorPane fx:id="ChartNode" layoutX="113.0" layoutY="96.0" prefHeight="367.0" prefWidth="467.0" />
-      <Button fx:id="retour" layoutX="10.0" layoutY="18.0" mnemonicParsing="false" onAction="#Retour" prefHeight="34.0" prefWidth="106.0" text="Retour" />
    </children>
 </AnchorPane>

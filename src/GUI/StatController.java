@@ -43,9 +43,11 @@ public class StatController implements Initializable {
 
     @FXML
     private AnchorPane ChartNode;
+    
+    /*
     @FXML
     private Button retour;
-    
+    */
     
 
     /**
@@ -138,7 +140,7 @@ public class StatController implements Initializable {
      
      
    
-
+     /*
     
     @FXML
     private void Retour(ActionEvent event) throws IOException {
@@ -147,6 +149,6 @@ public class StatController implements Initializable {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
+    } */
     
 }

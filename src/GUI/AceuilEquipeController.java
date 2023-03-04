@@ -42,13 +42,22 @@ public class AceuilEquipeController implements Initializable {
     private Button AjouterEquipe;
     @FXML
     private Button rechercherEquipe;
+    
+    
     @FXML
     private TextField rechercheEE;
     
     ServiceEquipe serviceEquipe = new ServiceEquipe();
     ArrayList<Equipe> Equipe = new ArrayList<>();
+    
+    /*
     @FXML
     private Button Retourrr;
+    */
+    @FXML
+    private Label aceuilEquipes;
+    @FXML
+    private AnchorPane AnchorPaneEquipe;
 
     /**
      * Initializes the controller class.
@@ -131,6 +140,8 @@ public class AceuilEquipeController implements Initializable {
     }
     }
 
+    
+    /*
     @FXML
     private void Retourrr(ActionEvent event) {
         try {
@@ -146,6 +157,7 @@ public class AceuilEquipeController implements Initializable {
         }
         
     }
+*/
         
     
     

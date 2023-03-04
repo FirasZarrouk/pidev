@@ -81,7 +81,7 @@ public class AjouterEquipeController implements Initializable {
                 serviceEquipe.ajouter(E);
                 
                 
-                FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
+                FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilProjet.fxml"));
                 Parent view_2=loader.load();
                 
                 Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -99,7 +99,7 @@ public class AjouterEquipeController implements Initializable {
     private void RetourE(ActionEvent event) {
         
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilProjet.fxml"));
             Parent view_2=loader.load();
             
             Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();

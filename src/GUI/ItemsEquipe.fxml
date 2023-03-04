@@ -13,7 +13,7 @@
       <Pane layoutX="30.0" layoutY="27.0" prefHeight="332.0" prefWidth="722.0" style="-fx-background-color: #fff;">
          <children>
             <Separator layoutX="37.0" layoutY="59.0" prefHeight="3.0" prefWidth="633.0" />
-            <Label layoutX="37.0" layoutY="28.0" prefHeight="27.0" prefWidth="111.0" text="Les Equipe" textFill="#3a1c9d">
+            <Label layoutX="37.0" layoutY="28.0" prefHeight="27.0" prefWidth="111.0" text="Les Equipes" textFill="#3a1c9d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -59,7 +59,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="idEquipe1" layoutX="138.0" layoutY="23.0" prefHeight="38.0" prefWidth="95.0" text="N°Equipe :" textFill="#4d4c4c">
+            <Label fx:id="idEquipe1" layoutX="164.0" layoutY="23.0" prefHeight="38.0" prefWidth="95.0" text="Reference :" textFill="#4d4c4c">
                <font>
                   <Font size="14.0" />
                </font>

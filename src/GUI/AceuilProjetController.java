@@ -68,6 +68,10 @@ public class AceuilProjetController implements Initializable {
     private Button QuitterP;
     @FXML
     private AnchorPane scenePaneee;
+    @FXML
+    private AnchorPane AnchorPaneProjet;
+    @FXML
+    private Pane PaneStat;
     
 
     /**
@@ -183,29 +187,23 @@ public class AceuilProjetController implements Initializable {
     private void GetEquipe(ActionEvent event) {
         
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
-            Parent view_2=loader.load();
-            
-            Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(view_2);
-            stage.setScene(scene);
-            stage.show();
+            Pane paneEquipe= FXMLLoader.load(getClass().getResource("AceuilEquipe.fxml"));
+            paneProjet.getChildren().clear();
+            paneProjet.getChildren().setAll(paneEquipe);
         } catch (IOException ex) {
             Logger.getLogger(AceuilProjetController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
     }
 
     @FXML
     private void GetStatistique(ActionEvent event) {
         
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("stat.fxml"));
-            Parent view_2=loader.load();
-            
-            Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(view_2);
-            stage.setScene(scene);
-            stage.show();
+            Pane PaneStat= FXMLLoader.load(getClass().getResource("Stat.fxml"));
+            paneProjet.getChildren().clear();
+            paneProjet.getChildren().setAll(PaneStat);
         } catch (IOException ex) {
             Logger.getLogger(AceuilProjetController.class.getName()).log(Level.SEVERE, null, ex);
         }

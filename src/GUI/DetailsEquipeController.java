@@ -7,7 +7,10 @@ package GUI;
 
 import Model.Equipe;
 import Services.ServiceEquipe;
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -21,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -43,6 +47,20 @@ public class DetailsEquipeController implements Initializable {
     ServiceEquipe sp = new ServiceEquipe();
     @FXML
     private Label iddetailsEquipe;
+    @FXML
+    private ImageView AnisHouriLin;
+    @FXML
+    private Button lienanis;
+    @FXML
+    private Button lienkhadija;
+    @FXML
+    private Button lienafif;
+    @FXML
+    private Button lienDorra;
+    @FXML
+    private Button lienyossra;
+    @FXML
+    private Button lienfiras;
 
     /**
      * Initializes the controller class.
@@ -68,7 +86,7 @@ public class DetailsEquipeController implements Initializable {
     private void RetourEE(ActionEvent event) {
         
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilProjet.fxml"));
             Parent view_2=loader.load();
             
             Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -103,5 +121,74 @@ public class DetailsEquipeController implements Initializable {
             Logger.getLogger(DetailsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @FXML
+    private void openWebsite(ActionEvent event) throws URISyntaxException {
+        try {
+            String url = "https://www.linkedin.com/in/mohamed-anis-houri-8952571ba/";
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (IOException ex) {
+            Logger.getLogger(DetailsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void openWebsite1(ActionEvent event) throws URISyntaxException {
+        
+        try {
+            String url = "https://www.linkedin.com/in/mohamed-anis-houri-8952571ba/";
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (IOException ex) {
+            Logger.getLogger(DetailsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void openWebsite2(ActionEvent event) throws URISyntaxException {
+        try {
+            String url = "https://www.linkedin.com/in/mohamed-anis-houri-8952571ba/";
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (IOException ex) {
+            Logger.getLogger(DetailsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void openWebsite3(ActionEvent event) throws URISyntaxException {
+        try {
+            String url = "https://www.linkedin.com/in/mohamed-anis-houri-8952571ba/";
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (IOException ex) {
+            Logger.getLogger(DetailsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void openWebsite4(ActionEvent event) throws URISyntaxException {
+        
+        try {
+            String url = "https://www.linkedin.com/in/mohamed-anis-houri-8952571ba/";
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (IOException ex) {
+            Logger.getLogger(DetailsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void openWebsite5(ActionEvent event) throws URISyntaxException {
+        try {
+            String url = "https://www.linkedin.com/in/mohamed-anis-houri-8952571ba/";
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (IOException ex) {
+            Logger.getLogger(DetailsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    
+    
     
 }

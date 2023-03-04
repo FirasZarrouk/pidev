@@ -92,7 +92,7 @@ public class ModifierEquipeController implements Initializable {
             
             serviceEquipe.modifier(E);
             
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilProjet.fxml"));
             Parent view_2=loader.load();
             Scene scene = new Scene(view_2);
             Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -113,7 +113,7 @@ public class ModifierEquipeController implements Initializable {
         try {
             
             
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("AceuilProjet.fxml"));
             Parent view_2=loader.load();
             
             Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();

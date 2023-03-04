@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -27,12 +29,12 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="Membre_equipe" alignment="TOP_LEFT" layoutX="40.0" layoutY="435.0" prefHeight="68.0" prefWidth="424.0" text="Membre d'equipes">
+      <Label fx:id="Membre_equipe" alignment="TOP_LEFT" layoutX="40.0" layoutY="435.0" prefHeight="68.0" prefWidth="424.0" text="Description">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="Description_Equipe" alignment="TOP_LEFT" layoutX="40.0" layoutY="168.0" prefHeight="223.0" prefWidth="424.0" text="description d'equipe">
+      <Label fx:id="Description_Equipe" alignment="TOP_LEFT" layoutX="40.0" layoutY="168.0" prefHeight="223.0" prefWidth="326.0" text="Membre d'equipe">
          <font>
             <Font size="16.0" />
          </font>
@@ -45,5 +47,41 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
+      <ImageView fx:id="AnisHouriLin" fitHeight="23.0" fitWidth="25.0" layoutX="326.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Linkedin%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="326.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Linkedin%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="326.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Linkedin%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="326.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Linkedin%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="326.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Linkedin%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="326.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Linkedin%20icon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="lienanis" layoutX="358.0" layoutY="153.0" mnemonicParsing="false" onAction="#openWebsite" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
+      <Button fx:id="lienkhadija" layoutX="358.0" layoutY="182.0" mnemonicParsing="false" onAction="#openWebsite1" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
+      <Button fx:id="lienafif" layoutX="357.0" layoutY="210.0" mnemonicParsing="false" onAction="#openWebsite2" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
+      <Button fx:id="lienDorra" layoutX="357.0" layoutY="238.0" mnemonicParsing="false" onAction="#openWebsite3" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
+      <Button fx:id="lienyossra" layoutX="358.0" layoutY="265.0" mnemonicParsing="false" onAction="#openWebsite4" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
+      <Button fx:id="lienfiras" layoutX="358.0" layoutY="293.0" mnemonicParsing="false" onAction="#openWebsite5" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
    </children>
 </AnchorPane>
