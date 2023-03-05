@@ -44,7 +44,7 @@ public class ModifierPController implements Initializable {
     private TextField txtcategorieP;
     @FXML
     private Button Modifier_Projet;
-    Projet p;
+    public Projet p;
     public Projet projet ;
     
     ServiceProjet serviceProjet=new ServiceProjet();
@@ -62,7 +62,7 @@ public class ModifierPController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    void getProjet(Projet P){
+    public void getProjet(Projet P){
         
         txtNomP.setText(P.getNom_Projet());
         txtDescriptionP.setText(P.getDescription());

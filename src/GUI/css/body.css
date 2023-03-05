@@ -1,0 +1,4 @@
+.root{
+    -fx-background-image:url('../img/pc.png');
+    -fx-background-size:cover;
+}

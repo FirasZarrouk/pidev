@@ -38,15 +38,6 @@ public class AceuilEquipeController implements Initializable {
 
     @FXML
     private VBox scenepaneee;
-    @FXML
-    private Button AjouterEquipe;
-    @FXML
-    private Button rechercherEquipe;
-    
-    
-    @FXML
-    private TextField rechercheEE;
-    
     ServiceEquipe serviceEquipe = new ServiceEquipe();
     ArrayList<Equipe> Equipe = new ArrayList<>();
     
@@ -58,6 +49,12 @@ public class AceuilEquipeController implements Initializable {
     private Label aceuilEquipes;
     @FXML
     private AnchorPane AnchorPaneEquipe;
+    @FXML
+    private Button AjouterEquipe;
+    @FXML
+    private Button RechercheEquipe;
+    @FXML
+    private TextField rechercheEE;
 
     /**
      * Initializes the controller class.

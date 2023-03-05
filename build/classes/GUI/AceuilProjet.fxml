@@ -14,17 +14,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPaneProjet" prefHeight="617.0" prefWidth="1038.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AceuilProjetController">
+<AnchorPane id="AnchorPane" fx:id="AnchorPaneProjet" prefHeight="617.0" prefWidth="1038.0" stylesheets="@css/body.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AceuilProjetController">
    <children>
       <AnchorPane fx:id="scenePaneee" prefHeight="200.0" prefWidth="200.0" />
-      <VBox prefHeight="618.0" prefWidth="191.0" style="-fx-background-color: #e0e0eb;">
+      <VBox prefHeight="618.0" prefWidth="191.0" style="-fx-background-color: #172948;">
          <children>
             <ImageView fitHeight="235.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/logo%20ontej.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnEquipe" alignment="BASELINE_LEFT" graphicTextGap="5.0" mnemonicParsing="false" onAction="#GetEquipe" prefHeight="55.0" prefWidth="194.0" style="-fx-background-color: #e0e0eb;" text="Equipe" textAlignment="CENTER">
+            <Button fx:id="btnEquipe" alignment="BASELINE_LEFT" graphicTextGap="5.0" mnemonicParsing="false" onAction="#GetEquipe" prefHeight="55.0" prefWidth="194.0" style="-fx-background-color: #2bb56b;" text="Equipe" textAlignment="CENTER">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -32,7 +32,7 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-            <Button fx:id="btnProjet" alignment="BASELINE_LEFT" contentDisplay="CENTER" ellipsisString="" graphicTextGap="22.0" mnemonicParsing="false" onAction="#GetProjet" prefHeight="54.0" prefWidth="194.0" style="-fx-background-color: #e0e0eb;" text="Projet" textOverrun="CLIP">
+            <Button fx:id="btnProjet" alignment="BASELINE_LEFT" contentDisplay="CENTER" ellipsisString="" graphicTextGap="22.0" mnemonicParsing="false" onAction="#GetProjet" prefHeight="54.0" prefWidth="194.0" style="-fx-background-color: #2bb56b;" text="Projet" textOverrun="CLIP">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -40,7 +40,7 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-            <Button fx:id="btnStat" alignment="BASELINE_LEFT" contentDisplay="CENTER" ellipsisString="" graphicTextGap="22.0" mnemonicParsing="false" onAction="#GetStatistique" prefHeight="54.0" prefWidth="194.0" style="-fx-background-color: #e0e0eb;" text="Statistique" textOverrun="CLIP">
+            <Button fx:id="btnStat" alignment="BASELINE_LEFT" contentDisplay="CENTER" ellipsisString="" graphicTextGap="22.0" mnemonicParsing="false" onAction="#GetStatistique" prefHeight="54.0" prefWidth="194.0" style="-fx-background-color: #2bb56b;" text="Statistique" textOverrun="CLIP">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -70,7 +70,7 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="206.0">
                            <children>
-                              <Button fx:id="AjouterProjet" mnemonicParsing="false" onAction="#AjouterProjet" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #e0e0eb;" text="Ajouter" textFill="#1e1e1e">
+                              <Button fx:id="AjouterProjet" mnemonicParsing="false" onAction="#AjouterProjet" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #172948;" text="Ajouter" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -79,7 +79,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="206.0">
                            <children>
-                              <Button fx:id="rechercherProjet" mnemonicParsing="false" onAction="#RechercheProjet" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #e0e0eb;" text="Recherche" textFill="#1e1e1e">
+                              <Button fx:id="rechercherProjet" mnemonicParsing="false" onAction="#RechercheProjet" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #172948;" text="Recherche" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -93,7 +93,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="206.0">
                            <children>
-                              <Button fx:id="QuitterP" mnemonicParsing="false" onAction="#QuitterP" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #e0e0eb;" text="Quitter" textFill="#1e1e1e">
+                              <Button fx:id="QuitterP" mnemonicParsing="false" onAction="#QuitterP" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #172948;" text="Quitter" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

@@ -41,8 +41,8 @@ public class ItemsEquipeController implements Initializable {
     private Label NomEquipe;
     @FXML
     private ImageView Imgqr;
-//    @FXML
-//    private Button deletee;
+    @FXML
+    private Button deletee;
     @FXML
     private Label Membres;
     @FXML
@@ -79,24 +79,24 @@ public class ItemsEquipeController implements Initializable {
     
     Equipe E =new Equipe();
     
-//    @FXML
-//    private void deletee(ActionEvent event) {
-//        
-//        try {
-//            sp.supprimer(Equipe.getId_Equipe());
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
-//            Parent root = loader.load();
-//            Scene scene = new Scene(root);
-//            
-//            
-//            // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
-//            Stage stage = (Stage) deletee.getScene().getWindow();
-//            stage.setScene(scene);
-//            stage.show();
-//        } catch (IOException ex) {
-//            Logger.getLogger(ItemsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
+    @FXML
+    private void deletee(ActionEvent event) {
+        
+        try {
+            sp.supprimer(Equipe.getId_Equipe());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            
+            
+            // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
+            Stage stage = (Stage) deletee.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ItemsEquipeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     Stage stage;
 
     @FXML

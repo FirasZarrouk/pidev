@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="abcddd" prefHeight="385.0" prefWidth="783.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewInves.ItemsInvestiEquipeController">
+   <children>
+      <Pane layoutX="30.0" layoutY="27.0" prefHeight="332.0" prefWidth="722.0" style="-fx-background-color: #fff;">
+         <children>
+            <Separator layoutX="37.0" layoutY="59.0" prefHeight="3.0" prefWidth="633.0" />
+            <Label layoutX="37.0" layoutY="28.0" prefHeight="27.0" prefWidth="111.0" text="Les Equipes" textFill="#3a1c9d">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="101.0" text="Nom D'equipe" textFill="#050000">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="435.0" layoutY="101.0" prefHeight="20.0" prefWidth="101.0" text="Description">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="NomEquipeIN" layoutX="39.0" layoutY="138.0" prefHeight="49.0" prefWidth="117.0" text="ProjetPI" textFill="#4d4c4c">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="219.0" layoutY="101.0" prefHeight="20.0" prefWidth="167.0" text="Membre D'equipe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator layoutX="678.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="4.0" />
+            <Pane layoutX="-1.0" layoutY="291.0" prefHeight="38.0" prefWidth="722.0" style="-fx-background-color: #F0F0F0;">
+               <children>
+                  <ImageView fx:id="Imgqr" fitHeight="77.0" fitWidth="81.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" />
+               </children></Pane>
+            <Label fx:id="MembresIN" alignment="TOP_LEFT" layoutX="219.0" layoutY="144.0" prefHeight="106.0" prefWidth="167.0" text="Les Membres " textFill="#4d4c4c">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="DescriptionEquipeIN" alignment="TOP_LEFT" layoutX="435.0" layoutY="144.0" prefHeight="106.0" prefWidth="167.0" text="La Description" textFill="#4d4c4c">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="idEquipeIN" layoutX="242.0" layoutY="23.0" prefHeight="38.0" prefWidth="35.0" text="N" textFill="#4d4c4c">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="164.0" layoutY="23.0" prefHeight="38.0" prefWidth="95.0" text="Reference :" textFill="#4d4c4c">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="DetailsEIN" layoutX="489.0" layoutY="250.0" mnemonicParsing="false" onAction="#DetailsEquipeIN" prefHeight="25.0" prefWidth="95.0" text="Details" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
