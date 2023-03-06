@@ -39,7 +39,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="RetourrrrEN" layoutX="339.0" layoutY="549.0" mnemonicParsing="false" onAction="#RetourEEEN" prefHeight="37.0" prefWidth="99.0" text="Retour" />
+      <Button fx:id="RetourrrrEN" layoutX="339.0" layoutY="549.0" mnemonicParsing="false" onAction="#RetourEEEN" prefHeight="37.0" prefWidth="99.0" style="-fx-background-radius: 5em;" text="Retour" />
       <Label fx:id="iddetailsEquipeEN" layoutX="472.0" layoutY="559.0" prefHeight="16.0" prefWidth="14.0" text="Label" />
       <Label layoutX="147.0" layoutY="24.0" text="Fiche descriptive d'equipe">
          <font>
@@ -76,11 +76,11 @@
             <Image url="@../GUI/img/Linkedin%20icon.png" />
          </image>
       </ImageView>
-      <Button fx:id="lienanisEN" layoutX="358.0" layoutY="153.0" mnemonicParsing="false" onAction="#openWebsiteEN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
-      <Button fx:id="lienkhadijaEN" layoutX="358.0" layoutY="182.0" mnemonicParsing="false" onAction="#openWebsite1EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
-      <Button fx:id="lienafifEN" layoutX="357.0" layoutY="210.0" mnemonicParsing="false" onAction="#openWebsite2EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
-      <Button fx:id="lienDorraEN" layoutX="357.0" layoutY="238.0" mnemonicParsing="false" onAction="#openWebsite3EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
-      <Button fx:id="lienyossraEN" layoutX="358.0" layoutY="265.0" mnemonicParsing="false" onAction="#openWebsite4EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
-      <Button fx:id="lienfirasEN" layoutX="358.0" layoutY="293.0" mnemonicParsing="false" onAction="#openWebsite5EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" text="LinkeDin" />
+      <Button fx:id="lienanisEN" layoutX="358.0" layoutY="153.0" mnemonicParsing="false" onAction="#openWebsiteEN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" style="-fx-background-radius: 5em;" text="LinkeDin" />
+      <Button fx:id="lienkhadijaEN" layoutX="358.0" layoutY="182.0" mnemonicParsing="false" onAction="#openWebsite1EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" style="-fx-background-radius: 5em;" text="LinkeDin" />
+      <Button fx:id="lienafifEN" layoutX="357.0" layoutY="210.0" mnemonicParsing="false" onAction="#openWebsite2EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" style="-fx-background-radius: 5em;" text="LinkeDin" />
+      <Button fx:id="lienDorraEN" layoutX="357.0" layoutY="238.0" mnemonicParsing="false" onAction="#openWebsite3EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" style="-fx-background-radius: 5em;" text="LinkeDin" />
+      <Button fx:id="lienyossraEN" layoutX="358.0" layoutY="265.0" mnemonicParsing="false" onAction="#openWebsite4EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" style="-fx-background-radius: 5em;" text="LinkeDin" />
+      <Button fx:id="lienfirasEN" layoutX="358.0" layoutY="293.0" mnemonicParsing="false" onAction="#openWebsite5EN" opacity="0.3" prefHeight="26.0" prefWidth="86.0" style="-fx-background-radius: 5em;" text="LinkeDin" />
    </children>
 </AnchorPane>

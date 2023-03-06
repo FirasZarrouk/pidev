@@ -63,7 +63,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="DetailsEEN" layoutX="489.0" layoutY="250.0" mnemonicParsing="false" onAction="#DetailsEquipeEN" prefHeight="25.0" prefWidth="95.0" text="Details" />
+            <Button fx:id="DetailsEEN" layoutX="489.0" layoutY="250.0" mnemonicParsing="false" onAction="#DetailsEquipeEN" prefHeight="25.0" prefWidth="101.0" style="-fx-background-radius: 5em;" text="Details" />
          </children>
       </Pane>
    </children>

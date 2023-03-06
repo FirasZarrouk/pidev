@@ -10,20 +10,35 @@
 
 <AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="618.0" stylesheets="@css/body.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifierEquipeController">
    <children>
-      <TextField fx:id="ModifierMembre" alignment="TOP_LEFT" layoutX="123.0" layoutY="264.0" prefHeight="158.0" prefWidth="270.0" promptText="Modifier Les Membres D'Equipe" />
-      <TextField fx:id="ModifierEquipe" layoutX="123.0" layoutY="99.0" prefHeight="46.0" prefWidth="270.0" promptText="Modifier Le Nom D'Equipe" />
-      <TextField fx:id="ModifierDesription" layoutX="123.0" layoutY="168.0" prefHeight="78.0" prefWidth="270.0" promptText="Modifier La Description" />
+      <TextField fx:id="ModifierMembre" alignment="TOP_LEFT" layoutX="261.0" layoutY="264.0" prefHeight="158.0" prefWidth="254.0" promptText="Modifier Les Membres D'Equipe" />
+      <TextField fx:id="ModifierEquipe" layoutX="260.0" layoutY="105.0" prefHeight="46.0" prefWidth="254.0" promptText="Modifier Le Nom D'Equipe" />
+      <TextField fx:id="ModifierDesription" layoutX="261.0" layoutY="167.0" prefHeight="85.0" prefWidth="254.0" promptText="Modifier La Description" />
       <Label layoutX="123.0" layoutY="52.0" prefHeight="37.0" prefWidth="203.0" text="Modifier L'equipe" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Button fx:id="Modifier_Equipe" layoutX="298.0" layoutY="452.0" mnemonicParsing="false" onAction="#Modifier_Equipe" prefHeight="26.0" prefWidth="94.0" text="Modifier" />
-      <Button fx:id="Annuler" layoutX="123.0" layoutY="452.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="26.0" prefWidth="94.0" text="Annuler" />
+      <Button fx:id="Modifier_Equipe" layoutX="467.0" layoutY="465.0" mnemonicParsing="false" onAction="#Modifier_Equipe" prefHeight="26.0" prefWidth="94.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Modifier" />
+      <Button fx:id="Annuler" layoutX="260.0" layoutY="465.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="26.0" prefWidth="94.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Annuler" />
       <ImageView fx:id="imglogo" fitHeight="133.0" fitWidth="123.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/logo%20ontej.png" />
          </image>
       </ImageView>
+      <Label layoutX="38.0" layoutY="107.0" prefHeight="42.0" prefWidth="170.0" text="Nom D'equipe" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="192.0" prefHeight="42.0" prefWidth="154.0" text="La Description" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="322.0" prefHeight="42.0" prefWidth="210.0" text="Les Membres D'equipes" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

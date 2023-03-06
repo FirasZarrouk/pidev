@@ -129,7 +129,6 @@ public class ItemsController implements Initializable {
     
     
     
-    
     public void getProjet(Projet P){
         
         try {
@@ -142,7 +141,7 @@ public class ItemsController implements Initializable {
             LocalDate d=P.getDate_creation().toLocalDate();
             datecreation.setText(d.toString());
             projet=P;
-            String str="Le nom de Projet est  "+projet.getNom_Projet()+" avec le categorie " +projet.getCategorie();
+            //String str="Le nom de Projet est  "+projet.getNom_Projet()+" avec le categorie " +projet.getCategorie();
             Imgqr.setImage(generateQRCodeImage("Le nom de Projet est:  "+projet.getNom_Projet()+" avec la categorie est : " +projet.getCategorie()+" et la description est :"+projet.getDescription(), 300, 300));
             //System.out.println(projet);
         } catch (WriterException ex) {
@@ -237,11 +236,17 @@ public class ItemsController implements Initializable {
         stage.close();
         }
     }
+    
+//    @FXML
+//    private void onRatingChanged() {
+//    double newRating = rating.getRating();
+//    // Enregistrer la nouvelle note dans la base de données
+//    sp.updateRating(projet.getId_Projet(), newRating);
 
 
 
 
     
-    
+//    }
     
 }

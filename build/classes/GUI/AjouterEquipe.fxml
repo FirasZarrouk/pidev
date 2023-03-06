@@ -10,28 +10,43 @@
 
 <AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="618.0" stylesheets="@css/body.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterEquipeController">
    <children>
-      <TextArea fx:id="txtnomEquipe" layoutX="129.0" layoutY="104.0" prefHeight="45.0" prefWidth="270.0" promptText="Entrer Nom D'equipe">
+      <TextArea fx:id="txtnomEquipe" layoutX="255.0" layoutY="107.0" prefHeight="46.0" prefWidth="260.0" promptText="Entrer Nom D'equipe">
          <font>
             <Font size="14.0" />
          </font></TextArea>
-      <TextArea fx:id="txtMembre" layoutX="129.0" layoutY="255.0" prefHeight="157.0" prefWidth="270.0" promptText="Les Membres D'equipes">
+      <TextArea fx:id="txtMembre" layoutX="255.0" layoutY="258.0" prefHeight="158.0" prefWidth="260.0" promptText="Les Membres D'equipes">
          <font>
             <Font size="14.0" />
          </font></TextArea>
-      <TextArea fx:id="txtDescription" layoutX="129.0" layoutY="166.0" prefHeight="75.0" prefWidth="270.0" promptText="Entrer La Description ">
+      <TextArea fx:id="txtDescription" layoutX="255.0" layoutY="169.0" prefHeight="75.0" prefWidth="260.0" promptText="Entrer La Description ">
          <font>
             <Font size="14.0" />
          </font></TextArea>
-      <Button fx:id="AjouterE" layoutX="309.0" layoutY="442.0" mnemonicParsing="false" onAction="#Ajouter_Equipe" text="Ajouter Equipe" />
+      <Button fx:id="AjouterE" layoutX="439.0" layoutY="453.0" mnemonicParsing="false" onAction="#Ajouter_Equipe" prefHeight="26.0" prefWidth="129.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Ajouter Equipe" />
       <ImageView fx:id="imglogo" fitHeight="133.0" fitWidth="123.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/logo%20ontej.png" />
          </image>
       </ImageView>
-      <Button fx:id="RetourE" layoutX="129.0" layoutY="442.0" mnemonicParsing="false" onAction="#RetourE" prefHeight="26.0" prefWidth="95.0" text="Retour" />
+      <Button fx:id="RetourE" layoutX="255.0" layoutY="453.0" mnemonicParsing="false" onAction="#RetourE" prefHeight="26.0" prefWidth="95.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Retour" />
       <Label layoutX="134.0" layoutY="44.0" prefHeight="35.0" prefWidth="260.0" text="Ajouter Equipe">
          <font>
             <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="108.0" prefHeight="42.0" prefWidth="154.0" text="Nom D'equipe" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="185.0" prefHeight="42.0" prefWidth="154.0" text="La Description" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="315.0" prefHeight="42.0" prefWidth="210.0" text="Les Membres D'equipes" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
    </children>

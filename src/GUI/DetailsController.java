@@ -49,11 +49,8 @@ public class DetailsController implements Initializable {
     private Button Retour;
     @FXML
     private Label iddetails;
-
-
-    /**
-     * Initializes the controller class.
-     */
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

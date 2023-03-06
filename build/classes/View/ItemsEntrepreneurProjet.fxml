@@ -59,8 +59,8 @@
                <children>
                   <ImageView fx:id="Imgqr" fitHeight="77.0" fitWidth="81.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" />
                </children></Pane>
-            <Button fx:id="detailsEN" layoutX="529.0" layoutY="221.0" mnemonicParsing="false" onAction="#btndetailsEN" prefHeight="25.0" prefWidth="77.0" text="details" />
-            <Button fx:id="deleteEN" layoutX="619.0" layoutY="221.0" mnemonicParsing="false" onAction="#deleteEN" prefHeight="25.0" prefWidth="95.0" text="Supprimer" />
+            <Button fx:id="detailsEN" layoutX="529.0" layoutY="221.0" mnemonicParsing="false" onAction="#btndetailsEN" prefHeight="25.0" prefWidth="77.0" style="-fx-background-radius: 5em;" text="details" />
+            <Button fx:id="deleteEN" layoutX="619.0" layoutY="221.0" mnemonicParsing="false" onAction="#deleteEN" prefHeight="25.0" prefWidth="95.0" style="-fx-background-radius: 5em;" text="Supprimer" />
             <Label fx:id="datecreationEN" layoutX="567.0" layoutY="43.0" prefHeight="25.0" prefWidth="111.0" text="date">
                <font>
                   <Font size="14.0" />

@@ -63,8 +63,8 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="DetailsE" layoutX="489.0" layoutY="250.0" mnemonicParsing="false" onAction="#DetailsEquipe" prefHeight="25.0" prefWidth="95.0" text="Details" />
-            <Button fx:id="deletee" layoutX="595.0" layoutY="250.0" mnemonicParsing="false" onAction="#deletee" prefHeight="25.0" prefWidth="95.0" text="Supprimer" />
+            <Button fx:id="DetailsE" layoutX="489.0" layoutY="250.0" mnemonicParsing="false" onAction="#DetailsEquipe" prefHeight="25.0" prefWidth="95.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-translate-x: 0.1em;" text="Details" />
+            <Button fx:id="deletee" layoutX="595.0" layoutY="250.0" mnemonicParsing="false" onAction="#deletee" prefHeight="25.0" prefWidth="95.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-translate-x: 0.1em;" text="Supprimer" />
          </children>
       </Pane>
    </children>

@@ -208,7 +208,16 @@ public class ServiceProjet implements Interface_IService<Projet>{
 
 
 
-    
+//    public void updateRating(int idProjet, double rating) {
+//    try {
+//        Connection cnx = MaConnection.getInstance().getCnx();
+//        Statement st = cnx.createStatement();
+//        String query = "UPDATE Projet SET rating = " + rating + " WHERE id_Projet = " + idProjet;
+//        st.executeUpdate(query);
+//    } catch (SQLException ex) {
+//        Logger.getLogger(ServiceProjet.class.getName()).log(Level.SEVERE, null, ex);
+//    }
+//}
     
     
     
