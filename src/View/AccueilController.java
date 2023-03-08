@@ -63,6 +63,8 @@ public class AccueilController implements Initializable {
     UserService bs = new UserService();
     @FXML
     private Button hjhfh;
+    @FXML
+    private Button FHFH;
 
     /**
      * Initializes the controller class.
@@ -228,5 +230,9 @@ public class AccueilController implements Initializable {
 
     @FXML
     private void jhgjh(ActionEvent event) {
+    }
+
+    @FXML
+    private void GNGFNF(ActionEvent event) {
     }
 }

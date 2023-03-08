@@ -3,30 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/services/EmailSender.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/services/WalletService.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/AccueilController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/models/User.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/models/Wallet.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/myListener1.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/AccueilWalletController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/firaspidev/FirasPidev.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/ModifierUserController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/EntrepriseController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/WalletFrontController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/ModifierWalletController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/SeConnecterController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/FXMLController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/firaspidev/NewFXMain.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/UsercellController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/AjoutWalletFrontController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/MenuController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/InvestiseurFXMLController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/TestController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/interfaces/Interface_IService.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/DetailsUserController.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/services/UserService.java</file>
-            <file>file:/C:/Users/msi/Documents/NetBeansProjects/FirasPidev/src/View/ModifUserFrontController.java</file>
+            <file>file:/C:/Users/msi/Documents/GitHub/pidev/src/firaspidev/NewFXMain.java</file>
+            <file>file:/C:/Users/msi/Documents/GitHub/pidev/src/View/AccueilController.java</file>
         </group>
     </open-files>
 </project-private>
