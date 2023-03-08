@@ -45,8 +45,6 @@ public class AccueilController implements Initializable {
     @FXML
     private Button AfficherUser;
     @FXML
-    private Button ModifierUser;
-    @FXML
     private Button LogIn;
     @FXML
     private Button RetourAuMenuUser;
@@ -118,7 +116,6 @@ public class AccueilController implements Initializable {
         
     }
 
-    @FXML
     private void ModifierUser(ActionEvent event) throws IOException {
 
         User selectedUser = afficher.getSelectionModel().getSelectedItem();
@@ -161,7 +158,6 @@ public class AccueilController implements Initializable {
         stage.show();
     }
 
-    @FXML
     private void desactiverUser(ActionEvent event) {
         // Récupérer le pack sélectionné
         User UserSelectionne = afficher.getSelectionModel().getSelectedItem();
@@ -214,5 +210,17 @@ public class AccueilController implements Initializable {
             e.printStackTrace();
         }
     
+    }
+
+    @FXML
+    private void aaaa(ActionEvent event) {
+    }
+
+    @FXML
+    private void bvjbvn(ActionEvent event) {
+    }
+
+    @FXML
+    private void bvbjbj(ActionEvent event) {
     }
 }
