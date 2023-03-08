@@ -42,11 +42,5 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button layoutX="384.0" layoutY="26.0" mnemonicParsing="false" onAction="#aaaa" text="Button" />
-      <Button layoutX="476.0" layoutY="26.0" mnemonicParsing="false" onAction="#bvjbvn" text="Button" />
-      <Button layoutX="582.0" layoutY="26.0" mnemonicParsing="false" onAction="#bvbjbj" text="Button" />
-      <Button fx:id="hjhfh" layoutX="282.0" layoutY="26.0" mnemonicParsing="false" onAction="#jhgjh" text="Button" />
-      <Button fx:id="FHFH" layoutX="648.0" layoutY="26.0" mnemonicParsing="false" onAction="#GNGFNF" text="Button" />
-      <Button fx:id="vdfvdf" layoutX="282.0" layoutY="59.0" mnemonicParsing="false" onAction="#vdvf" text="Button" />
    </children>
 </AnchorPane>
