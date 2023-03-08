@@ -53,6 +53,8 @@ public class AjoutWalletFrontController implements Initializable {
       private UserService sa = new UserService();
     private WalletService sw= new WalletService();
     SessionManager sessionManager = SessionManager.getInstance();
+    @FXML
+    private Button fssfs;
 
     /**
      * Initializes the controller class.
@@ -191,5 +193,9 @@ public class AjoutWalletFrontController implements Initializable {
            System.out.println(ex.getMessage());
 
         }
+    }
+
+    @FXML
+    private void vdfvd(ActionEvent event) {
     }
 }
