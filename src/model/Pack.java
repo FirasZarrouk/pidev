@@ -14,22 +14,49 @@ public class Pack {
    private String nomPack;
    private String categorie;
    private float tarif;
+   private String roleU;
+   private User user;
+
 
     public Pack() {
     }
 
-    public Pack(int ID_Pack, String nomPack, String categorie, float tarif) {
+    public Pack(int ID_Pack, String nomPack, String categorie, float tarif, String roleU, User user) {
         this.ID_Pack = ID_Pack;
         this.nomPack = nomPack;
         this.categorie = categorie;
         this.tarif = tarif;
+        this.roleU = roleU;
+        this.user = user;
     }
 
-    public Pack(String nomPack, String categorie, float tarif) {
+    public Pack(String nomPack, String categorie, float tarif, String roleU, User user) {
         this.nomPack = nomPack;
         this.categorie = categorie;
         this.tarif = tarif;
+        this.roleU = roleU;
+        this.user = user;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
+   
+
+    public String getRoleU() {
+        return roleU;
+    }
+
+    public void setRoleU(String roleU) {
+        this.roleU = roleU;
+    }
+
+    
     
     
 
@@ -70,9 +97,14 @@ public class Pack {
 
     @Override
     public String toString() {
-        return "Pack{" + "ID_Pack=" + ID_Pack + ", nomPack=" + nomPack + ", categorie=" + categorie + ", tarif=" + tarif + '}';
+        return "Pack{" + "ID_Pack=" + ID_Pack + ", nomPack=" + nomPack + ", categorie=" + categorie + ", tarif=" + tarif + ", roleU=" + roleU + ", user=" + user + '}';
     }
 
+    
+
+  
+
+    
    
 
 }

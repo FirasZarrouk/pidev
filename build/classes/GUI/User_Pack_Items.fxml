@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="385.0" prefWidth="783.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.User_Pack_ItemsController">
+   <children>
+      <Label layoutX="71.0" layoutY="60.0" text="Pack:" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="148.0" text="Nom du pack:" textFill="#172948" />
+      <Label layoutX="283.0" layoutY="148.0" text="Catégorie de pack:" textFill="#172948" />
+      <Label layoutX="450.0" layoutY="148.0" text="Tarif:" textFill="#172948" />
+      <Button fx:id="ResserverSupp" layoutX="510.0" layoutY="262.0" mnemonicParsing="false" onAction="#ResItems" prefHeight="26.0" prefWidth="99.0" text="Reserver" />
+      <AnchorPane fx:id="abc" layoutX="70.0" layoutY="306.0" prefHeight="70.0" prefWidth="694.0" style="-fx-background-color: #aeacac;" />
+      <TextField id="tarifPack" fx:id="CategorieText" layoutX="275.0" layoutY="199.0" prefHeight="28.0" prefWidth="115.0" />
+      <TextField id="tarifPack" fx:id="TarifText" layoutX="411.0" layoutY="199.0" prefHeight="28.0" prefWidth="115.0" />
+      <TextField id="tarifPack" fx:id="NomText" layoutX="141.0" layoutY="199.0" prefHeight="28.0" prefWidth="115.0" />
+      <Label fx:id="IDRap" layoutX="683.0" layoutY="385.0" text="." visible="false" />
+      <Separator layoutX="69.0" layoutY="109.0" prefHeight="0.0" prefWidth="686.0" />
+      <Separator layoutX="762.0" layoutY="14.0" orientation="VERTICAL" prefHeight="96.0" prefWidth="3.0" />
+      <Label layoutX="567.0" layoutY="148.0" text="Destiné à:" textFill="#172948" />
+      <TextField id="tarifPack" fx:id="RoleUText" layoutX="548.0" layoutY="199.0" prefHeight="28.0" prefWidth="115.0" />
+   </children>
+</AnchorPane>

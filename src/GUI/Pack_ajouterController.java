@@ -22,7 +22,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
+import model.SessionManager;
+import model.User;
 
 
 /**
@@ -49,30 +52,34 @@ public class Pack_ajouterController implements Initializable {
     servicePack sp = new servicePack();
     @FXML
     private Button BoutonRetourPack1;
+    @FXML
+    private Label RoleU;
+    @FXML
+    private ChoiceBox<String> RoleUChoiceBox;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        RoleUChoiceBox.getItems().add("Entrepreneur");
+     RoleUChoiceBox.getItems().add("Investisseur");
     }    
 
     @FXML
     private void AjouterPack(ActionEvent event) throws IOException {
         
-//         Pack p = new Pack();
-//              p.setNomPack(nomPackText.getText());
-//              p.setCategorie(categoriePackText.getText());
-//              p.setTarif(Float.parseFloat(tarifPackText.getText()));
-//              sp.ajouter(p);
+
 
  // Récupérer les valeurs entrées dans les champs de texte
     String nom = nomPackText.getText();
     String categorie = categoriePackText.getText();
     String tarifStr = tarifPackText.getText();
+    String RoleU = RoleUChoiceBox.getValue();
+    
 
     // Vérifier que les champs ne sont pas vides
-    if (nom.isEmpty() || categorie.isEmpty() || tarifStr.isEmpty()) {
+    if (nom.isEmpty() || categorie.isEmpty() || tarifStr.isEmpty()|| RoleU.isEmpty()) {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Erreur");
         alert.setHeaderText(null);
@@ -107,6 +114,11 @@ public class Pack_ajouterController implements Initializable {
     p.setNomPack(nom);
     p.setCategorie(categorie);
     p.setTarif(tarif);
+    p.setRoleU(RoleU);
+   p.setUser(SessionManager.getInstance().getCurrentUser());
+   
+   
+   
     sp.ajouter(p);
 
     // Afficher un message de confirmation

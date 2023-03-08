@@ -17,11 +17,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.Wallet;
 
 import model.transaction;
 import service.servicetransaction;
@@ -47,11 +49,16 @@ public class Transaction_modifierController implements Initializable {
     private DatePicker dateTransText;
     @FXML
     private TextField MontantTransText;
-    @FXML
     private TextField TypeTransText;
         private ListView<transaction> listviewafficherT;
         servicetransaction tr = new servicetransaction();
         transaction t;
+    @FXML
+    private ChoiceBox<String> TypeTransChoiceBox;
+    @FXML
+    private Label WalletTransLabel1;
+    @FXML
+    private TextField WalletTransText1;
 
     /**
      * Initializes the controller class.
@@ -59,11 +66,18 @@ public class Transaction_modifierController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+         TypeTransChoiceBox.getItems().add("Transaction de revenus");
+    TypeTransChoiceBox.getItems().add("Transaction de depenses");
+         
     }    
    void gettransaction(transaction t) {
+       
     dateTransText.setValue(t.getDate_trans().toLocalDate());
     MontantTransText.setText(Float.toString(t.getMontant()));
-    TypeTransText.setText(t.getType_trans());
+    TypeTransChoiceBox.setValue(t.getType_trans());
+       
+
+   // TypeTransText.setText(t.getType_trans());
 }
     @FXML
     private void ModifierTrans(ActionEvent event) {
@@ -74,7 +88,9 @@ public class Transaction_modifierController implements Initializable {
     String date = dateTransText.getValue().toString();
     
     String montantTrans = MontantTransText.getText();    
-    String TypeTrans = TypeTransText.getText();
+    String TypeTrans =  TypeTransChoiceBox.getValue();
+
+
 
     // Vérifier que les champs ne sont pas vides
     if (date.isEmpty() || montantTrans.isEmpty() || TypeTrans.isEmpty()) {
@@ -117,10 +133,14 @@ public class Transaction_modifierController implements Initializable {
 
     // Créer un nouveau Pack et l'ajouter avec le servicePack
     transaction t = new transaction();
+    
     LocalDate d = dateTransText.getValue(); 
     t.setDate_trans(java.sql.Date.valueOf(d));
     t.setMontant(montant);
     t.setType_trans(TypeTrans);
+    Wallet w = new Wallet();
+    
+    
    
     tr.modifier(t);
 

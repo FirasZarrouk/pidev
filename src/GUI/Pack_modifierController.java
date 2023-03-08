@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -52,6 +53,10 @@ servicePack sp = new servicePack();
 Pack p;
     @FXML
     private Button BoutonRetourPack1;
+    @FXML
+    private Label RoleU;
+    @FXML
+    private ChoiceBox<String> RoleUChoiceBox;
 
     /**
      * Initializes the controller class.
@@ -59,12 +64,14 @@ Pack p;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+           RoleUChoiceBox.getItems().add("Entrepreneur");
+     RoleUChoiceBox.getItems().add("Investisseur");
     }    
     void getPack(Pack p){
     nomPackText.setText(p.getNomPack());
     categoriePackText.setText(p.getCategorie());
     tarifPackText.setText(Float.toString(p.getTarif()));
-
+    RoleUChoiceBox.setValue(p.getRoleU());
   //  tarifPackText.setText(Float.parseFloat(p.getTarif()));
     
 }
@@ -74,6 +81,9 @@ Pack p;
     String nom = nomPackText.getText();
     String categorie = categoriePackText.getText();
     String tarifStr = tarifPackText.getText();
+    String RoleU = RoleUChoiceBox.getValue();
+    
+    
 
     // Vérifier que les champs ne sont pas vides
     if (nom.isEmpty() || categorie.isEmpty() || tarifStr.isEmpty()) {
@@ -109,6 +119,7 @@ Pack p;
     p.setNomPack(nom);
     p.setCategorie(categorie);
     p.setTarif(tarif);
+    p.setRoleU(RoleU);
     sp.modifier(p);
 
     // Afficher un message de confirmation

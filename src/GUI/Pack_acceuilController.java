@@ -8,20 +8,27 @@ package GUI;
 import Interface.Interface_IService;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Pack;
 import service.servicePack;
@@ -38,23 +45,16 @@ public class Pack_acceuilController implements Initializable {
     private Label nomPackLabel;
     @FXML
     private Button BoutonAjouterPack;
-    @FXML
-    private Button BoutonModifierPack1;
-    @FXML
-    private Button BoutonSupprimerPack11;
+   
     @FXML
     private Button BoutonQuitterPack111;
-    @FXML
-    private Button BoutonAfficherPack112;
    
    Interface_IService sp= new servicePack(); 
-   
+   ArrayList<Pack> Pack = new ArrayList<>();
     @FXML
-    private ListView<Pack> listviewafficher;
+    private VBox scenepane;
     @FXML
-    private Button BoutonRecherchePack;
-    @FXML
-    private TextField IDPackText;
+    private Button BoutonTrierPack;
     
     
 
@@ -65,6 +65,40 @@ public class Pack_acceuilController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        servicePack spp = new servicePack();
+           
+       Pack.addAll(spp.afficher());
+        // TODO
+       
+        
+        Node [] nodes = new  Node[15];
+        
+        
+        
+        
+        
+        for(int i = 0; i<Pack.size() ; i++)
+        {
+             
+                
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("Pack_Items.fxml"));
+                AnchorPane abc = fxmlLoader.load();
+                Pack_ItemsController itemcontroller = fxmlLoader.getController();
+                itemcontroller.getPack(Pack.get(i));
+                scenepane.getChildren().add(abc);
+            }
+            // TODO
+            catch (IOException ex) {
+                Logger.getLogger(Rapport_accueilController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
+    
+           
+        }  
+        
+        
       
     }    
 
@@ -81,71 +115,42 @@ public class Pack_acceuilController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    private void ModifierPack(ActionEvent event) throws IOException {
-       
-       
+   
 
-// Charger l'interface suivante à partir de son fichier FXML
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Pack_modifier.fxml"));
+    @FXML
+    private void QuitterPack(ActionEvent event) throws IOException {
+             // Charger l'interface suivante à partir de son fichier FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_menu.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        Pack selectedPack=listviewafficher.getSelectionModel().getSelectedItem();
-         Pack_modifierController Pack_modifierController=loader.getController();
-        Pack_modifierController.getPack(selectedPack);
-        Pack_modifierController.p=selectedPack;
         
         // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
-        Stage stage = (Stage) BoutonModifierPack1.getScene().getWindow();
+        Stage stage = (Stage) BoutonQuitterPack111.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML
-    private void SupprimerPack(ActionEvent event) {
-         // Récupérer le pack sélectionné
-    Pack packSelectionne = listviewafficher.getSelectionModel().getSelectedItem();
+  
 
-    if (packSelectionne != null) {
-        // Appeler le service pour supprimer le pack
-        sp.supprimer(packSelectionne.getID_Pack());
+        @FXML
+        private void TrierPack(ActionEvent event) {
+      // Trier les transactions par date
+    ArrayList<Pack> Pack = sp.sortBy("nomPack", "ASC");
 
-        // Retirer le pack de la ListView
-        listviewafficher.getItems().remove(packSelectionne);
+    // Effacer la vue actuelle des transactions
+    scenepane.getChildren().clear();
+
+    // Ajouter les transactions triées dans la vue
+    for(int i = 0; i < Pack.size(); i++) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("Pack_Items.fxml"));
+            AnchorPane abc = fxmlLoader.load();
+            Pack_ItemsController itemcontroller = fxmlLoader.getController();
+            itemcontroller.getPack(Pack.get(i));
+            scenepane.getChildren().add(abc);
+        } catch (IOException ex) {
+            Logger.getLogger(Transaction_accueilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    }
-
-    @FXML
-    private void QuitterPack(ActionEvent event) {
-        // Récupérer le stage actuel et le fermer
-    Stage stage = (Stage) BoutonQuitterPack111.getScene().getWindow();
-    stage.close();
-    }
-
-    @FXML
-    private void AfficherPack(ActionEvent event) {
-        ObservableList<Pack> Packs =FXCollections.observableArrayList(sp.afficher());
-       listviewafficher.setItems(Packs);
-
-       
-    }
-
-    @FXML
-    private void RecherchePack(ActionEvent event) {
-         // Récupérer l'ID du pack à rechercher depuis le champ de texte
-    int idPack = Integer.parseInt(IDPackText.getText());
-
-    // Appeler le service pour récupérer le pack correspondant à l'ID
-    Pack packRecherche = (Pack) sp.readById(idPack);
-
-    if (packRecherche != null) {
-        // Afficher le pack trouvé dans la ListView
-        ObservableList<Pack> Packs = FXCollections.observableArrayList(packRecherche);
-        listviewafficher.setItems(Packs);
-    } else {
-        // Afficher un message d'erreur si le pack n'a pas été trouvé
-        System.out.println("Pack non trouvé");
-    }
-    }
-    
-}
+    }}

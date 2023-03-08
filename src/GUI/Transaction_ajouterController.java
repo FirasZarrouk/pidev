@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,10 +19,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.SessionManager;
+
 import model.transaction;
 import service.servicetransaction;
 
@@ -41,19 +46,25 @@ public class Transaction_ajouterController implements Initializable {
     private DatePicker dateTransText;
     @FXML
     private TextField MontantTransText;
-    @FXML
     private TextField TypeTransText;
     @FXML
     private Button BoutonAjouterTrans;
     @FXML
     private Button BoutonRetourTrans;
     servicetransaction st = new servicetransaction();
+    @FXML
+    private ChoiceBox<String> TypeTransChoiceBox;
+    
+
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+    TypeTransChoiceBox.getItems().add("Transaction de revenus");
+    TypeTransChoiceBox.getItems().add("Transaction de depenses");
+
         // TODO
     }    
 
@@ -63,7 +74,8 @@ public class Transaction_ajouterController implements Initializable {
     String date = dateTransText.getValue().toString();
     
     String montantTrans = MontantTransText.getText();    
-    String TypeTrans = TypeTransText.getText();
+    String TypeTrans = TypeTransChoiceBox.getValue();
+    
 
     // Vérifier que les champs ne sont pas vides
     if (date.isEmpty() || montantTrans.isEmpty() || TypeTrans.isEmpty()) {
@@ -112,9 +124,18 @@ public class Transaction_ajouterController implements Initializable {
     t.setDate_trans(java.sql.Date.valueOf(d));
     t.setMontant(montant);
     t.setType_trans(TypeTrans);
+//    Wallet w = new Wallet();
+//    int id = Integer.parseInt(ID_W);
+//    w.setId_wallet(id);
+//    t.setWallet(w);
+    t.setId(SessionManager.getInstance().getCurrentUser());
+    
+   
+    
    
     st.ajouter(t);
 
+       
     // Afficher un message de confirmation
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle("Confirmation");

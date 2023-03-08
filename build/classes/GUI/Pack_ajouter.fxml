@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -9,33 +10,39 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Pack_ajouterController">
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@../css/back.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Pack_ajouterController">
    <children>
-      <Label fx:id="nomPackLabel" ellipsisString=".." layoutX="164.0" layoutY="121.0" text="Nom du pack :" textFill="#2bb56b">
+      <VBox layoutX="171.0" layoutY="114.0" opacity="0.7" prefHeight="370.0" prefWidth="732.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 2em;" />
+      <Label fx:id="nomPackLabel" ellipsisString=".." layoutX="331.0" layoutY="192.0" text="Nom du pack :" textFill="#172948">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="categoriePackLabel" layoutX="164.0" layoutY="169.0" text="Catégorie de pack :" textFill="#2bb56b">
+      <Label fx:id="categoriePackLabel" layoutX="331.0" layoutY="246.0" text="Catégorie de pack :" textFill="#172948">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="TarifPackLabel" layoutX="166.0" layoutY="219.0" text="Tarif du pack :" textFill="#2bb56b">
+      <Label fx:id="TarifPackLabel" layoutX="333.0" layoutY="299.0" text="Tarif du pack :" textFill="#172948">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField id="nomPack" fx:id="nomPackText" layoutX="337.0" layoutY="123.0" />
-      <TextField id="categoriePack" fx:id="categoriePackText" layoutX="367.0" layoutY="171.0" />
-      <TextField id="tarifPack" fx:id="tarifPackText" layoutX="327.0" layoutY="221.0" />
-      <Button fx:id="BoutonAjouterPack" layoutX="387.0" layoutY="294.0" mnemonicParsing="false" onAction="#AjouterPack" prefHeight="30.0" prefWidth="63.0" text="Ajouter" />
-      <VBox prefHeight="408.0" prefWidth="114.0" style="-fx-background-color: #172948;" />
-      <Button fx:id="BoutonRetourPack1" layoutX="459.0" layoutY="294.0" mnemonicParsing="false" onAction="#RetourrPack" prefHeight="30.0" prefWidth="63.0" text="Retour" />
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="435.0" layoutY="-51.0">
+      <TextField id="nomPack" fx:id="nomPackText" layoutX="593.0" layoutY="194.0" />
+      <TextField id="categoriePack" fx:id="categoriePackText" layoutX="593.0" layoutY="248.0" />
+      <TextField id="tarifPack" fx:id="tarifPackText" layoutX="593.0" layoutY="301.0" />
+      <Button fx:id="BoutonAjouterPack" layoutX="781.0" layoutY="556.0" mnemonicParsing="false" onAction="#AjouterPack" prefHeight="30.0" prefWidth="98.0" text="Ajouter" />
+      <Button fx:id="BoutonRetourPack1" layoutX="895.0" layoutY="556.0" mnemonicParsing="false" onAction="#RetourrPack" prefHeight="30.0" prefWidth="98.0" text="Retour" />
+      <ImageView fitHeight="150.0" fitWidth="137.0" layoutY="-29.0">
          <image>
             <Image url="@../image/331939313_908136223642012_3641689149527626504_n.png" />
          </image>
       </ImageView>
+      <Label fx:id="RoleU" layoutX="335.0" layoutY="356.0" text="Dédié à :  " textFill="#172948">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="RoleUChoiceBox" layoutX="593.0" layoutY="359.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

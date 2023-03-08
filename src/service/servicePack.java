@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.User;
 /**
  *
  * @author LENOVO
@@ -25,7 +26,7 @@ public class servicePack implements Interface_IService <Pack> {
     @Override
     public void ajouter(Pack t) {
             try {
-                String req = "INSERT INTO `pack`(`nomPack`, `categorie`, `tarif`) VALUES ('"+ t.getNomPack()+"','"+t.getCategorie()+"',"+t.getTarif()+")";
+                String req = "INSERT INTO `pack`(`nomPack`, `categorie`, `tarif`, `roleU`, `id`) VALUES ('"+ t.getNomPack()+"','"+t.getCategorie()+"',"+t.getTarif()+",'"+t.getRoleU()+"','"+t.getUser().getId()+"')";
                 Statement st = cnx.createStatement();
                 st.executeUpdate(req);
                 System.out.println("Pack ajouter avec succes");
@@ -49,7 +50,7 @@ public class servicePack implements Interface_IService <Pack> {
     @Override
     public void modifier(Pack t) {
             try {
-                String req="UPDATE pack SET `nomPack`='"+t.getNomPack()+"',`categorie`='"+t.getCategorie()+"',`tarif`='"+t.getTarif()+"' WHERE (`ID_Pack`='"+t.getID_Pack()+"' )";
+                String req="UPDATE pack SET `nomPack`='"+t.getNomPack()+"',`categorie`='"+t.getCategorie()+"',`tarif`='"+t.getTarif()+"',`roleU`='"+t.getRoleU()+"' WHERE (`ID_Pack`='"+t.getID_Pack()+"' )";
                 Statement st = cnx.createStatement();
                 st.executeUpdate(req);
                 System.out.println("Pack modifié avec succes");
@@ -72,6 +73,11 @@ public class servicePack implements Interface_IService <Pack> {
                     p.setNomPack(res.getString(2));
                     p.setCategorie(res.getString(3));
                     p.setTarif(res.getFloat(4));
+                    p.setRoleU(res.getString(5));
+                    User U = new User();
+                    U.setId(res.getInt(6));
+                    p.setUser(U);
+                   
                   
                     pa.add(p);
                 }       } catch (SQLException ex) {
@@ -93,6 +99,11 @@ public class servicePack implements Interface_IService <Pack> {
                     p.setNomPack(res.getString(2));
                     p.setCategorie(res.getString(3));
                     p.setTarif(res.getFloat(4));
+                   p.setRoleU(res.getString(5));
+                    User U = new User();
+                    U.setId(res.getInt(6));
+                    p.setUser(U);
+                
                   
                    }
                
@@ -116,6 +127,12 @@ public class servicePack implements Interface_IService <Pack> {
                     p.setNomPack(res.getString(2));
                     p.setCategorie(res.getString(3));
                     p.setTarif(res.getFloat(4));
+                  p.setRoleU(res.getString(5));
+                   User U = new User();
+                    U.setId(res.getInt(6));
+                    p.setUser(U);
+                   
+
                   
                     pa.add(p);
             }} 
@@ -124,4 +141,17 @@ public class servicePack implements Interface_IService <Pack> {
             }
             return (ArrayList<Pack>) pa;
     }
+
+  
+    @Override
+    public List<Pack> afficherrr() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Pack> afficherjointure() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 }
