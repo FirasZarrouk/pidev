@@ -55,6 +55,8 @@ public class AjoutWalletFrontController implements Initializable {
     SessionManager sessionManager = SessionManager.getInstance();
     @FXML
     private Button fssfs;
+    @FXML
+    private Button vdfv;
 
     /**
      * Initializes the controller class.
@@ -197,5 +199,9 @@ public class AjoutWalletFrontController implements Initializable {
 
     @FXML
     private void vdfvd(ActionEvent event) {
+    }
+
+    @FXML
+    private void vdvd(ActionEvent event) {
     }
 }
