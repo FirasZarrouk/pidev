@@ -65,6 +65,8 @@ public class AccueilController implements Initializable {
     private Button hjhfh;
     @FXML
     private Button FHFH;
+    @FXML
+    private Button vdfvdf;
 
     /**
      * Initializes the controller class.
@@ -234,5 +236,9 @@ public class AccueilController implements Initializable {
 
     @FXML
     private void GNGFNF(ActionEvent event) {
+    }
+
+    @FXML
+    private void vdvf(ActionEvent event) {
     }
 }
