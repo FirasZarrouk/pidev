@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@../css/firas.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SeConnecterController">
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@../css/firas.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SeConnecterController">
    <children>
       <VBox layoutX="318.0" layoutY="107.0" opacity="0.7" prefHeight="290.0" prefWidth="436.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 2em;">
          <opaqueInsets>
