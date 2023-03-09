@@ -17,6 +17,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.awt.AWTException;
+import java.awt.Image;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
+import java.awt.event.ActionListener;
+import org.controlsfx.control.Notifications;
+
+import javafx.application.Platform;
+
 
 /**
  *
@@ -28,13 +38,13 @@ public class FXMain extends Application {
     public void start(Stage primaryStage) {
        Parent root ;
        try {
-       root = FXMLLoader.load(getClass().getResource("../gui/afficherRappel.fxml"));
+       root = FXMLLoader.load(getClass().getResource("../gui/notif.fxml"));
        
        Scene scene = new Scene (root) ;
-       primaryStage.setTitle("planification");
+       primaryStage.setTitle("Gestion_reunion");
        primaryStage.setScene(scene);
        primaryStage.show();
-     
+     Notifications notif = Notifications.create();
        }catch (IOException ex){
        Logger.getLogger(FXMain.class.getName()).log(Level.SEVERE , null , ex);
        }

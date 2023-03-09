@@ -5,14 +5,17 @@ import Interfaces.Interface_IService;
 import models.rappel;
 import utilities.connection;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.TableColumn;
+import models.reunion;
 
 public class serviceRappel implements Interface_IService<rappel>{
     
@@ -21,7 +24,7 @@ public class serviceRappel implements Interface_IService<rappel>{
     @Override
     public void ajouter(rappel r) {
         try {
-            String req = "INSERT INTO `rappel`(`date`,`heure`,`reminder`,`ID_investisseur`,`ID_entrepreneur`) VALUES ('"+r.getDate()+"','"+r.getHeure()+"','"+r.getReminder()+"','"+r.getID_investisseur()+"','"+r.getID_entrepreneur()+"')";
+            String req = "INSERT INTO `rappel`(`dateRappel`,`heureRappel`,`reminder`,`email_investisseur`,`eamil_entrepreneur`) VALUES ('"+r.getDateRappel()+"','"+r.getHeureRappel()+"','"+r.getReminder()+"','"+r.getEmail_investisseur()+"','"+r.getEmail_entrepreneur()+"')";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("rappel ajouter avec succes");
@@ -45,7 +48,7 @@ public class serviceRappel implements Interface_IService<rappel>{
     @Override
     public void modifier(rappel r) {
         try {
-            String req="UPDATE rappel SET `date`='"+r.getDate()+"',`heure`='"+r.getHeure()+"',`reminder`='"+r.getReminder()+"',`ID_investisseur`='"+r.getID_investisseur()+"',`ID_entrepreneur`='"+r.getID_entrepreneur()+"' WHERE (ID_rappel='"+r.getID_rappel()+"')";
+            String req="UPDATE rappel SET `dateRappel`='"+r.getDateRappel()+"',`heureRappel`='"+r.getHeureRappel()+"',`reminder`='"+r.getReminder()+"',`email_investisseur`='"+r.getEmail_investisseur()+"',`email_entrepreneur`='"+r.getEmail_entrepreneur()+"' WHERE (ID_rappel='"+r.getID_rappel()+"')";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("rappel modifie avec succes");
@@ -64,11 +67,11 @@ public class serviceRappel implements Interface_IService<rappel>{
             while(res.next()){
               rappel R = new rappel(); 
               R.setID_rappel(res.getInt(1));
-              R.setDate(res.getDate(2));
-              R.setHeure(res.getString(3));
+              R.setDateRappel(res.getDate(2));
+              R.setHeureRappel(res.getString(3));
               R.setReminder(res.getString(4));
-              R.setID_investisseur(res.getString(5));
-              R.setID_entrepreneur(res.getString(6));
+              R.setEmail_investisseur(res.getString(5));
+              R.setEmail_entrepreneur(res.getString(6));
               li.add(R);    
             }
         } catch (SQLException ex) {
@@ -85,13 +88,13 @@ public class serviceRappel implements Interface_IService<rappel>{
             Statement ste = cnx.createStatement();
             ResultSet res=ste.executeQuery(req);
             while(res.next()){
-               
+              
               r.setID_rappel(res.getInt(1));
-              r.setDate(res.getDate(2));
-              r.setHeure(res.getString(3));
+              r.setDateRappel(res.getDate(2));
+              r.setHeureRappel(res.getString(3));
               r.setReminder(res.getString(4));
-              r.setID_investisseur(res.getString(5));
-              r.setID_entrepreneur(res.getString(6));
+              r.setEmail_investisseur(res.getString(5));
+              r.setEmail_entrepreneur(res.getString(6));
               
                   
             }
@@ -108,6 +111,16 @@ public class serviceRappel implements Interface_IService<rappel>{
 
     @Override
     public boolean sortBy(int i, TableColumn.SortType sortType) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<rappel> readBynom(String nom) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public reunion readbyd(Date d) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

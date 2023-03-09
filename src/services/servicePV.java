@@ -4,9 +4,11 @@ import Interfaces.Interface_IService;
 import models.PV;
 import utilities.connection;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -22,7 +24,7 @@ public class servicePV implements Interface_IService<PV>{
     @Override
     public void ajouter(PV P) {
         try {
-            String req = "INSERT INTO `PV`(`nom`,`prenom`,`date`,`Commentaire`,`ID_investisseur`,`ID_entrepreneur`,`ID_projet`,`id_reunion`) VALUES ('"+P.getNom()+"','"+P.getPrenom()+"','"+P.getDate()+"','"+P.getCommentaire()+"','"+P.getID_investisseur()+"','"+P.getID_entrepreneur()+"','"+P.getID_projet()+"','"+P.getId_reunion().getId_reunion()+"')";
+            String req = "INSERT INTO `PV`(`datePV`,`Commentaire`,`Verifier`,`id_reunion`) VALUES ('"+P.getDatePV()+"','"+P.getCommentaire()+"','"+P.getVerifier()+"','"+P.getId_reunion().getId_reunion()+"')";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("PV ajouter avec succes");
@@ -46,7 +48,7 @@ public class servicePV implements Interface_IService<PV>{
     @Override
     public void modifier(PV P) {
         try {
-            String req="UPDATE PV SET `nom`='"+P.getNom()+"',`prenom`='"+P.getPrenom()+"',`date`='"+P.getDate()+"',`Commentaire`='"+P.getCommentaire()+"',`ID_investisseur`='"+P.getID_investisseur()+"',`ID_entrepreneur`='"+P.getID_entrepreneur()+"',`ID_projet`='"+P.getID_projet()+"',`id_reunion`='"+P.getId_reunion().getId_reunion()+"' WHERE (ID_PV='"+P.getID_PV()+"')";
+            String req="UPDATE PV SET `datePV`='"+P.getDatePV()+"',`Commentaire`='"+P.getCommentaire()+"',`Verifier`='"+P.getVerifier()+"',`id_reunion`='"+P.getId_reunion().getId_reunion()+"' WHERE (ID_PV='"+P.getID_PV()+"')";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("PV modifie avec succes");
@@ -65,15 +67,11 @@ public class servicePV implements Interface_IService<PV>{
             while(res.next()){
               PV P = new PV(); 
               P.setID_PV(res.getInt(1));
-              P.setNom(res.getString(2));
-              P.setPrenom(res.getString(3));
-              P.setDate(res.getDate(4));
-              P.setCommentaire(res.getString(5));
-              P.setID_investisseur(res.getString(6));
-              P.setID_entrepreneur(res.getString(7));
-              P.setID_projet(res.getString(8));
+              P.setDatePV(res.getDate(2));
+              P.setCommentaire(res.getString(3));
+              P.setVerifier(res.getString(4));
               reunion Ri = new reunion();
-              Ri.setId_reunion(res.getInt(9));
+              Ri.setId_reunion(res.getInt(5));
               P.setId_reunion(Ri);
               l.add(P);    
             }
@@ -91,19 +89,16 @@ public class servicePV implements Interface_IService<PV>{
             Statement ste = cnx.createStatement();
             ResultSet res=ste.executeQuery(req);
             while(res.next()){
+                
                
-             P.setID_PV(res.getInt(1));
-              P.setNom(res.getString(2));
-              P.setPrenom(res.getString(3));
-              P.setDate(res.getDate(4));
-              P.setCommentaire(res.getString(5));
-              P.setID_investisseur(res.getString(6));
-              P.setID_entrepreneur(res.getString(7));
-              P.setID_projet(res.getString(8));
+              P.setID_PV(res.getInt(1));
+              P.setDatePV(res.getDate(2));
+              P.setCommentaire(res.getString(3));
+              P.setVerifier(res.getString(4));
               reunion Ri = new reunion();
-              Ri.setId_reunion(res.getInt(9));
+              Ri.setId_reunion(res.getInt(5));
               P.setId_reunion(Ri);
-                  
+                 
             }
         } catch (SQLException ex) {
             Logger.getLogger(servicePV.class.getName()).log(Level.SEVERE, null, ex);
@@ -118,6 +113,38 @@ public class servicePV implements Interface_IService<PV>{
 
     @Override
     public boolean sortBy(int i, TableColumn.SortType sortType) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+
+    @Override
+    public List<PV> readBynom(String nom) {
+        List<PV> l=new ArrayList<>();
+        try {
+            String req="SELECT * FROM PV WHERE `nom`='"+nom+"'";
+            Statement ste = cnx.createStatement();
+            ResultSet res=ste.executeQuery(req);
+            while(res.next()){
+                PV P = new PV(); 
+               
+              P.setID_PV(res.getInt(1));
+              P.setDatePV(res.getDate(2));
+              P.setCommentaire(res.getString(3));
+              P.setVerifier(res.getString(4));
+              reunion Ri = new reunion();
+              Ri.setId_reunion(res.getInt(5));
+              P.setId_reunion(Ri);
+              l.add(P);   
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(servicePV.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return l;
+    }
+
+    @Override
+    public reunion readbyd(Date d) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

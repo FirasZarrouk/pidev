@@ -13,76 +13,77 @@ import java.sql.Date;
  */
 public class rappel {
     private int ID_rappel;
-    private Date date; 
-    private String heure;
+    private Date dateRappel; 
+    private String heureRappel;
     private String reminder;
-    private String ID_investisseur;
-    private String ID_entrepreneur;
+    private String email_investisseur;
+    private String email_entrepreneur;
 
     public rappel() {
     }
 
-    public rappel(int ID_rappel, Date date, String heure, String reminder, String ID_investisseur, String ID_entrepreneur) {
+    public rappel(int ID_rappel, Date dateRappel, String heureRappel, String reminder, String email_investisseur, String email_entrepreneur) {
         this.ID_rappel = ID_rappel;
-        this.date = date;
-        this.heure = heure;
+        this.dateRappel = dateRappel;
+        this.heureRappel = heureRappel;
         this.reminder = reminder;
-        this.ID_investisseur = ID_investisseur;
-        this.ID_entrepreneur = ID_entrepreneur;
+        this.email_investisseur = email_investisseur;
+        this.email_entrepreneur = email_entrepreneur;
     }
 
     public int getID_rappel() {
         return ID_rappel;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDateRappel() {
+        return dateRappel;
     }
 
-    public String getHeure() {
-        return heure;
+    public String getHeureRappel() {
+        return heureRappel;
     }
 
     public String getReminder() {
         return reminder;
     }
 
-    public String getID_investisseur() {
-        return ID_investisseur;
+    public String getEmail_investisseur() {
+        return email_investisseur;
     }
 
-    public String getID_entrepreneur() {
-        return ID_entrepreneur;
+    public String getEmail_entrepreneur() {
+        return email_entrepreneur;
     }
 
     public void setID_rappel(int ID_rappel) {
         this.ID_rappel = ID_rappel;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateRappel(Date dateRappel) {
+        this.dateRappel = dateRappel;
     }
 
-    public void setHeure(String heure) {
-        this.heure = heure;
+    public void setHeureRappel(String heureRappel) {
+        this.heureRappel = heureRappel;
     }
 
     public void setReminder(String reminder) {
         this.reminder = reminder;
     }
 
-    public void setID_investisseur(String ID_investisseur) {
-        this.ID_investisseur = ID_investisseur;
+    public void setEmail_investisseur(String email_investisseur) {
+        this.email_investisseur = email_investisseur;
     }
 
-    public void setID_entrepreneur(String ID_entrepreneur) {
-        this.ID_entrepreneur = ID_entrepreneur;
+    public void setEmail_entrepreneur(String email_entrepreneur) {
+        this.email_entrepreneur = email_entrepreneur;
     }
 
     @Override
     public String toString() {
-        return "rappel{" + "ID_rappel=" + ID_rappel + ", date=" + date + ", heure=" + heure + ", reminder=" + reminder + ", ID_investisseur=" + ID_investisseur + ", ID_entrepreneur=" + ID_entrepreneur + '}';
+        return "rappel{" + "ID_rappel=" + ID_rappel + ", dateRappel=" + dateRappel + ", heureRappel=" + heureRappel + ", reminder=" + reminder + ", email_investisseur=" + email_investisseur + ", email_entrepreneur=" + email_entrepreneur + '}';
     }
+
     
     
     

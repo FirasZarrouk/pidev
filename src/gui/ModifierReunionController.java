@@ -7,6 +7,7 @@ package gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -51,6 +52,10 @@ public class ModifierReunionController implements Initializable {
     private TextField IDinv1;
     @FXML
     private Button retournermodif;
+    
+    public reunion Reunion;
+    
+    reunion r = new reunion();
 
     /**
      * Initializes the controller class.
@@ -58,29 +63,43 @@ public class ModifierReunionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }   
+    
+    public void getReunion(reunion E){
+
+
+            contactinv1.setText(E.getContactReunion());
+            //Description.setText(P.getDescription());
+            heureinv1.setText(E.getHeureReunion());
+            lieuinv1.setText(E.getLieuReunion());
+            //this.evenements=EP;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            String dateEnString = format.format(E.getDateReunion()); 
+            
+
+
+            Reunion=E;
+
+    }
 
     @FXML
     private void modifierReunion(ActionEvent event) {
-        reunion r = new reunion();
         
-        r.setId_reunion(Integer.parseInt(IDinv1.getText()));
-        r.setNom(nominv1.getText());
-        r.setPrenom(prenominv1.getText());
-        r.setEntreprise(entrepriseinv1.getText());
+        
+        
         LocalDate d = dateinv1.getValue(); 
-        r.setDate(java.sql.Date.valueOf(d));
-        r.setHeure(heureinv1.getText());
-        r.setLieu(lieuinv1.getText());
-        r.setContact(contactinv1.getText());
+        Reunion.setDateReunion(java.sql.Date.valueOf(d));
+        Reunion.setHeureReunion(heureinv1.getText());
+        Reunion.setLieuReunion(lieuinv1.getText());
+        Reunion.setContactReunion(contactinv1.getText());
         
            serviceReunion sr= new serviceReunion();
-           sr.modifier(r);
+           sr.modifier(Reunion);
     }
 
     @FXML
     private void retourauajout(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ajouterReunion.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("afficherReunion.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         

@@ -11,6 +11,7 @@ import models.reunion;
 import services.servicePV;
 import services.serviceRappel;
 import services.serviceReunion;
+import services.Example;
 
 /**
  *
@@ -30,61 +31,57 @@ public class Pidev_reunion {
         
         
         reunion R = new reunion();
-        R.setId_reunion(10);
-        R.setNom("nomm");
-        R.setPrenom("prenomm");
-        R.setEntreprise("entreprisem");
-        R.setDate(java.sql.Date.valueOf("2023-06-04"));
-        R.setHeure("2:00m");
-        R.setLieu( "premiere validationm");
-        R.setContact("contactm");
-        R.setID_investisseur("159m");
-        R.setID_entrepreneur("123m");
-        R.setID_projet("147m");
+        R.setId_reunion(33);
+        R.setDateReunion(java.sql.Date.valueOf("2026-02-02"));
+        R.setHeureReunion("2:00m");
+        R.setLieuReunion("premiere validationm");
+        R.setContactReunion("contactm");
+        R.setValider("non validée");
+        R.setID_investisseur(159);
+        R.setID_projet(147);
         
         //in.ajouter(R);
-        //in.supprimer(9);
+        //in.supprimer(16);
         //in.modifier(R);
         //System.out.println(in.afficher());
         //System.out.println(in.readById(6));
         //System.out.println(in.sortBy("id_reunion", "Desc"));
+        //System.out.println(in.readbyd(R.getDate()));
         
        
         PV P = new PV();
         P.setID_PV(7);
-        P.setNom("nom");
-        P.setPrenom("prenom");
-        P.setDate(java.sql.Date.valueOf("2011-06-04"));
+        P.setDatePV(java.sql.Date.valueOf("2011-06-04"));
         P.setCommentaire("2:00m");
-        P.setID_investisseur("159pvm");
-        P.setID_entrepreneur("123pvm");
-        P.setID_projet("147pvmodifierm");
         reunion Ri = new reunion();
         Ri.setId_reunion(11);
         P.setId_reunion(Ri);
         
         
         //n.ajouter(P);
-        //n.supprimer(6);
+        //n.supprimer(32);
         //n.modifier(P);
         //System.out.println(n.afficher());
-        //System.out.println(n.readById(7));
+        //System.out.println(n.readById(nom));
     
         
         
         rappel r = new rappel();
         //r.setID_rappel(2);
-        r.setDate(java.sql.Date.valueOf("2011-06-04"));
-        r.setHeure("2:00");
+        r.setDateRappel(java.sql.Date.valueOf("2011-06-04"));
+        r.setHeureRappel("2:00");
         r.setReminder("votre reunion est dans 2 jours");
-        r.setID_investisseur("159rappel");
-        r.setID_entrepreneur("123rappelmodifier"); 
+        r.setEmail_investisseur("159rappel");
+        r.setEmail_entrepreneur("123rappelmodifier"); 
         
         //ni.ajouter(r);
         //ni.supprimer(1);
         //ni.modifier(r);
         //System.out.println(ni.afficher());
         //System.out.println(ni.readById(2));
+        
+        
+        
     }
     
 }

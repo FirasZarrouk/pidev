@@ -21,16 +21,6 @@
             </ImageView>
          </children>
       </VBox>
-      <Label layoutX="259.0" layoutY="175.0" prefHeight="32.0" prefWidth="94.0" text="Nom" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="221.0" prefHeight="32.0" prefWidth="94.0" text="Prenom" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </Label>
       <Label layoutX="259.0" layoutY="316.0" prefHeight="32.0" prefWidth="94.0" text="Date" textFill="#2bb56b">
          <font>
             <Font name="System Bold Italic" size="19.0" />
@@ -41,9 +31,7 @@
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="nompv" layoutX="477.0" layoutY="178.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le nom" />
       <TextField fx:id="commentairepv" layoutX="478.0" layoutY="488.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer votre (email/numero)" />
-      <TextField fx:id="prenompv" layoutX="477.0" layoutY="224.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le prenom" />
       <DatePicker fx:id="datepv" layoutX="477.0" layoutY="319.0" prefHeight="26.0" prefWidth="166.0" />
       <Button fx:id="ajouterpv" layoutX="473.0" layoutY="601.0" mnemonicParsing="false" onAction="#ajouterpv" prefHeight="43.0" prefWidth="158.0" text="ENVOYER" textFill="#053781">
          <font>
@@ -55,12 +43,6 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="135.0" prefHeight="32.0" prefWidth="94.0" text="ID" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <TextField fx:id="IDpv" layoutX="477.0" layoutY="138.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le nom" />
       <Button fx:id="modifpv" layoutX="478.0" layoutY="653.0" mnemonicParsing="false" onAction="#modifpv" text="Modifier" textFill="#053781">
          <font>
             <Font name="System Bold Italic" size="12.0" />

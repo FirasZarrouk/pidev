@@ -7,6 +7,7 @@ package gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -46,27 +47,42 @@ public class ModifierPVController implements Initializable {
     private Button retourmodifpv;
     @FXML
     private TextField IDpv2;
-
+    public PV PVs;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    public void getPV(PV E){
+
+
+            
+           
+            commentairepv1.setText(E.getCommentaire());
+            //this.evenements=EP;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            String dateEnString = format.format(E.getDatePV()); 
+            
+            
+
+
+            PVs=E;
+
+    }
 
     @FXML
     private void modifierpv(ActionEvent event) {
-         PV r = new PV();
-        r.setID_PV(Integer.parseInt(IDpv2.getText()));
-        r.setNom(nompv1.getText());
-        r.setPrenom(prenompv1.getText());
+         
+        
         LocalDate d = datepv1.getValue(); 
-        r.setDate(java.sql.Date.valueOf(d));
-        r.setCommentaire(commentairepv1.getText());
-        reunion re = new reunion();
-        re.setId_reunion(Integer.parseInt(IDpv1.getText()));
-        r.setId_reunion(re);
+        PVs.setDatePV(java.sql.Date.valueOf(d));
+        PVs.setCommentaire(commentairepv1.getText());
+//        reunion re = new reunion();
+//        re.setId_reunion(Integer.parseInt(IDpv1.getText()));
+//        PVs.setId_reunion(re);
            servicePV sr= new servicePV();
-           sr.ajouter(r);
+           sr.modifier(PVs);
 //             Alert a = new Alert(Alert.AlertType.CONFIRMATION);
 //        a.setTitle("Localisation ajoutée");
 //        a.show();

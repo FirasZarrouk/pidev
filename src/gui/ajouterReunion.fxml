@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterReunionController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="880.0" stylesheets="@newCascadeStyleSheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterReunionController">
    <children>
       <VBox prefHeight="700.0" prefWidth="206.0" style="-fx-background-color: #172948;">
          <children>
@@ -19,69 +19,63 @@
                   <Image url="@331939313_908136223642012_3641689149527626504_n.png" />
                </image>
             </ImageView>
+            <Button fx:id="Home" mnemonicParsing="false" onAction="#allezauHomeR" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 3em; -fx-translate-x: 50; -fx-translate-y: 110;" text="Home" textFill="#053781">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="allerauaffichR" mnemonicParsing="false" onAction="#allerauaffichR" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 3em; -fx-translate-x: 50; -fx-translate-y: 145;" text="Mes reunion" textFill="#053781">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="allerauprojet" mnemonicParsing="false" onAction="#allerauprojet" prefHeight="29.0" prefWidth="15.0" style="-fx-background-radius: 3em; -fx-translate-x: 8; -fx-translate-y: 375; -fx-background-color: #172948;" textFill="#053781">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Bureau/images/icone-fleche-droite-verte.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </VBox>
-      <Label layoutX="259.0" layoutY="175.0" prefHeight="32.0" prefWidth="94.0" text="Nom" textFill="#2bb56b">
+      <Label layoutX="306.0" layoutY="266.0" prefHeight="32.0" prefWidth="94.0" text="Date" textFill="#2bb56b">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="221.0" prefHeight="32.0" prefWidth="94.0" text="Prenom" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="267.0" prefHeight="32.0" prefWidth="94.0" text="Entreprise" textFill="#2bb56b">
+      <Label layoutX="306.0" layoutY="485.0" prefHeight="32.0" prefWidth="94.0" text="Contact" textFill="#2bb56b">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="316.0" prefHeight="32.0" prefWidth="94.0" text="Date" textFill="#2bb56b">
+      <Label layoutX="306.0" layoutY="425.0" prefHeight="32.0" prefWidth="94.0" text="Lieu" textFill="#2bb56b">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="485.0" prefHeight="32.0" prefWidth="94.0" text="Contact" textFill="#2bb56b">
+      <Label layoutX="306.0" layoutY="372.0" prefHeight="32.0" prefWidth="94.0" text="Heure" textFill="#2bb56b">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="425.0" prefHeight="32.0" prefWidth="94.0" text="Lieu" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="372.0" prefHeight="32.0" prefWidth="94.0" text="Heure" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <TextField fx:id="nominv" layoutX="477.0" layoutY="178.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le nom" />
-      <TextField fx:id="contactinv" layoutX="478.0" layoutY="488.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer votre (email/numero)" />
-      <TextField fx:id="lieuinv" layoutX="478.0" layoutY="428.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le lieu de la reunion" />
-      <TextField fx:id="heureinv" layoutX="477.0" layoutY="375.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer l'heure de la reunion" />
-      <TextField fx:id="prenominv" layoutX="477.0" layoutY="224.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le prenom" />
-      <TextField fx:id="entrepriseinv" layoutX="478.0" layoutY="270.0" prefHeight="26.0" prefWidth="165.0" promptText="entrer le nom de l'entreprise" />
-      <DatePicker fx:id="dateinv" layoutX="477.0" layoutY="319.0" prefHeight="26.0" prefWidth="166.0" />
-      <Button fx:id="planifierinv" layoutX="473.0" layoutY="601.0" mnemonicParsing="false" onAction="#ajouterReunion" prefHeight="43.0" prefWidth="158.0" text="Planifier" textFill="#053781">
+      <TextField fx:id="contactinv" layoutX="478.0" layoutY="488.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer votre (email/numero)" style="-fx-background-color: 0; -fx-border-color: #808080; -fx-border-radius: 2em;" />
+      <TextField fx:id="lieuinv" layoutX="478.0" layoutY="428.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le lieu de la reunion" style="-fx-background-color: 0; -fx-border-color: #808080; -fx-border-radius: 2em;" />
+      <TextField fx:id="heureinv" layoutX="477.0" layoutY="375.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer l'heure de la reunion" style="-fx-background-color: 0; -fx-border-color: #808080; -fx-border-radius: 2em;" />
+      <DatePicker fx:id="dateinv" layoutX="478.0" layoutY="269.0" prefHeight="0.0" prefWidth="166.0" promptText="choisir une date" style="-fx-background-radius: 0em; -fx-background-color: #2bb56b;" />
+      <Button fx:id="planifierinv" layoutX="473.0" layoutY="601.0" mnemonicParsing="false" onAction="#ajouterReunion" prefHeight="43.0" prefWidth="158.0" style="-fx-background-radius: 2em;" text="Planifier" textFill="#053781">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Button>
-      <Label layoutX="306.0" layoutY="30.0" prefHeight="98.0" prefWidth="490.0" text="PLANIFICATION DES REUNIONS" textFill="#2bb56b">
+      <Label layoutX="307.0" layoutY="58.0" prefHeight="98.0" prefWidth="490.0" text="PLANIFICATION DES REUNIONS" textFill="#2bb56b">
          <font>
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="modif" layoutX="478.0" layoutY="651.0" mnemonicParsing="false" onAction="#allezaumodif" text="modifier" textFill="#053781">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="allerauaffichR" layoutX="560.0" layoutY="651.0" mnemonicParsing="false" onAction="#allerauaffichR" text="afficher" textFill="#053781">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

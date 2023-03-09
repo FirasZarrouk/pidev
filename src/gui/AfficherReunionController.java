@@ -5,22 +5,25 @@
  */
 package gui;
 
-import Interfaces.Interface_IService;
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister.Pack;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import models.reunion;
 import services.serviceReunion;
@@ -30,106 +33,84 @@ import services.serviceReunion;
  *
  * @author afifa
  */
-public class AfficherReunionController implements Initializable {
+public class afficherReunionController implements Initializable {
 
     @FXML
-    private ListView<reunion> listereunion;
+    private Pane pnlCustomer;
     @FXML
-    private Button afficherR;
-    Interface_IService sp= new serviceReunion(); 
-    reunion r = new reunion();
+    private Pane pnlOrders;
     @FXML
-    private Button supprimerR;
+    private Pane pnlMenus;
     @FXML
-    private TextField chercherid;
+    private Pane pnlOverview;
     @FXML
-    private Button alleraumodifR;
+    private TextField chercherAcceuilEv;
     @FXML
-    private Button allerauajoutR;
+    private VBox pnItems;
     @FXML
-    private Button retouracceuilR;
+    private Button CHercher_ev;
     
+    ArrayList<reunion> Reunion = new ArrayList<>();
+    @FXML
+    private Button affichRajoutR;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        
+         // TODO
+         serviceReunion serviceReunions = new serviceReunion();
+        Reunion.addAll(serviceReunions.afficher());
+        // TODO
+       pnItems.getChildren().clear();
+
+
+        Node [] nodes = new  Node[15];
+
+
+
+        for(int i = 0; i<Reunion.size() ; i++)
+        {
+
+                try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/gui/itemReunion.fxml"));
+                AnchorPane abc = fxmlLoader.load();
+                ItemReunionController itemcontroller = fxmlLoader.getController();
+                itemcontroller.getEvent(Reunion.get(i));
+
+
+
+
+                    pnItems.getChildren().add(abc);
+                } catch (IOException ex) {
+                    Logger.getLogger(afficherReunionController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+
+
+        }
+
+
+    
     }    
 
+
     @FXML
-    private void afficherReunion(ActionEvent event) {
-        
-       ObservableList<reunion> reunion =FXCollections.observableArrayList(sp.afficher());
-       listereunion.setItems(reunion);
+    private void BTNChercherEVENEMENT(ActionEvent event) {
     }
 
     @FXML
-    private void supprimerReunion(ActionEvent event) {
-        reunion reunionSelectionne = listereunion.getSelectionModel().getSelectedItem();
-
-    if (reunionSelectionne != null) {
-        // Appeler le service pour supprimer le pack
-        sp.supprimer(reunionSelectionne.getId_reunion());
-
-        // Retirer le pack de la ListView
-        listereunion.getItems().remove(reunionSelectionne);
-    }
-    }
-
-    @FXML
-    private void chercherReunion(ActionEvent event) {
-        int id = Integer.parseInt(chercherid.getText());
-
-    // Appeler le service pour récupérer le pack correspondant à l'ID
-    reunion chercherReunion = (reunion) sp.readById(id);
-
-    if (chercherReunion != null) {
-        // Afficher le pack trouvé dans la ListView
-        ObservableList<reunion> reunion = FXCollections.observableArrayList(chercherReunion);
-        listereunion.setItems(reunion);
-    } else {
-        // Afficher un message d'erreur si le pack n'a pas été trouvé
-        System.out.println("reunion non trouvé");
-    }
-    }
-
-    @FXML
-    private void alleraumodifR(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("modifierReunion.fxml"));
+    private void affichRajoutR(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ajouterReunion.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         
         // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
-        Stage stage = (Stage) alleraumodifR.getScene().getWindow();
+        Stage stage = (Stage) affichRajoutR.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML
-    private void allerauajoutR(ActionEvent event) throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("ajouterReunion.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        
-        // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
-        Stage stage = (Stage) allerauajoutR.getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void retouracceuilR(ActionEvent event) throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("front.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        
-        // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
-        Stage stage = (Stage) retouracceuilR.getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
     }
     
-
+}

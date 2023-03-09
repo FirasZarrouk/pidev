@@ -5,10 +5,14 @@
  */
 package gui;
 
+import Interfaces.Interface_IService;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,26 +35,23 @@ import services.serviceReunion;
 public class AjouterReunionController implements Initializable {
 
     @FXML
-    private TextField nominv;
-    @FXML
     private TextField contactinv;
     @FXML
     private TextField lieuinv;
     @FXML
     private TextField heureinv;
     @FXML
-    private TextField prenominv;
-    @FXML
-    private TextField entrepriseinv;
-    @FXML
     private DatePicker dateinv;
     @FXML
     private Button planifierinv;
-    @FXML
     private Button modif;
     @FXML
     private Button allerauaffichR;
-
+    Interface_IService sp= new serviceReunion();
+    @FXML
+    private Button Home;
+    @FXML
+    private Button allerauprojet;
     /**
      * Initializes the controller class.
      */
@@ -82,36 +83,36 @@ public class AjouterReunionController implements Initializable {
 
     @FXML
     private void ajouterReunion(ActionEvent event) {
-         reunion r = new reunion();
-       if (ValidDate()){
-        r.setNom(nominv.getText());
-        r.setPrenom(prenominv.getText());
-        r.setEntreprise(entrepriseinv.getText());
-        LocalDate d = dateinv.getValue(); 
-        r.setDate(java.sql.Date.valueOf(d));
-        r.setHeure(heureinv.getText());
-        r.setLieu(lieuinv.getText());
-        r.setContact(contactinv.getText());
+        reunion r = new reunion();
+         Date d;
+        LocalDate dr = dateinv.getValue();
+        d = (java.sql.Date.valueOf(dr));
         
-           serviceReunion sr= new serviceReunion();
-           sr.ajouter(r);
+    
+    reunion i= sp.readbyd(d);
+
+    if  (i.getDateReunion()==null) {
+        
+        
+        r.setDateReunion(d);
+        r.setHeureReunion(heureinv.getText());
+        r.setLieuReunion(lieuinv.getText());
+        r.setContactReunion(contactinv.getText());
+        r.setValider("non validée");
+        serviceReunion sr= new serviceReunion();
+        sr.ajouter(r);
+        
+        
+    } else {
+        System.out.println("date reservée");
+        
+        
 //             Alert a = new Alert(Alert.AlertType.CONFIRMATION);
 //        a.setTitle("Localisation ajoutée");
 //        a.show();
-     }  
-    }
+    }  }
 
-    @FXML
-    private void allezaumodif(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("modifierReunion.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        
-        // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
-        Stage stage = (Stage) modif.getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
+    
 
     @FXML
     private void allerauaffichR(ActionEvent event) throws IOException {
@@ -124,6 +125,14 @@ public class AjouterReunionController implements Initializable {
         stage.setScene(scene);
         stage.show();
         
+    }
+
+    @FXML
+    private void allezauHomeR(ActionEvent event) {
+    }
+
+    @FXML
+    private void allerauprojet(ActionEvent event) {
     }
     
 }

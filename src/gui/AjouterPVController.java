@@ -7,6 +7,7 @@ package gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -32,44 +33,50 @@ import services.serviceReunion;
 public class AjouterPVController implements Initializable {
 
     @FXML
-    private TextField nompv;
-    @FXML
     private TextField commentairepv;
-    @FXML
-    private TextField prenompv;
     @FXML
     private DatePicker datepv;
     @FXML
     private Button ajouterpv;
-    @FXML
     private TextField IDpv;
     @FXML
     private Button modifpv;
     @FXML
     private Button allerauaffichPV;
+    reunion r = new reunion();
+    
+    public reunion Reunion;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         // TODO
     }    
+    
+    public void getReunion(reunion E){ 
+            
+      
+
+            Reunion=E;
+
+    }
 
     @FXML
     private void ajouterpv(ActionEvent event) {
-         PV r = new PV();
+         PV re = new PV();
        
-        r.setNom(nompv.getText());
-        r.setPrenom(prenompv.getText());
         LocalDate d = datepv.getValue(); 
-        r.setDate(java.sql.Date.valueOf(d));
-        r.setCommentaire(commentairepv.getText());
-        reunion re = new reunion();
-        re.setId_reunion(Integer.parseInt(IDpv.getText()));
-        r.setId_reunion(re);
+        re.setDatePV(java.sql.Date.valueOf(d));
+        re.setCommentaire(commentairepv.getText());
+        re.setVerifier("non verifiée");
+        
+        
+        re.setId_reunion(Reunion);
            servicePV sr= new servicePV();
-           sr.ajouter(r);
+           sr.ajouter(re);
 //             Alert a = new Alert(Alert.AlertType.CONFIRMATION);
 //        a.setTitle("Localisation ajoutée");
 //        a.show();

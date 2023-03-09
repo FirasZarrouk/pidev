@@ -54,7 +54,7 @@ public class ModifierRappelController implements Initializable {
     void getrappel(rappel ra){
         
     commentaireRAm.setText(ra.getReminder());
-    heureRAm.setText(ra.getHeure());
+    heureRAm.setText(ra.getHeureRappel());
  
     
     
@@ -78,10 +78,10 @@ public class ModifierRappelController implements Initializable {
         String date = dateRAm.getValue().toString();
         String reminder = heureRAm.getText();
         String commentaire = commentaireRAm.getText();
-        ra.setHeure(heureRAm.getText());
+        ra.setHeureRappel(heureRAm.getText());
         ra.setReminder(commentaireRAm.getText());
         LocalDate d = dateRAm.getValue();
-        ra.setDate(java.sql.Date.valueOf(d));
+        ra.setDateRappel(java.sql.Date.valueOf(d));
         sr.modifier(ra);
         
     }

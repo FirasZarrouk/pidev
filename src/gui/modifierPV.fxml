@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierPVController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="788.0" stylesheets="@newCascadeStyleSheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierPVController">
     <children>
       <VBox prefHeight="700.0" prefWidth="206.0" style="-fx-background-color: #172948;">
          <children>
@@ -21,16 +21,6 @@
             </ImageView>
          </children>
       </VBox>
-      <Label layoutX="259.0" layoutY="175.0" prefHeight="32.0" prefWidth="94.0" text="Nom" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="221.0" prefHeight="32.0" prefWidth="94.0" text="Prenom" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </Label>
       <Label layoutX="259.0" layoutY="316.0" prefHeight="32.0" prefWidth="94.0" text="Date" textFill="#2bb56b">
          <font>
             <Font name="System Bold Italic" size="19.0" />
@@ -41,9 +31,7 @@
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="nompv1" layoutX="477.0" layoutY="178.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le nom" />
       <TextField fx:id="commentairepv1" layoutX="478.0" layoutY="488.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer votre (email/numero)" />
-      <TextField fx:id="prenompv1" layoutX="477.0" layoutY="224.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le prenom" />
       <DatePicker fx:id="datepv1" layoutX="477.0" layoutY="319.0" prefHeight="26.0" prefWidth="166.0" />
       <Button fx:id="ajouterpv1" layoutX="473.0" layoutY="601.0" mnemonicParsing="false" onAction="#modifierpv" prefHeight="43.0" prefWidth="158.0" text="ENVOYER" textFill="#053781">
          <font>
@@ -55,22 +43,10 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="135.0" prefHeight="32.0" prefWidth="102.0" text="ID_reunion" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font>
-      </Label>
-      <TextField fx:id="IDpv1" layoutX="477.0" layoutY="138.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le nom" />
       <Button fx:id="retourmodifpv" layoutX="518.0" layoutY="653.0" mnemonicParsing="false" onAction="#retourauajoutpv" text="Retourner" textFill="#053781">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="IDpv2" layoutX="477.0" layoutY="389.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer le nom" />
-      <Label layoutX="259.0" layoutY="386.0" prefHeight="32.0" prefWidth="94.0" text="ID" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

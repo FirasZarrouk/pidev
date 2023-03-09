@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.NotificationController">
+   <children>
+      <TextField fx:id="numero" layoutX="300.0" layoutY="120.0" />
+      <TextField fx:id="text" layoutX="299.0" layoutY="185.0" prefHeight="72.0" prefWidth="150.0" />
+      <Button layoutX="345.0" layoutY="314.0" mnemonicParsing="false" onAction="#envoyernotif" text="envoyer" />
+      <VBox prefHeight="400.0" prefWidth="162.0" style="-fx-background-color: #172948;" />
+      <ImageView fitHeight="162.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@331939313_908136223642012_3641689149527626504_n.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="274.0" layoutY="37.0" prefHeight="28.0" prefWidth="230.0" text="Envoyer une notification" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

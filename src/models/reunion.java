@@ -13,31 +13,25 @@ import java.sql.Date;
  */
 public class reunion {
     private int id_reunion;
-    private String nom;
-    private String prenom;
-    private String entreprise;
-    private Date date;
-    private String heure;
-    private String lieu;
-    private String contact;
-    private String ID_investisseur;
-    private String ID_entrepreneur;
-    private String ID_projet;
+    private Date dateReunion;
+    private String heureReunion;
+    private String lieuReunion;
+    private String contactReunion;
+    private String Valider;
+    private int ID_investisseur;
+    private int ID_projet;
 
     public reunion() {
     }
 
-    public reunion(int id_reunion, String nom, String prenom, String entreprise, Date date, String heure, String lieu, String contact, String ID_investisseur, String ID_entrepreneur, String ID_projet) {
+    public reunion(int id_reunion, Date dateReunion, String heureReunion, String lieuReunion, String contactReunion, String Valider, int ID_investisseur, int ID_projet) {
         this.id_reunion = id_reunion;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.entreprise = entreprise;
-        this.date = date;
-        this.heure = heure;
-        this.lieu = lieu;
-        this.contact = contact;
+        this.dateReunion = dateReunion;
+        this.heureReunion = heureReunion;
+        this.lieuReunion = lieuReunion;
+        this.contactReunion = contactReunion;
+        this.Valider = Valider;
         this.ID_investisseur = ID_investisseur;
-        this.ID_entrepreneur = ID_entrepreneur;
         this.ID_projet = ID_projet;
     }
 
@@ -45,43 +39,31 @@ public class reunion {
         return id_reunion;
     }
 
-    public String getNom() {
-        return nom;
+    public Date getDateReunion() {
+        return dateReunion;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getHeureReunion() {
+        return heureReunion;
     }
 
-    public String getEntreprise() {
-        return entreprise;
+    public String getLieuReunion() {
+        return lieuReunion;
     }
 
-    public Date getDate() {
-        return date;
+    public String getContactReunion() {
+        return contactReunion;
     }
 
-    public String getHeure() {
-        return heure;
+    public String getValider() {
+        return Valider;
     }
 
-    public String getLieu() {
-        return lieu;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public String getID_investisseur() {
+    public int getID_investisseur() {
         return ID_investisseur;
     }
 
-    public String getID_entrepreneur() {
-        return ID_entrepreneur;
-    }
-
-    public String getID_projet() {
+    public int getID_projet() {
         return ID_projet;
     }
 
@@ -89,50 +71,43 @@ public class reunion {
         this.id_reunion = id_reunion;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setDateReunion(Date dateReunion) {
+        this.dateReunion = dateReunion;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setHeureReunion(String heureReunion) {
+        this.heureReunion = heureReunion;
     }
 
-    public void setEntreprise(String entreprise) {
-        this.entreprise = entreprise;
+    public void setLieuReunion(String lieuReunion) {
+        this.lieuReunion = lieuReunion;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setContactReunion(String contactReunion) {
+        this.contactReunion = contactReunion;
     }
 
-    public void setHeure(String heure) {
-        this.heure = heure;
+    public void setValider(String Valider) {
+        this.Valider = Valider;
     }
 
-    public void setLieu(String lieu) {
-        this.lieu = lieu;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    public void setID_investisseur(String ID_investisseur) {
+    public void setID_investisseur(int ID_investisseur) {
         this.ID_investisseur = ID_investisseur;
     }
 
-    public void setID_entrepreneur(String ID_entrepreneur) {
-        this.ID_entrepreneur = ID_entrepreneur;
-    }
-
-    public void setID_projet(String ID_projet) {
+    public void setID_projet(int ID_projet) {
         this.ID_projet = ID_projet;
     }
 
     @Override
     public String toString() {
-        return "reunion{" + "id_reunion=" + id_reunion + ", nom=" + nom + ", prenom=" + prenom + ", entreprise=" + entreprise + ", date=" + date + ", heure=" + heure + ", lieu=" + lieu + ", contact=" + contact + ", ID_investisseur=" + ID_investisseur + ", ID_entrepreneur=" + ID_entrepreneur + ", ID_projet=" + ID_projet + '}';
+        return "reunion{" + "id_reunion=" + id_reunion + ", dateReunion=" + dateReunion + ", heureReunion=" + heureReunion + ", lieuReunion=" + lieuReunion + ", contactReunion=" + contactReunion + ", Valider=" + Valider + ", ID_investisseur=" + ID_investisseur + ", ID_projet=" + ID_projet + '}';
     }
+
+   
+    
+
+    
     
     
     

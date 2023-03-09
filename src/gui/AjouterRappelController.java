@@ -64,9 +64,10 @@ public class AjouterRappelController implements Initializable {
     private void ajouterRA(ActionEvent event) {
         rappel ra = new rappel();
         LocalDate d = dateRA.getValue(); 
-        ra.setDate(java.sql.Date.valueOf(d));
+        ra.setDateRappel(java.sql.Date.valueOf(d));
         ra.setReminder(commentaireRA.getText());
-        ra.setHeure(heureRA.getText());
+        ra.setHeureRappel(heureRA.getText());
+        
         serviceRappel sr= new serviceRappel();
            sr.ajouter(ra);
           }
