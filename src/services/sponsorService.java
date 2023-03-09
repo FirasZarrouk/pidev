@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +30,7 @@ public class sponsorService implements Interface_IService<sponsors>{
     @Override
     public void ajouter(sponsors t) {
            try {
-            String req = "INSERT INTO `sponsors`( `nom`, `prenom`, `ID_ev`) VALUES ('"+ t.getNom()+"','"+t.getPrenom()+"','"+t.getEv().getID_ev()+"')";
+            String req = "INSERT INTO `sponsors`(`nom`, `prenom`, `Nom_evenement`, `ID_ev`) VALUES ('"+ t.getNom()+"','"+t.getPrenom()+"','"+t.getNom_Evenement().getNom_ev()+"','"+t.getEv().getID_ev()+"')";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println(" Le sponsor est ajouté avec succés ! ");
@@ -53,7 +54,7 @@ public class sponsorService implements Interface_IService<sponsors>{
     @Override
     public void modifier(sponsors t) {
           try {
-            String req = "UPDATE  sponsors SET `nom`='"+ t.getNom()+"',`prenom`='"+t.getPrenom()+"',`ID_ev`='"+t.getEv().getID_ev()+"' WHERE (`ID_sponsors`='" +t.getID_sponsors()+ "')";
+            String req = "UPDATE  sponsors SET `nom`='"+ t.getNom()+"',`prenom`='"+t.getPrenom()+"',`Nom_evenement`='"+t.getNom_Evenement().getNom_ev()+"',`ID_ev`='"+t.getEv().getID_ev()+"' WHERE (`ID_sponsors`='" +t.getID_sponsors()+ "')";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("  Le sponsor est modifié avec succés ! ");
@@ -76,8 +77,12 @@ public class sponsorService implements Interface_IService<sponsors>{
                 s.setNom(res.getString(2));
                 s.setPrenom(res.getString(3));
                 evenements ev = new evenements();
-                ev.setID_ev(res.getInt(4));
+              
+                ev.setNom_ev(res.getString(4));
+                ev.setID_ev(res.getInt(5));
+               s.setNom_Evenement(ev);
                 s.setEv(ev);
+                
                 li.add(s);
             }
             
@@ -101,8 +106,13 @@ public class sponsorService implements Interface_IService<sponsors>{
                 s.setID_sponsors(res.getInt(1));
                 s.setNom(res.getString(2));
                 s.setPrenom(res.getString(3));
-               evenements ev = new evenements();
-                ev.setID_ev(res.getInt(4));
+                
+                evenements ev = new evenements();
+              
+                ev.setNom_ev(res.getString(4));
+                ev.setID_ev(res.getInt(5));
+              
+                s.setNom_Evenement(ev);
                 s.setEv(ev);
              
             }
@@ -128,8 +138,11 @@ public class sponsorService implements Interface_IService<sponsors>{
                 s.setID_sponsors(res.getInt(1));
                 s.setNom(res.getString(2));
                 s.setPrenom(res.getString(3));
-               evenements ev = new evenements();
-                ev.setID_ev(res.getInt(4));
+              evenements ev = new evenements();
+              
+                ev.setNom_ev(res.getString(4));
+                ev.setID_ev(res.getInt(5));
+               s.setNom_Evenement(ev);
                 s.setEv(ev);
                 li.add(s);
             }
@@ -139,6 +152,64 @@ public class sponsorService implements Interface_IService<sponsors>{
             }
             return (ArrayList<sponsors>)li ;
     
+    }
+
+   
+
+    @Override
+    public sponsors readbyName(String e) {
+        sponsors s=new sponsors();
+           
+              try {
+              
+            String req="SELECT * FROM sponsors WHERE `nom`='" +e+ "' ";
+           
+            Statement ste = cnx.createStatement();
+            ResultSet res=ste.executeQuery(req);
+          
+            while(res.next()){
+              
+                s.setID_sponsors(res.getInt(1));
+                s.setNom(res.getString(2));
+                s.setPrenom(res.getString(3));
+                
+                evenements ev = new evenements();
+              
+                ev.setNom_ev(res.getString(4));
+                ev.setID_ev(res.getInt(5));
+              
+                s.setNom_Evenement(ev);
+                s.setEv(ev);
+               
+               
+            }   
+            
+            }catch (SQLException ex) {  
+            Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex); 
+         
+            }
+     
+          return s ; 
+    }
+
+    @Override
+    public ArrayList<sponsors> readbyd(Date d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int nbLigne() {
+        int nombreDeLignes = 0;
+   
+     try (
+            Statement ste = cnx.createStatement();
+             ResultSet resultSet = ste.executeQuery("SELECT COUNT(*) AS nombre_de_lignes FROM sponsors")) {
+            resultSet.next();
+            nombreDeLignes = resultSet.getInt("nombre_de_lignes");
+        } catch (SQLException ex) {
+            Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return nombreDeLignes;
     }
     
     }

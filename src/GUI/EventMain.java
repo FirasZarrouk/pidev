@@ -27,7 +27,7 @@ public class EventMain extends Application {
     public void start(Stage primaryStage) {
        Parent root ;
        try {
-       root = FXMLLoader.load(getClass().getResource("../GUI/afficheEvenemenet.fxml"));
+       root = FXMLLoader.load(getClass().getResource("../GUI/acceuil.fxml"));
        
        Scene scene = new Scene (root) ;
        primaryStage.setTitle("Gestion d'evenement ");

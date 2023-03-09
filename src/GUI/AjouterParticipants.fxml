@@ -1,67 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.AjouterParticipantsController">
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterParticipantsController">
    <children>
-      <VBox prefHeight="400.0" prefWidth="81.0" style="-fx-background-color: #172948;" />
-      <Label layoutX="196.0" layoutY="29.0" text="Ajouter participant" textFill="#2bb56b">
+      <VBox prefHeight="618.0" prefWidth="150.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="153.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="101.0" prefWidth="5.0" />
+            <Button mnemonicParsing="false" onAction="#AjouterParticipant" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em;" text="Participer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ajout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label prefHeight="18.0" prefWidth="7.0" />
+            <Button fx:id="RetournerP" mnemonicParsing="false" onAction="#RetournerParticipantA" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em;" text="Retourner" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/retour.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="IDEvenementPP" prefHeight="19.0" prefWidth="6.0" textFill="#2bb56b">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children></VBox>
+      <Label layoutX="196.0" layoutY="29.0" textFill="#2bb56b">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <ImageView fitHeight="130.0" fitWidth="124.0" layoutX="482.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@logo.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="129.0" layoutY="90.0" text="Nom :" textFill="#2bb56b">
+      <VBox layoutX="357.0" layoutY="129.0" opacity="0.9" prefHeight="378.0" prefWidth="530.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 5em;">
+         <children>
+            <HBox prefHeight="46.0" prefWidth="530.0" />
+            <HBox prefHeight="74.0" prefWidth="530.0" style="-fx-translate-x: 5em;">
+               <children>
+                  <Label text="Nom :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="NomParticipant" prefHeight="34.0" prefWidth="194.0" promptText="Entrer le nom" style="-fx-translate-x: 12em; -fx-background-radius: 5em;" />
+               </children>
+            </HBox>
+            <HBox prefHeight="74.0" prefWidth="530.0" style="-fx-translate-x: 5em;">
+               <children>
+                  <Label text="Prenom :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="PrenomParticipant" prefHeight="34.0" prefWidth="194.0" promptText="Entrer le prenom" style="-fx-translate-x: 10.5em; -fx-background-radius: 5em;" />
+               </children>
+            </HBox>
+            <HBox prefHeight="74.0" prefWidth="530.0" style="-fx-translate-x: 5em;">
+               <children>
+                  <Label text="Role :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="RoleParticipantEV" prefHeight="34.0" prefWidth="194.0" style="-fx-background-radius: 5em; -fx-translate-x: 12.3em;" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-translate-x: 5em;">
+               <children>
+                  <Label text="Nom evenement :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="NomEvenementP" prefHeight="34.0" prefWidth="194.0" promptText="Entrer le nom d'evenement" style="-fx-background-radius: 5em; -fx-translate-x: 6em;" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="221.0" layoutY="38.0" prefHeight="32.0" prefWidth="219.0" text="Se participer :" textFill="#2bb56b" underline="true">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Berlin Sans FB" size="29.0" />
          </font>
       </Label>
-      <Label layoutX="129.0" layoutY="126.0" text="Prenom :" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="130.0" layoutY="162.0" text="Role :" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="130.0" layoutY="200.0" text="Nom evenement :" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="129.0" layoutY="237.0" text="Identifiant de l'evenement :" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="NomParticipant" layoutX="370.0" layoutY="87.0" prefHeight="26.0" prefWidth="180.0" promptText="Entrer le nom" />
-      <TextField fx:id="PrenomParticipant" layoutX="371.0" layoutY="123.0" prefHeight="26.0" prefWidth="180.0" promptText="Entrer le prenom" />
-      <TextField fx:id="RoleParticipant" layoutX="372.0" layoutY="159.0" prefHeight="26.0" prefWidth="180.0" promptText="Entrer le role" />
-      <TextField fx:id="NomEvenementP" layoutX="373.0" layoutY="197.0" prefHeight="26.0" prefWidth="180.0" promptText="Entrer le nom d'evenement" />
-      <TextField fx:id="IdEvenementParticipant" layoutX="372.0" layoutY="234.0" prefHeight="26.0" prefWidth="189.0" promptText="Entrer le participant" />
-      <Button layoutX="165.0" layoutY="315.0" mnemonicParsing="false" onAction="#AjouterParticipant" prefHeight="42.0" prefWidth="143.0" text="Ajouter" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="RetournerP" layoutX="401.0" layoutY="315.0" mnemonicParsing="false" onAction="#RetournerParticipantA" prefHeight="42.0" prefWidth="143.0" text="Retourner" textFill="#2bb562">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

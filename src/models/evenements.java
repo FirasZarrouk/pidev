@@ -7,6 +7,9 @@ package models;
 
 
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 /**
@@ -21,16 +24,28 @@ public class evenements {
         private String description ;
         private String type_ev ;
         private String nom_ev; 
+        private  String Tarif_Ev ;
 
-    public evenements(int ID_ev, Date date_ev,  String lieu_ev, String description, String type_ev, String nom_ev) {
+    public void setTarif_Ev(String Tarif_Ev) {
+        this.Tarif_Ev = Tarif_Ev;
+    }
+
+    public String getTarif_Ev() {
+        return Tarif_Ev;
+    }
+
+    public evenements(int ID_ev, Date date_ev, String lieu_ev, String description, String type_ev, String nom_ev, String Tarif_Ev) {
         this.ID_ev = ID_ev;
         this.date_ev = date_ev;
-   
         this.lieu_ev = lieu_ev;
         this.description = description;
         this.type_ev = type_ev;
         this.nom_ev = nom_ev;
+        this.Tarif_Ev = Tarif_Ev;
     }
+
+    
+   
 
     public evenements() {
     }
@@ -89,12 +104,14 @@ public class evenements {
         this.nom_ev = nom_ev;
     }
 
-    @Override
+
+
+        @Override
     public String toString() {
-        return "evenements{" + "ID_ev=" + ID_ev + ", date_ev=" + date_ev + ", lieu_ev=" + lieu_ev + ", description=" + description + ", type_ev=" + type_ev + ", nom_ev=" + nom_ev + '}';
+        return "evenements{" + "ID_ev=" + ID_ev + ", date_ev=" + date_ev + ", lieu_ev=" + lieu_ev + ", description=" + description + ", type_ev=" + type_ev + ", nom_ev=" + nom_ev + ", Tarif_Ev=" + Tarif_Ev + '}';
     }
+
         
-        
-        
+         
     
 }

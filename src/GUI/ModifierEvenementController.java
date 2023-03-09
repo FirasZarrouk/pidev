@@ -8,7 +8,13 @@ package GUI;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,6 +25,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -33,8 +40,8 @@ import services.EventService;
 public class ModifierEvenementController implements Initializable {
 
     EventService es= new EventService();
-    evenements e = new evenements();
-    
+   public evenements e = new evenements();
+  
    @FXML   
     private Button boutton_modifier;
     @FXML
@@ -49,6 +56,14 @@ public class ModifierEvenementController implements Initializable {
     private TextArea description_ev;
     @FXML
     private Button ButtonRetour;
+    @FXML
+    private TextField tarifEvs;
+    @FXML
+    private TextField textchercherEv;
+    @FXML
+    private Button boutton_chercher1;
+    @FXML
+    private Label idEVV;
  
     /**
      * Initializes the controller class.
@@ -74,8 +89,16 @@ public class ModifierEvenementController implements Initializable {
         
     nomEv.setText(e.getNom_ev());
     Type_ev.setText(e.getType_ev());
- 
-// e.setDate_ev(java.sql.Date.valueOf(d));
+ tarifEvs.setText(e.getTarif_Ev());
+//e.setDate_ev(java.sql.Date.valueOf(d));
+
+
+//Date date_ev = E.getDate_ev();
+//Instant instant = e.getDate_ev().toInstant();
+//ZonedDateTime zonedDateTime = instant.atZone(ZoneId.systemDefault());
+//LocalDate localDate = zonedDateTime.toLocalDate();
+//date_ev.setValue(localDate);
+
     lieu_ev.setText(e.getLieu_ev());
     description_ev.setText(e.getDescription());
     
@@ -94,13 +117,49 @@ public class ModifierEvenementController implements Initializable {
        String date = date_ev.getValue().toString();
          String type = Type_ev.getText();
          String lieu = lieu_ev.getText();
+         String tarif = tarifEvs.getText();
          String description =  description_ev.getText();
-       
+         
+         
+         
+         
+//         Calendar calendar = Calendar.getInstance();
+//                    
+//                    
+//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+//        java.util.Date date2;
+//  
+//        
+//        // Use the SimpleDateFormat object to format the Date object as a String
+//        String dateString = dateFormat.format(date);
+//         
+//            date2 = format.parse(e.getDate_ev());
+//        System.out.println(date2);
+//
+//
+//        int yeardeb = calendar.get(Calendar.YEAR);
+//        int monthdeb = calendar.get(Calendar.MONTH);
+//        int daydeb = calendar.get(Calendar.DATE);
+//
+//      
+//        LocalDate date2 = LocalDate.of(yeardeb, monthdeb, daydeb);
+//      
+//        date_ev.setValue(date2);
+        
+         
+         
+         
+         
+         
+       int idev = Integer.parseInt(idEVV.getText());
+       e.setID_ev(idev);
+        
         e.setNom_ev(nomEv.getText());
         e.setType_ev(Type_ev.getText());
         LocalDate d = date_ev.getValue(); 
         e.setDate_ev(java.sql.Date.valueOf(d));
         e.setLieu_ev(lieu_ev.getText());
+        e.setTarif_Ev(tarifEvs.getText());
         e.setDescription(description_ev.getText());
       
            es.modifier(e);
@@ -116,7 +175,7 @@ public class ModifierEvenementController implements Initializable {
     private void retourner_eve(ActionEvent event) throws IOException {
         
           // Charger le fichier FXML de la nouvelle interface
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("afficheEvenemenet.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("homeEvenement.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         
@@ -128,5 +187,32 @@ public class ModifierEvenementController implements Initializable {
         stage.show();
         
     }
+
+    @FXML
+    private void chercherEv(ActionEvent event) {
+        // Récupérer l'ID du evenement à rechercher depuis le champ de texte
+//    int idevenement = Integer.parseInt(textchercherEv.getText());
+String name =   textchercherEv.getText();
+    // Appeler le service pour récupérer le evenement correspondant à l'ID
+  
+   
+//evenements evenementsRechercher = (evenements) es.readbyName(name); 
+e=es.readbyName(name);
+  if (e != null  ) {
+        // Afficher le evenements trouvé dans la ListView
+       
+        getEvenement(e);
+        idEVV.setText(String.valueOf(e.getID_ev()));
+        
+        
+      
+//   }else {evenements evenementsRecherche = (evenements) es.readById(Integer.parseInt(name));
+//  if ( evenementsRecherche != null){
+//      getEvenement(evenementsRecherche);
+//  }
+  }
+        
+    }    
+    }
     
-}
+

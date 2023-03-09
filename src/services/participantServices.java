@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,6 +76,7 @@ public class participantServices implements Interface_IService<Participant> {
                 s.setNom(res.getString(2));
                 s.setPrenom(res.getString(3));
                 s.setRole(res.getString(4));
+            
                 evenements ev = new evenements();
                 ev.setNom_ev(res.getString(5));
                 ev.setID_ev(res.getInt(6));
@@ -144,6 +146,65 @@ public class participantServices implements Interface_IService<Participant> {
             return (ArrayList<Participant>)li ;
     
     }
+
+   
+
+    @Override
+    public Participant readbyName(String s) {
+        Participant e=new Participant();
+           
+              try {
+              
+            String req="SELECT * FROM `participants` WHERE `nom`='" +s+ "' ";
+           
+            Statement ste = cnx.createStatement();
+            ResultSet res=ste.executeQuery(req);
+          
+            while(res.next()){
+              
+                e.setID_part(res.getInt(1));
+              
+                e.setNom(res.getString(2));
+                e.setPrenom(res.getString(3));
+                e.setRole(res.getString(4));
+                
+                  evenements ev = new evenements();
+                ev.setNom_ev(res.getString(5));
+                ev.setID_ev(res.getInt(6));
+            e.setNom_event(ev);
+                e.setEvent(ev);
+               
+               
+            }   
+            
+            }catch (SQLException ex) {  
+            Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex); 
+         
+            }
+     
+          return e ; 
     }
+
+    @Override
+    public ArrayList<Participant> readbyd(Date d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int nbLigne() {
+       int nombreDeLignes = 0;
+   
+     try (
+            Statement ste = cnx.createStatement();
+             ResultSet resultSet = ste.executeQuery("SELECT COUNT(*) AS nombre_de_lignes FROM `participants`")) {
+            resultSet.next();
+            nombreDeLignes = resultSet.getInt("nombre_de_lignes");
+        } catch (SQLException ex) {
+            Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return nombreDeLignes;
+    }
+    }
+    
     
 

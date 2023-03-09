@@ -6,44 +6,91 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifierSponsorController">
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifierSponsorController">
    <children>
-      <VBox prefHeight="400.0" prefWidth="100.0" style="-fx-background-color: #172948;" />
-      <Label layoutX="227.0" layoutY="21.0" prefHeight="18.0" prefWidth="164.0" text="Modifier Sponsor" textFill="#2bb56b" underline="true">
+      <VBox prefHeight="618.0" prefWidth="137.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="159.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="idSpon" prefHeight="116.0" prefWidth="24.0" />
+            <Button mnemonicParsing="false" onAction="#Modifier_Sonsors" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/modif.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="dEVn" />
+            <Button fx:id="R_sponsors" mnemonicParsing="false" onAction="#Retourner_sponsors" prefHeight="38.0" prefWidth="121.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Retourner" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/retour.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children></VBox>
+      <Label layoutX="224.0" layoutY="40.0" prefHeight="32.0" prefWidth="286.0" text="Modifier sponsor" textFill="#2bb56b" underline="true">
          <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font></Label>
-      <Label layoutX="157.0" layoutY="93.0" text="Nom :" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <Label layoutX="157.0" layoutY="137.0" text="Prenom :" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <Label layoutX="159.0" layoutY="183.0" text="ID evenement :" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <TextField fx:id="text_nom_sponsor" layoutX="272.0" layoutY="89.0" promptText="Entrer le nom" />
-      <TextField fx:id="text_prenom_sponsor" layoutX="272.0" layoutY="133.0" promptText="Entrer le prenom" />
-      <TextField fx:id="text_id_evenement" layoutX="272.0" layoutY="179.0" promptText="Entrer identifiant" />
-      <Button layoutX="164.0" layoutY="284.0" mnemonicParsing="false" onAction="#Modifier_Sonsors" prefHeight="38.0" prefWidth="114.0" text="Modifier" textFill="#2bb56b">
+            <Font name="Berlin Sans FB" size="29.0" />
+         </font>
+      </Label>
+      <VBox layoutX="340.0" layoutY="158.0" prefHeight="378.0" prefWidth="530.0" style="-fx-background-color: #c0c0c0; -fx-background-radius: 5em;">
+         <children>
+            <HBox prefHeight="88.0" prefWidth="530.0" />
+            <HBox prefHeight="77.0" prefWidth="334.0" style="-fx-translate-x: 5em;">
+               <children>
+                  <Label text="Nom :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="text_nom_sponsor" prefHeight="34.0" prefWidth="179.0" promptText="Entrer le nom" style="-fx-background-color: 0; -fx-background-radius: 5em; -fx-border-radius: 5em; -fx-border-color: #7f7f7f; -fx-translate-x: 10em;" />
+               </children>
+            </HBox>
+            <HBox prefHeight="82.0" prefWidth="334.0" style="-fx-translate-x: 5em;">
+               <children>
+                  <Label text="Prenom :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="text_prenom_sponsor" prefHeight="35.0" prefWidth="182.0" promptText="Entrer le prenom" style="-fx-background-color: 0; -fx-background-radius: 5em; -fx-border-color: #7c7c7c; -fx-border-radius: 5em; -fx-translate-x: 8em;" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-translate-x: 5em;">
+               <children>
+                  <Label text="Nom d'evenement: " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="text_no_evenement" prefHeight="34.0" prefWidth="178.0" promptText="Entrer identifiant" style="-fx-background-color: 0; -fx-background-radius: 5em; -fx-border-radius: 5em; -fx-border-color: #7c7c7c; -fx-translate-x: 2em;" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TextField fx:id="taxt_Chercher" layoutX="600.0" layoutY="60.0" prefHeight="35.0" prefWidth="172.0" promptText="Entrer votre nom" style="-fx-background-radius: 5em;" />
+      <Button layoutX="798.0" layoutY="62.0" mnemonicParsing="false" onAction="#BTNchercherSpon" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em;" text="Chercher" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
-         </font></Button>
-      <Button fx:id="R_sponsors" layoutX="379.0" layoutY="284.0" mnemonicParsing="false" onAction="#Retourner_sponsors" prefHeight="38.0" prefWidth="114.0" text="Retourner" textFill="#2bb56b">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Button>
-      <ImageView fitHeight="116.0" fitWidth="107.0" layoutX="493.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@logo.png" />
-         </image>
-      </ImageView>
+         </font>
+      </Button>
    </children>
 </AnchorPane>
-

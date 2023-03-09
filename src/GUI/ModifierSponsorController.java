@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.evenements;
@@ -34,10 +35,17 @@ public class ModifierSponsorController implements Initializable {
     private TextField text_nom_sponsor;
     @FXML
     private TextField text_prenom_sponsor;
-    @FXML
     private TextField text_id_evenement;
     @FXML
     private Button R_sponsors;
+    @FXML
+    private Label idSpon;
+    @FXML
+    private Label dEVn;
+    @FXML
+    private TextField text_no_evenement;
+    @FXML
+    private TextField taxt_Chercher;
 
     /**
      * Initializes the controller class.
@@ -50,7 +58,7 @@ public class ModifierSponsorController implements Initializable {
     void getSponsor (sponsors s){
     text_nom_sponsor.setText(s.getNom());
     text_prenom_sponsor.setText(s.getPrenom()); 
-    text_id_evenement.setText(Integer.toString(s.getEv().getID_ev()));
+    text_no_evenement.setText(s.getNom_Evenement().getNom_ev());
 
     }
      
@@ -72,16 +80,27 @@ public class ModifierSponsorController implements Initializable {
         
             String nom = text_nom_sponsor.getText();
              String prenom = text_prenom_sponsor.getText();
-            
-            
-             
-           
-        
+     
         s.setNom(text_nom_sponsor.getText());
         s.setPrenom(text_prenom_sponsor.getText());
+    
+        
         evenements e = new evenements() ;
-        e.setID_ev(Integer.parseInt(text_id_evenement.getText()));
-        s.setEv(e);
+        //e.setID_ev(Integer.parseInt(text_id_evenement.getText()));
+      
+        
+        
+         int idev = Integer.parseInt(idSpon.getText());
+        s.setID_sponsors(idev);
+       
+          int idev1 = Integer.parseInt(dEVn.getText());     
+         e.setID_ev(idev1);
+      
+      
+      e.setNom_ev(text_no_evenement.getText() );
+        s.setNom_Evenement(e);
+        s.setEv(e);  
+        
         ss.modifier(s);
         
         Alert a = new Alert(Alert.AlertType.INFORMATION);
@@ -98,7 +117,7 @@ public class ModifierSponsorController implements Initializable {
     @FXML
     private void Retourner_sponsors(ActionEvent event) throws IOException {
         
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherSponsor.fxml"));
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeSponsors.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         
@@ -109,5 +128,22 @@ public class ModifierSponsorController implements Initializable {
          // Afficher la nouvelle interface
         stage.show();
     }
-    
+
+    @FXML
+    private void BTNchercherSpon(ActionEvent event) {
+        
+        String name =   taxt_Chercher.getText();
+    // Appeler le service pour récupérer le evenement correspondant à l'ID
+  
+   
+//evenements evenementsRechercher = (evenements) es.readbyName(name); 
+s=ss.readbyName(name);
+  if (s != null  ) {
+        // Afficher le evenements trouvé dans la ListView
+       
+        getSponsor(s);
+        idSpon.setText(String.valueOf(s.getID_sponsors()));
+        dEVn.setText(String.valueOf(s.getEv().getID_ev()));
+    }
+    }
 }

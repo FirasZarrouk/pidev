@@ -15,9 +15,28 @@ public class sponsors {
             private  String nom ;
             private String prenom ; 
             private  evenements   ev ; 
+            private evenements Nom_Evenement ; 
 
     public sponsors() {
     }
+
+    public sponsors(int ID_sponsors, String nom, String prenom, evenements ev, evenements Nom_Evenement) {
+        this.ID_sponsors = ID_sponsors;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.ev = ev;
+        this.Nom_Evenement = Nom_Evenement;
+    }
+
+    public evenements getNom_Evenement() {
+        return Nom_Evenement;
+    }
+
+    public void setNom_Evenement(evenements Nom_Evenement) {
+        this.Nom_Evenement = Nom_Evenement;
+    }
+    
+    
 
     public sponsors(int ID_sponsors, String nom, String prenom, evenements ev) {
         this.ID_sponsors = ID_sponsors;
@@ -61,8 +80,9 @@ public class sponsors {
 
     @Override
     public String toString() {
-        return "sponsors{" + "ID_sponsors=" + ID_sponsors + ", nom=" + nom + ", prenom=" + prenom + ", ev=" + ev + '}';
+        return "sponsors{" + "ID_sponsors=" + ID_sponsors + ", nom=" + nom + ", prenom=" + prenom + ", ev=" + ev + ", Nom_Evenement=" + Nom_Evenement + '}';
     }
-         
+
+       
     
 }

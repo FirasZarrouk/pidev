@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.Participant;
@@ -31,7 +32,8 @@ public class ModifierParticipantsController implements Initializable {
 
      participantServices ps = new participantServices();
   Participant p = new Participant();
-    
+            evenements e = new evenements() ;
+
     @FXML
     private TextField NomParticipant;
     @FXML
@@ -40,10 +42,15 @@ public class ModifierParticipantsController implements Initializable {
     private TextField RoleParticipant;
     @FXML
     private TextField NomEvenementP;
-    @FXML
     private TextField IdEvenementParticipant;
     @FXML
     private Button RetournerPs;
+    @FXML
+    private TextField TextChercherPart;
+    @FXML
+    private Label IDparticipant;
+    @FXML
+    private Label IDevenement;
 
     /**
      * Initializes the controller class.
@@ -69,12 +76,12 @@ public class ModifierParticipantsController implements Initializable {
       
       
      void getParticipant (Participant p){
-    NomParticipant.setText(p.getNom());
+   NomParticipant.setText(p.getNom());
     PrenomParticipant.setText(p.getPrenom()); 
     RoleParticipant.setText(p.getRole()); 
     NomEvenementP.setText(p.getNom_event().getNom_ev());
-    IdEvenementParticipant.setText(Integer.toString(p.getEvent().getID_ev()));
-
+//    IdEvenementParticipant.setText(Integer.toString(p.getEvent().getID_ev()));
+ IDevenement.setText(String.valueOf(p.getEvent().getID_ev()));
     }
     @FXML
     private void ModifierParticipant(ActionEvent event) {
@@ -87,14 +94,20 @@ public class ModifierParticipantsController implements Initializable {
                 p.setNom(NomParticipant.getText());
         p.setPrenom(PrenomParticipant.getText());
         p.setRole(RoleParticipant.getText());
-        
-        evenements e = new evenements() ;
-        e.setNom_ev(NomEvenementP.getText() );
-        e.setID_ev(Integer.parseInt(IdEvenementParticipant.getText()));
-        
+         int idev = Integer.parseInt(IDparticipant.getText());
+        p.setID_part(idev);
+       
+          int idev1 = Integer.parseInt(IDevenement.getText());     
+         e.setID_ev(idev1);
+      
+      
+      e.setNom_ev(NomEvenementP.getText() );
         p.setNom_event(e);
         p.setEvent(e);
-        ps.ajouter(p);
+      
+     
+     
+     ps.modifier(p);
         
          Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setTitle("Participant modifié");
@@ -114,7 +127,7 @@ public class ModifierParticipantsController implements Initializable {
         
         
         // Charger le fichier FXML de la nouvelle interface
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherParticipant.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeParticipants.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         
@@ -125,5 +138,24 @@ public class ModifierParticipantsController implements Initializable {
          // Afficher la nouvelle interface
         stage.show();
     }
-    
+
+    @FXML
+    private void BTNchercherPart(ActionEvent event) {
+        
+        
+        String name =   TextChercherPart.getText();
+    // Appeler le service pour récupérer le evenement correspondant à l'ID
+  
+   
+//evenements evenementsRechercher = (evenements) es.readbyName(name); 
+p=ps.readbyName(name);
+  if (p != null  ) {
+        // Afficher le evenements trouvé dans la ListView
+       
+        getParticipant(p);
+        IDparticipant.setText(String.valueOf(p.getID_part()));
+        IDevenement.setText(String.valueOf(p.getEvent().getID_ev()));
+        
+    }
+    }
 }

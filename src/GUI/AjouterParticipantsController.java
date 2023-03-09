@@ -16,10 +16,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.Participant;
 import models.evenements;
+import services.EventService;
 import services.participantServices;
 
 
@@ -38,20 +41,25 @@ public class AjouterParticipantsController implements Initializable {
     private TextField NomParticipant;
     @FXML
     private TextField PrenomParticipant;
-    @FXML
-    private TextField RoleParticipant;
+    
     @FXML
     private TextField NomEvenementP;
-    @FXML
-    private TextField IdEvenementParticipant;
+   // private TextField IdEvenementParticipant;
     @FXML
     private Button RetournerP;
-
+    @FXML
+    private ChoiceBox<String> RoleParticipantEV;
+    @FXML
+    private Label IDEvenementPP;
+EventService es= new EventService();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+         RoleParticipantEV.getItems().add("Investisseur");
+     RoleParticipantEV.getItems().add("Entrepreneur");
         // TODO
     }    
       private boolean Validechamp(TextField T){
@@ -64,22 +72,39 @@ public class AjouterParticipantsController implements Initializable {
       return false;
     }return true;
 }
-
+ 
     @FXML
     private void AjouterParticipant(ActionEvent event) {
-        if (Validechamp(NomParticipant ) &&Validechamp(PrenomParticipant) &&Validechamp(RoleParticipant) &&Validechamp(NomEvenementP)){
+        if (Validechamp(NomParticipant ) &&Validechamp(PrenomParticipant)  &&Validechamp(NomEvenementP)){
         
         p.setNom(NomParticipant.getText());
         p.setPrenom(PrenomParticipant.getText());
-        p.setRole(RoleParticipant.getText());
+        p.setRole(RoleParticipantEV.getValue());
         
         evenements e = new evenements() ;
         e.setNom_ev(NomEvenementP.getText() );
-        e.setID_ev(Integer.parseInt(IdEvenementParticipant.getText()));
+
+      evenements k = es.readbyName(NomEvenementP.getText());
+               // int idev = Integer.parseInt(IDEvenementPP.getText());
+      if(k.getID_ev()==0){
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur de champ");
+            alert.setHeaderText(null);
+            alert.setContentText("L'evenement n'existe pas ! ");
+            alert.showAndWait();
+      
+      }
+      else { 
+               
+               e.setID_ev(k.getID_ev()); 
+       
+       
+       
+                p.setNom_event(e);
+                 p.setEvent(e);
         
-        p.setNom_event(e);
-        p.setEvent(e);
-        ps.ajouter(p);
+      
+                    ps.ajouter(p);
         
          Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setTitle("Participant ajoutée");
@@ -87,8 +112,8 @@ public class AjouterParticipantsController implements Initializable {
         a.setContentText(content);
                               
         a.show();
+        }} 
         
-        }
         
         
         
@@ -99,7 +124,7 @@ public class AjouterParticipantsController implements Initializable {
     private void RetournerParticipantA(ActionEvent event) throws IOException {
         
         // Charger le fichier FXML de la nouvelle interface
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherParticipant.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeParticipants.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         

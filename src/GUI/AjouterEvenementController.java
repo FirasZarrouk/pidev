@@ -49,6 +49,8 @@ public class AjouterEvenementController implements Initializable {
     private TextArea description_ev;
     @FXML
     private Button ButtonAfficher;
+    @FXML
+    private TextField tarifEvs;
     
     /**
      * Initializes the controller class.
@@ -77,7 +79,17 @@ public class AjouterEvenementController implements Initializable {
           Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Erreur de champ");
             alert.setHeaderText(null);
-            alert.setContentText("Veuillez vérifier votre saisie s'il vous plait!!");
+            alert.setContentText("Veuillez tout remplir svp");
+            alert.showAndWait();
+      return false;
+    }return true;
+}
+      private boolean Validechamps(TextArea T){
+         if(T.getText().isEmpty() | T.getLength() <2 ){
+          Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur de champ");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez tout remplir svp");
             alert.showAndWait();
       return false;
     }return true;
@@ -86,7 +98,7 @@ public class AjouterEvenementController implements Initializable {
     @FXML
     private void ajoutEv(ActionEvent event) {
        
-      if (Validechamp(nomEv) &&Validechamp(Type_ev) &&Validechamp(lieu_ev) && ValidDate()){
+      if (Validechamp(nomEv) &&Validechamp(Type_ev) &&Validechamp(lieu_ev) && Validechamp(tarifEvs) && Validechamps(description_ev)&&ValidDate()){
         evenements e = new evenements();
        
         e.setNom_ev(nomEv.getText());
@@ -94,6 +106,7 @@ public class AjouterEvenementController implements Initializable {
         LocalDate d = date_ev.getValue(); 
         e.setDate_ev(java.sql.Date.valueOf(d));
         e.setLieu_ev(lieu_ev.getText());
+        e.setTarif_Ev(tarifEvs.getText());
         e.setDescription(description_ev.getText());
         
           
@@ -113,7 +126,7 @@ public class AjouterEvenementController implements Initializable {
        
 
 // Charger le fichier FXML de la nouvelle interface
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("afficheEvenemenet.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("homeEvenement.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         

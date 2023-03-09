@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" style="-fx-background-color: c0c0c0;" stylesheets="@ITEMstyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AcceuilUtilisateurController">
+   <children>
+      <VBox prefHeight="618.0" prefWidth="250.0" style="-fx-background-color: #172948;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="787.6">
+         <children>
+            <ImageView fitHeight="161.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 4em;">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="53.0" prefWidth="28.0" />
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="254.0" text="Voulez-vous vous présenter  " textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="254.0" text="à notre événement en tant que :" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label />
+            <Button fx:id="part_acc" mnemonicParsing="false" onAction="#acceuilParticipants" prefHeight="38.0" prefWidth="232.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Participants" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/part.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label />
+            <Button fx:id="sopn_acceil" mnemonicParsing="false" onAction="#acceuilSpon" prefHeight="38.0" prefWidth="230.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text=" Sponsors" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/spon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label />
+         </children>
+      </VBox>
+      <MediaView fx:id="mv" fitHeight="500.0" fitWidth="710.0" layoutX="289.0" layoutY="100.0" AnchorPane.rightAnchor="39.0" />
+      <HBox layoutX="319.0" layoutY="524.0" prefHeight="80.0" prefWidth="428.0" AnchorPane.bottomAnchor="14.399999999999977" AnchorPane.leftAnchor="319.0" AnchorPane.rightAnchor="291.0">
+         <children>
+            <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#playBTN" prefHeight="43.0" prefWidth="123.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 1em;" text="Play" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnPause" mnemonicParsing="false" onAction="#pauseBTN" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 1em; -fx-translate-x: 2em;" text="Pause" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pause.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutX="533.0" layoutY="24.0" prefHeight="47.0" prefWidth="428.0" text="Bienvenu au espace evenement" textAlignment="CENTER" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

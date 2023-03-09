@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/GestionEvenement%20-%20Copy/src/GUI/AjouterSponsorController.java</file>
-            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/GestionEvenement%20-%20Copy/src/models/evenements.java</file>
-            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/GestionEvenement%20-%20Copy/src/GUI/ModifierEvenementController.java</file>
-            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/GestionEvenement%20-%20Copy/src/GUI/ModifierSponsorController.java</file>
-            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/GestionEvenement%20-%20Copy/src/GUI/AfficheSponsorController.java</file>
-            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/GestionEvenement%20-%20Copy/src/GUI/EventMain.java</file>
-            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/GestionEvenement%20-%20Copy/src/GUI/AfficheEvenementController.java</file>
-            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/GestionEvenement%20-%20Copy/src/GUI/AjouterEvenementController.java</file>
+            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/FInal-Gestion-Evenement/src/GUI/EventMain.java</file>
+            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/FInal-Gestion-Evenement/src/GUI/AcceuilController.java</file>
+            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/FInal-Gestion-Evenement/src/GUI/HomeSponsorsController.java</file>
+            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/FInal-Gestion-Evenement/src/GUI/AcceuilUtilisateurController.java</file>
+            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/FInal-Gestion-Evenement/src/GUI/HomeParticipantsController.java</file>
+            <file>file:/C:/Users/ydorr/OneDrive/Documents/NetBeansProjects/FInal-Gestion-Evenement/src/GUI/ParticipantMain.java</file>
         </group>
     </open-files>
 </project-private>

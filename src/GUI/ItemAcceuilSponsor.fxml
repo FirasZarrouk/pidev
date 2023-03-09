@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="abc" prefHeight="350.0" prefWidth="800.0" style="-fx-background-color: #fff;" stylesheets="@ITEMstyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ItemAcceuilSponsorController">
+   <children>
+      <Pane layoutX="29.0" layoutY="14.0" prefHeight="332.0" prefWidth="722.0" style="-fx-background-color: #fff;">
+         <children>
+            <Separator layoutX="41.0" layoutY="94.0" prefHeight="1.0" prefWidth="638.0" />
+            <Label layoutX="41.0" layoutY="46.0" text="Nom Sponsor" textFill="#3a1c9d">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="238.0" layoutY="119.0" prefHeight="20.0" prefWidth="81.0" text="Prenom">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="NomParticipantss" layoutX="195.0" layoutY="40.0" prefHeight="32.0" prefWidth="111.0" text="nomEvs" textFill="#4d4c4c">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="PrenomP" layoutX="238.0" layoutY="166.0" prefHeight="50.0" prefWidth="95.0" text="prenomp" textFill="#4d4c4c">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator layoutX="690.0" layoutY="27.0" orientation="VERTICAL" prefHeight="64.0" prefWidth="0.0" />
+            <Pane layoutX="-1.0" layoutY="265.0" prefHeight="64.0" prefWidth="722.0" style="-fx-background-color: #F0F0F0;">
+               <children>
+                  <ImageView fx:id="Imgqr" fitHeight="77.0" fitWidth="81.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/det.png" />
+                     </image></ImageView>
+               </children></Pane>
+            <Label layoutX="449.0" layoutY="119.0" prefHeight="17.0" prefWidth="111.0" text="Evenement">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="NomEVv" layoutX="449.0" layoutY="166.0" prefHeight="50.0" prefWidth="131.0" style="-fx-background-color: #aeacac;" text="JavaFX" textFill="#fffefe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="IDeven" layoutX="41.0" layoutY="19.0" />
+          
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
