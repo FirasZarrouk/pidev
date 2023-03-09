@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="374.0" prefWidth="783.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.Transaction_UserController">
+   <children>
+      <VBox layoutX="96.0" layoutY="110.0" opacity="0.54" prefHeight="76.0" prefWidth="577.0" style="-fx-background-color: #172948;" />
+      <Label layoutX="46.0" layoutY="41.0" text="Facture" textFill="#172948">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="138.0" text="Date de transaction" textFill="WHITE" />
+      <Label layoutX="531.0" layoutY="138.0" text="Type de transaction" textFill="WHITE" />
+      <Label layoutX="352.0" layoutY="138.0" text="Le montant" textFill="WHITE" />
+      <TextField id="tarifPack" fx:id="montantTrans" layoutX="288.0" layoutY="185.0" prefHeight="76.0" prefWidth="198.0" />
+      <TextField id="tarifPack" fx:id="typeTransChoice" layoutX="487.0" layoutY="186.0" prefHeight="76.0" prefWidth="187.0" />
+      <Line endX="9.999984741210938" endY="-103.0" layoutX="86.0" layoutY="214.0" startX="9.999969482421875" startY="46.0" stroke="#172948" />
+      <Line endX="9.999984741210938" endY="-103.0" layoutX="278.0" layoutY="214.0" startX="9.999969482421875" startY="46.0" stroke="#172948" />
+      <Line endX="9.999984741210938" endY="-103.0" layoutX="477.0" layoutY="215.0" startX="9.999969482421875" startY="46.0" stroke="#172948" />
+      <Line endX="9.999984741210938" endY="-103.0" layoutX="663.0" layoutY="214.0" startX="9.999969482421875" startY="46.0" stroke="#172948" />
+      <Line endX="578.7071533203125" endY="0.29290771484375" layoutX="95.0" layoutY="110.0" startX="1.7070846557617188" startY="0.29290771484375" />
+      <Line endX="578.7071533203125" endY="0.29290771484375" layoutX="95.0" layoutY="261.0" startX="1.7070846557617188" startY="0.29290771484375" />
+      <TextField id="tarifPack" fx:id="Date_Trans" layoutX="97.0" layoutY="185.0" prefHeight="76.0" prefWidth="191.0" />
+      <AnchorPane fx:id="abc" layoutX="23.0" layoutY="282.0" opacity="0.16" prefHeight="76.0" prefWidth="727.0" style="-fx-background-color: #aeacac;" />
+      <ImageView fitHeight="105.0" fitWidth="97.0" layoutX="672.0" layoutY="-10.0">
+         <image>
+            <Image url="@../image/331939313_908136223642012_3641689149527626504_n.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

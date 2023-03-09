@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="788.0" stylesheets="@newCascadeStyleSheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierPVController">
+    <children>
+      <VBox prefHeight="700.0" prefWidth="206.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="208.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@331939313_908136223642012_3641689149527626504_n.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Label layoutX="259.0" layoutY="316.0" prefHeight="32.0" prefWidth="94.0" text="Date" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="259.0" layoutY="485.0" prefHeight="32.0" prefWidth="130.0" text="Commentaire" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="commentairepv1" layoutX="478.0" layoutY="488.0" prefHeight="26.0" prefWidth="166.0" promptText="entrer votre (email/numero)" />
+      <DatePicker fx:id="datepv1" layoutX="477.0" layoutY="319.0" prefHeight="26.0" prefWidth="166.0" />
+      <Button fx:id="ajouterpv1" layoutX="473.0" layoutY="601.0" mnemonicParsing="false" onAction="#modifierpv" prefHeight="43.0" prefWidth="158.0" text="ENVOYER" textFill="#053781">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="360.0" layoutY="21.0" prefHeight="98.0" prefWidth="301.0" text="MODIFIER VOTRE PV" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="retourmodifpv" layoutX="518.0" layoutY="653.0" mnemonicParsing="false" onAction="#retourauajoutpv" text="Retourner" textFill="#053781">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

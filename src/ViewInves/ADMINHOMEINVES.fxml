@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPaneProjet" prefHeight="617.0" prefWidth="1038.0" stylesheets="@../GUI/css/body.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewInves.ADMINHOMEINVESController">
+   <children>
+      <AnchorPane fx:id="scenePaneee" prefHeight="200.0" prefWidth="200.0" />
+      <MediaView fx:id="mv" fitHeight="500.0" fitWidth="710.0" layoutX="264.0" layoutY="100.0" />
+      <VBox prefHeight="618.0" prefWidth="232.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="143.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 1em;">
+               <image>
+                  <Image url="@../GUI/img/logo%20ontej.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ConsulterP" alignment="BASELINE_LEFT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#ConsulterP" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Consulter Projet" textAlignment="CENTER" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/projet.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label text="Label" />
+            <Button fx:id="Reunion" alignment="BASELINE_LEFT" ellipsisString="" graphicTextGap="8.0" mnemonicParsing="false" onAction="#Reunion" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Consulter Reunion" textFill="WHITE" textOverrun="CLIP">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/reunion.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label text="Label" />
+            <Button fx:id="PV" alignment="BASELINE_LEFT" ellipsisString="" graphicTextGap="8.0" layoutX="10.0" layoutY="259.0" mnemonicParsing="false" onAction="#consulterpv" prefHeight="42.0" prefWidth="214.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Consulter Vos PV" textFill="WHITE" textOverrun="CLIP">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pv.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label text="Label" />
+            <Button fx:id="Evenementsss" alignment="BASELINE_LEFT" ellipsisString="" graphicTextGap="8.0" mnemonicParsing="false" onAction="#Evenementss" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Les Evenements" textFill="WHITE" textOverrun="CLIP">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/event.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label text="Label" />
+            <Button fx:id="LesFormations" alignment="BASELINE_LEFT" ellipsisString="" graphicTextGap="8.0" mnemonicParsing="false" onAction="#LesFormations" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Les Packs" textFill="WHITE" textOverrun="CLIP">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/formation.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Profil" alignment="BASELINE_LEFT" ellipsisString="" graphicTextGap="8.0" mnemonicParsing="false" onAction="#lesFrofils" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Mes Wallet" textFill="WHITE" textOverrun="CLIP">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/formation.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Label text="Label" />
+         </children>
+      </VBox>
+      <Button fx:id="btnPlay" alignment="BASELINE_LEFT" ellipsisString="" graphicTextGap="8.0" layoutX="306.0" layoutY="545.0" mnemonicParsing="false" onAction="#playBTN" prefHeight="42.0" prefWidth="140.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Play" textFill="WHITE" textOverrun="CLIP">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPause" alignment="BASELINE_LEFT" ellipsisString="" graphicTextGap="8.0" layoutX="465.0" layoutY="545.0" mnemonicParsing="false" onAction="#pauseBTN" prefHeight="42.0" prefWidth="140.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Pause" textFill="WHITE" textOverrun="CLIP">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

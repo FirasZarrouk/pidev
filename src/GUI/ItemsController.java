@@ -86,6 +86,8 @@ public class ItemsController implements Initializable {
     private AnchorPane abc;
     @FXML
     private Button details;
+    @FXML
+    private Label rate;
     
     
     
@@ -110,7 +112,11 @@ public class ItemsController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(ItemsController.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-        
+       
+//       rating.ratingProperty().addListener((observable, oldValue, newValue) -> {
+//            rate.setText( Integer.toString(newValue.intValue()));
+//        });
+//        
         
 
     }   
@@ -142,7 +148,7 @@ public class ItemsController implements Initializable {
             datecreation.setText(d.toString());
             projet=P;
             //String str="Le nom de Projet est  "+projet.getNom_Projet()+" avec le categorie " +projet.getCategorie();
-            Imgqr.setImage(generateQRCodeImage("Le nom de Projet est:  "+projet.getNom_Projet()+" avec la categorie est : " +projet.getCategorie()+" et la description est :"+projet.getDescription(), 300, 300));
+            Imgqr.setImage(generateQRCodeImage(" Le nom de Projet est: "+projet.getNom_Projet()+"\n Avec la categorie est : " +projet.getCategorie()+" \n La description est :"+projet.getDescription(), 300, 300));
             //System.out.println(projet);
         } catch (WriterException ex) {
             Logger.getLogger(ItemsController.class.getName()).log(Level.SEVERE, null, ex);
@@ -219,6 +225,8 @@ public class ItemsController implements Initializable {
         }
      
     }
+    
+    
     Stage stage;
 
     @FXML

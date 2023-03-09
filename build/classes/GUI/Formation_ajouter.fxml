@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Formation_ajouterController">
+   <children>
+      <VBox prefHeight="617.0" prefWidth="354.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="328.0" fitWidth="329.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/331939313_908136223642012_3641689149527626504_n.png" />
+               </image>
+            </ImageView>
+         </children></VBox>
+      <Label layoutX="509.0" layoutY="39.0" text="Ajouter Formation" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="294.0" layoutY="96.0" text="Titre Formation" textFill="#2d977b" AnchorPane.leftAnchor="430.0">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="422.0" layoutY="432.0" text="Nombre de places" textFill="#2d977b" AnchorPane.leftAnchor="430.0" />
+      <Label layoutX="433.0" layoutY="337.0" text="Description" textFill="#2d977b" AnchorPane.leftAnchor="430.0" />
+      <Label layoutX="469.0" layoutY="487.0" text="Prix" textFill="#2d977b" AnchorPane.leftAnchor="430.0" />
+      <TextField fx:id="titre_formation" layoutX="607.0" layoutY="92.0" style="-fx-background-radius: 10px;" AnchorPane.leftAnchor="607.0" />
+      <TextField fx:id="NbrePlaces" layoutX="613.0" layoutY="428.0" style="-fx-background-radius: 10px;" AnchorPane.leftAnchor="607.0" />
+      <TextField fx:id="Description" layoutX="613.0" layoutY="309.0" prefHeight="90.0" prefWidth="149.0" style="-fx-background-radius: 10px;" AnchorPane.leftAnchor="607.0" />
+      <TextField fx:id="prix" layoutX="613.0" layoutY="483.0" style="-fx-background-radius: 10px;" AnchorPane.leftAnchor="607.0" />
+      <Button fx:id="ajouter_Formation" layoutX="740.0" layoutY="548.0" mnemonicParsing="false" onAction="#ajouter_Formation" prefHeight="30.0" prefWidth="181.0" style="-fx-background-radius: 10px;" text="Ajouter Formation" textFill="#3d6ebc">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <Label layoutX="427.0" layoutY="140.0" text="Catégorie Formation" textFill="#2d977b" AnchorPane.leftAnchor="430.0" />
+      <ComboBox fx:id="categorie_formation" layoutX="607.0" layoutY="136.0" prefWidth="150.0" style="-fx-background-radius: 10px;" AnchorPane.leftAnchor="607.0" />
+      <Button fx:id="Retour_Formation" layoutX="561.0" layoutY="548.0" mnemonicParsing="false" onAction="#Retour_Formation" prefHeight="30.0" prefWidth="103.0" style="-fx-background-radius: 10px;" text="Retour" textFill="#3d6ebc">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <Label layoutX="439.0" layoutY="199.0" text="Lien" textFill="#2d977b" AnchorPane.leftAnchor="430.0" />
+      <Label layoutX="436.0" layoutY="255.0" text="Image" textFill="#2d977b" AnchorPane.leftAnchor="430.0" />
+      <TextField fx:id="lien" layoutX="607.0" layoutY="195.0" style="-fx-background-radius: 10px;" AnchorPane.leftAnchor="607.0" />
+      <TextField fx:id="image" layoutX="613.0" layoutY="251.0" style="-fx-background-radius: 10px;" AnchorPane.leftAnchor="607.0" />
+   </children>
+</AnchorPane>

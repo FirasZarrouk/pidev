@@ -84,7 +84,7 @@ public class ItemsEquipeController implements Initializable {
         
         try {
             sp.supprimer(Equipe.getId_Equipe());
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AceuilEquipe.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AceuilProjet.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             

@@ -18,6 +18,7 @@ public class Projet {
     private String Tache_de_projet ; 
     private Date Date_creation ;
     private String categorie;
+    private User id ;
     
     private Equipe Id_Equipe;
     
@@ -29,7 +30,7 @@ public class Projet {
         
     }
 
-    public Projet(int Id_Projet, String Nom_Projet, String Description, String Technologie, String Tache_de_projet, Date Date_creation, String categorie,Equipe Id_Equipe) {
+    public Projet(int Id_Projet, String Nom_Projet, String Description, String Technologie, String Tache_de_projet, Date Date_creation, String categorie, User id, Equipe Id_Equipe) {
         this.Id_Projet = Id_Projet;
         this.Nom_Projet = Nom_Projet;
         this.Description = Description;
@@ -37,20 +38,34 @@ public class Projet {
         this.Tache_de_projet = Tache_de_projet;
         this.Date_creation = Date_creation;
         this.categorie = categorie;
-        
+        this.id = id;
         this.Id_Equipe = Id_Equipe;
     }
 
-    public Projet(String Nom_Projet, String Description, String Technologie, String Tache_de_projet, Date Date_creation, String categorie,Equipe Id_Equipe) {
+    public Projet(String Nom_Projet, String Description, String Technologie, String Tache_de_projet, Date Date_creation, String categorie, User id, Equipe Id_Equipe) {
         this.Nom_Projet = Nom_Projet;
         this.Description = Description;
         this.Technologie = Technologie;
         this.Tache_de_projet = Tache_de_projet;
         this.Date_creation = Date_creation;
         this.categorie = categorie;
-        
+        this.id = id;
         this.Id_Equipe = Id_Equipe;
     }
+
+    public User getId() {
+        return id;
+    }
+
+    public void setId(User id) {
+        this.id = id;
+    }
+
+    
+
+    
+
+   
 
     
     
@@ -141,8 +156,13 @@ public class Projet {
 
     @Override
     public String toString() {
-        return "Projet{" + "Id_Projet=" + Id_Projet + ", Nom_Projet=" + Nom_Projet + ", Description=" + Description + ", Technologie=" + Technologie + ", Tache_de_projet=" + Tache_de_projet + ", Date_creation=" + Date_creation + ", categorie=" + categorie + ", Id_Equipe=" + Id_Equipe + '}';
+        return "Projet{" + "Id_Projet=" + Id_Projet + ", Nom_Projet=" + Nom_Projet + ", Description=" + Description + ", Technologie=" + Technologie + ", Tache_de_projet=" + Tache_de_projet + ", Date_creation=" + Date_creation + ", categorie=" + categorie + ", id=" + id + ", Id_Equipe=" + Id_Equipe + '}';
     }
+
+    
+    
+
+    
 
     
 

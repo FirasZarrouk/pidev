@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SupprimerPartAcceuilController">
+   <children>
+      <VBox prefHeight="618.0" prefWidth="148.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="159.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="IDsuppEV" prefHeight="121.0" prefWidth="6.0" />
+            <Button fx:id="SuppEvid" mnemonicParsing="false" onAction="#SupprimerEvAcc" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Annuler" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/supp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label />
+            <Button fx:id="btnSUPPev" mnemonicParsing="false" onAction="#RetourBTNsupp" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 0.5em;" text="Retourner" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/retour.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <Label layoutX="245.0" layoutY="78.0" prefHeight="32.0" prefWidth="286.0" text="Annuler Participation" textFill="#2bb56b" underline="true">
+         <font>
+            <Font name="Berlin Sans FB" size="29.0" />
+         </font>
+      </Label>
+      <VBox layoutX="388.0" layoutY="176.0" opacity="0.9" prefHeight="266.0" prefWidth="368.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 5em;">
+         <children>
+            <HBox prefHeight="79.0" prefWidth="375.0" style="-fx-translate-y: 5em;">
+               <children>
+                  <TextField fx:id="ChercheSupprime" prefHeight="37.0" prefWidth="230.0" promptText="Entrer votre nom " style="-fx-translate-x: 5.5em; -fx-background-radius: 5em;">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <Label fx:id="ErreurRechercheS" alignment="CENTER" prefHeight="30.0" prefWidth="369.0" style="-fx-translate-y: 3em; -fx-translate-x: 0;" textFill="#9e0505" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="cherchebtnupp" mnemonicParsing="false" onAction="#chercherBTNSupp" prefHeight="44.0" prefWidth="162.0" style="-fx-translate-y: 5em; -fx-translate-x: 8em; -fx-background-radius: 5em;" text="Chercher " textFill="#2bb56b">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

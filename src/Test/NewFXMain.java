@@ -31,7 +31,7 @@ public class NewFXMain extends Application {
         
         try {
             
-            root = FXMLLoader.load(getClass().getResource("../GUI/AceuilProjet.fxml"));
+            root = FXMLLoader.load(getClass().getResource("../GUI/Event.fxml"));
 
             Scene scene = new Scene(root);
             primaryStage.setTitle("Gestion de Produit");

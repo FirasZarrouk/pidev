@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="507.0" prefWidth="759.0" style="-fx-background-color: #ffff;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterEvenementController">
+   <children>
+      <VBox layoutX="-24.0" prefHeight="507.0" prefWidth="162.0" style="-fx-background-color: #172948; -fx-background-radius: 0em;">
+         <children>
+            <ImageView fitHeight="131.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-y: 5; -fx-translate-x: 30;">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="94.0" prefWidth="43.0" />
+            <Button fx:id="boutton_ajouter" mnemonicParsing="false" onAction="#ajoutEv" prefHeight="35.0" prefWidth="117.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 5em; -fx-translate-x: 35;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonAfficher" mnemonicParsing="false" onAction="#afficher_eve" prefHeight="35.0" prefWidth="119.0" style="-fx-translate-y: 10; -fx-background-color: #2bb56b; -fx-translate-x: 35; -fx-background-radius: 5em;" text="Afficher" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets top="10.0" />
+         </opaqueInsets></VBox>
+      <Label layoutX="362.0" layoutY="14.0" text="Ajouter evenement" textFill="#2bb56b" underline="true">
+         <font>
+            <Font name="Berlin Sans FB" size="29.0" />
+         </font>
+      </Label>
+      <VBox layoutX="221.0" layoutY="77.0" opacity="0.9" prefHeight="407.0" prefWidth="310.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 2em;">
+         <children>
+            <Label prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: 0;" />
+            <Label alignment="CENTER" graphicTextGap="6.0" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #c0c0c0; -fx-background-radius: 5em; -fx-translate-x: 10;" text="Nom evenement :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: 0;" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="206.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 5em; -fx-translate-x: 13;" text="Type d'evenement :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: 0;" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="206.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 5em; -fx-translate-x: 12;" text="Date d'evenement :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: 0;" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="206.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 5em; -fx-translate-x: 12;" text="Lieu d'evenement :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: 0;" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="206.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 5em; -fx-translate-x: 12;" text="Tarif d'evenement :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: 0;" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="206.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 5em; -fx-translate-x: 35;" text="Description d'evenement :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="478.0" layoutY="77.0" opacity="0.9" prefHeight="407.0" prefWidth="233.0" style="-fx-background-color: c0c0c0;">
+         <children>
+            <Label prefHeight="21.0" prefWidth="150.0" />
+            <TextField fx:id="nomEv" prefHeight="34.0" prefWidth="150.0" promptText="Entrer le nom d'evenement " style="-fx-background-radius: 5em; -fx-background-color: 0; -fx-border-color: #7f7f7f; -fx-border-radius: 5em;" />
+            <Label prefHeight="22.0" prefWidth="150.0" />
+            <TextField fx:id="Type_ev" prefHeight="35.0" prefWidth="222.0" promptText="Entrer le type d'evenement" style="-fx-background-radius: 5em; -fx-background-color: 0; -fx-border-radius: 5em; -fx-border-color: #7f7f7f;" />
+            <Label prefHeight="26.0" prefWidth="150.0" />
+            <DatePicker fx:id="date_ev" prefHeight="34.0" prefWidth="246.0" promptText="Entrer la date" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-background-color: 0;" />
+            <Label prefHeight="24.0" prefWidth="150.0" />
+            <TextField fx:id="lieu_ev" prefHeight="34.0" prefWidth="150.0" promptText="Entrer le lieu" style="-fx-background-radius: 5em; -fx-background-color: 0; -fx-border-radius: 5em; -fx-border-color: #7f7f7f;" />
+            <Label prefHeight="18.0" prefWidth="150.0" />
+            <TextField fx:id="tarifEvs" prefHeight="36.0" prefWidth="150.0" promptText="Entrer le tarif" style="-fx-background-radius: 5em; -fx-background-color: 0; -fx-border-radius: 5em; -fx-border-color: #7f7f7f;" />
+            <Label prefHeight="18.0" prefWidth="150.0" />
+            <TextArea fx:id="description_ev" prefHeight="74.0" prefWidth="191.0" promptText="Entrer le description d'evenement" style="-fx-background-radius: 10em;" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

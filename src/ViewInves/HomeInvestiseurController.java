@@ -173,18 +173,19 @@ public class HomeInvestiseurController implements Initializable {
     }
      Stage stage;
     @FXML
-    private void QuitterProjetIN(ActionEvent event) {
+    private void QuitterProjetIN(ActionEvent event) throws IOException {
         
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Quitter");
-        alert.setHeaderText("Vous êtes sur de quitter!");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ADMINHOMEINVES.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
         
-        
-        if(alert.showAndWait().get()== ButtonType.OK){
-        stage = (Stage) scenePaneeeEN.getScene().getWindow();
-        System.out.println("Quitter avec succès");
-        stage.close();
+        // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
+        Stage stage = (Stage)  QuitterProjetIN.getScene().getWindow();
+         // Modifier la scène de la fenêtre pour la nouvelle scène
+        stage.setScene(scene);
+         // Afficher la nouvelle interface
+        stage.show();
     }
-    }
+    
     
 }

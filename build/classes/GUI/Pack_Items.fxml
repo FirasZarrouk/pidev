@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="385.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Pack_ItemsController">
+   <children>
+      <Label layoutX="62.0" layoutY="70.0" text="Pack:" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="174.0" layoutY="158.0" text="Nom du pack:" textFill="#172948" />
+      <Label layoutX="302.0" layoutY="158.0" text="Catégorie de pack:" textFill="#172948" />
+      <Label layoutX="469.0" layoutY="158.0" text="Tarif:" textFill="#172948" />
+      <Button fx:id="BouttonSupp" layoutX="501.0" layoutY="272.0" mnemonicParsing="false" onAction="#SuppItems" prefHeight="26.0" prefWidth="99.0" text="Supprimer" />
+      <Button fx:id="ModifierItems" layoutX="639.0" layoutY="272.0" mnemonicParsing="false" onAction="#bouttonMod" prefHeight="26.0" prefWidth="99.0" text="Modifier" />
+      <AnchorPane fx:id="abc" layoutX="61.0" layoutY="316.0" prefHeight="70.0" prefWidth="694.0" style="-fx-background-color: #aeacac;" />
+      <TextField id="tarifPack" fx:id="CategorieText" layoutX="294.0" layoutY="209.0" prefHeight="28.0" prefWidth="115.0" />
+      <TextField id="tarifPack" fx:id="TarifText" layoutX="430.0" layoutY="209.0" prefHeight="28.0" prefWidth="115.0" />
+      <TextField id="tarifPack" fx:id="NomText" layoutX="160.0" layoutY="209.0" prefHeight="28.0" prefWidth="115.0" />
+      <Label fx:id="IDRap" layoutX="674.0" layoutY="395.0" text="." visible="false" />
+      <Separator layoutX="60.0" layoutY="119.0" prefHeight="0.0" prefWidth="686.0" />
+      <Separator layoutX="753.0" layoutY="24.0" orientation="VERTICAL" prefHeight="96.0" prefWidth="3.0" />
+      <Label layoutX="600.0" layoutY="158.0" text="Destiné à:" textFill="#172948" />
+      <TextField id="tarifPack" fx:id="RoleUText" layoutX="581.0" layoutY="209.0" prefHeight="28.0" prefWidth="115.0" />
+   </children>
+</AnchorPane>

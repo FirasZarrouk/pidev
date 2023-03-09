@@ -93,7 +93,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="206.0">
                            <children>
-                              <Button fx:id="QuitterP" mnemonicParsing="false" onAction="#QuitterP" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #172948;" text="Quitter" textFill="WHITE">
+                              <Button fx:id="QuitterP" mnemonicParsing="false" onAction="#QuitterP" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #172948;" text="Retour" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@css/body.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.User_PackController">
+   <children>
+      <VBox prefHeight="618.0" prefWidth="191.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo%20ontej.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="BoutonQuitterPack1111" mnemonicParsing="false" onAction="#QuitterPack" prefHeight="57.0" prefWidth="197.0" style="-fx-background-color: #2bb56b;" text="Retour" textFill="WHITE" />
+         </children>
+      </VBox>
+      <ScrollPane layoutX="191.0" layoutY="187.0" prefHeight="430.0" prefWidth="846.0">
+         <content>
+            <VBox fx:id="scenepane" prefHeight="622.0" prefWidth="838.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

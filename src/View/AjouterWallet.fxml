@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="379.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AjouterWalletController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="100.0" style="-fx-background-color: #172948;">
+         <children>
+            <ImageView fitHeight="93.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/331939313_908136223642012_3641689149527626504_n.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Label layoutX="224.0" layoutY="92.0" text="Id" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="140.0" text="Num Carte" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="125.0" layoutY="191.0" text="Méthode de Payment" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="147.0" layoutY="242.0" text="Date d'expiration" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="109.0" prefHeight="42.0" prefWidth="138.0" text="Your Wallet" textFill="#172948">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="0.64" specularConstant="0.92" specularExponent="7.15" surfaceScale="4.53">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.16862745583057404" green="0.7098039388656616" blue="0.41960784792900085" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <TextField fx:id="idd" layoutX="261.0" layoutY="88.0" />
+      <TextField fx:id="nummcarte" layoutX="261.0" layoutY="136.0" />
+      <ComboBox fx:id="MethodeDePayment" layoutX="261.0" layoutY="187.0" prefWidth="150.0" promptText="Cards" />
+      <DatePicker fx:id="dattee" layoutX="260.0" layoutY="237.0" prefHeight="26.0" prefWidth="150.0" />
+      <Button fx:id="AjouteerWalleet" layoutX="443.0" layoutY="343.0" mnemonicParsing="false" onAction="#AjouteerWalleet" text="Ajouter Wallet" />
+      <Button fx:id="Reettouur" layoutX="121.0" layoutY="343.0" mnemonicParsing="false" onAction="#Reettouur" text="Retour" />
+   </children>
+</AnchorPane>

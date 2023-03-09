@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@../css/back.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Rapport_modifierController">
+   <children>
+      <Button fx:id="BoutonModifierRap" layoutX="711.0" layoutY="544.0" mnemonicParsing="false" onAction="#ModifierRap" prefHeight="30.0" prefWidth="102.0" text="Modifier" />
+      <Button fx:id="BoutonRetourRap" layoutX="824.0" layoutY="545.0" mnemonicParsing="false" onAction="#RetourrRap" prefHeight="30.0" prefWidth="102.0" text="Retour" />
+      <ImageView fitHeight="176.0" fitWidth="175.0" layoutX="-14.0" layoutY="-47.0">
+         <image>
+            <Image url="@../image/331939313_908136223642012_3641689149527626504_n.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="IDRap" layoutX="177.0" layoutY="379.0" text="." />
+      <VBox layoutX="153.0" layoutY="123.0" opacity="0.7" prefHeight="370.0" prefWidth="732.0" style="-fx-background-color: c0c0c0; -fx-background-radius: 2em;" />
+      <Label fx:id="typeRapLabel" ellipsisString=".." layoutX="281.0" layoutY="293.0" text="Type de rapport:" textFill="#172948">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateTransLabel" ellipsisString=".." layoutX="283.0" layoutY="229.0" text="Date du rapport:" textFill="#172948">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateRapText" layoutX="562.0" layoutY="231.0" />
+      <Label fx:id="IDtransRapLabel1" layoutX="283.0" layoutY="352.0" text="Date de début du bilan:" textFill="#172948">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="typeRapChoiceBox" layoutX="562.0" layoutY="293.0" prefWidth="150.0" />
+      <DatePicker fx:id="date_debut_T_text" layoutX="562.0" layoutY="353.0" />
+   </children>
+</AnchorPane>

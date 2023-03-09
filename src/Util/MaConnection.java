@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class MaConnection {
 
     //db credentials
-    static final String URL ="jdbc:mysql://localhost:3306/pidev_projet";
+    static final String URL ="jdbc:mysql://localhost:3306/Infinity";
     static final String USER ="root";
     static final String PASSWORD ="";
     

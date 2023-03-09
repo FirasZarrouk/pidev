@@ -7,10 +7,12 @@ package piprojet;
 
 import Interfaces.Interface_IService;
 import Model.Equipe;
+import Model.Pack;
 import Model.Projet;
 import Services.ServiceEquipe;
 import Services.ServiceProjet;
 import Util.MaConnection;
+import services.servicePack;
 
 /**
  *
@@ -32,8 +34,9 @@ public class PiProjet {
         Equipe E=new Equipe();
 //        Projet P=new Projet();
         Projet P=new Projet();
-        
-            
+        servicePack sp = new servicePack();
+            Pack p = new Pack();
+            System.out.println(sp.readByROLE("Investisseur"));
                 //ajout Equipe
 
         

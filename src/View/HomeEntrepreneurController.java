@@ -8,6 +8,7 @@ package View;
 import GUI.AceuilProjetController;
 import GUI.ItemsController;
 import Model.Projet;
+import Model.SessionManager;
 import Services.ServiceProjet;
 import java.io.IOException;
 import java.net.URL;
@@ -73,7 +74,7 @@ public class HomeEntrepreneurController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
          ServiceProjet serviceprojet = new ServiceProjet();
-        Projet.addAll(serviceprojet.afficher());
+        Projet.addAll(serviceprojet.afficherbyid(SessionManager.getInstance().getCurrentUser()));
         // TODO
        ScenepaneeEN.getChildren().clear();
        
@@ -193,18 +194,19 @@ public class HomeEntrepreneurController implements Initializable {
         Stage stage;
 
     @FXML
-    private void QuitterEN(ActionEvent event) {
+    private void QuitterEN(ActionEvent event) throws IOException {
         
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Quitter");
-        alert.setHeaderText("Vous êtes sur de quitter!");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ADMINHOMEENTR.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
         
-        
-        if(alert.showAndWait().get()== ButtonType.OK){
-        stage = (Stage) scenePaneeeEN.getScene().getWindow();
-        System.out.println("Quitter avec succès");
-        stage.close();
+        // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
+        Stage stage = (Stage)  QuitterEN.getScene().getWindow();
+         // Modifier la scène de la fenêtre pour la nouvelle scène
+        stage.setScene(scene);
+         // Afficher la nouvelle interface
+        stage.show();
         }
-    }
+    
     
 }

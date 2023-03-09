@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="add" prefHeight="330.0" prefWidth="722.0" stylesheets="@newCascadeStyleSheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ItemPVInvestisseurController">
+  <children>
+      <Pane layoutY="35.0" prefHeight="279.0" prefWidth="722.0" style="-fx-background-color: #172948; -fx-background-radius: 2em;" stylesheets="@newCascadeStyleSheet.css">
+         <children>
+            <Pane layoutY="215.0" prefHeight="66.0" prefWidth="722.0" style="-fx-background-color: #172948; -fx-border-color: #ffff; -fx-background-radius: 2em;">
+               <children>
+                  <Button fx:id="verifierPV" layoutX="342.0" layoutY="19.0" mnemonicParsing="false" onAction="#verifierPV" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: #2bb56b; -fx-background-radius: 3em;" text="Verifier" textFill="#172948">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></Button>
+               </children></Pane>
+            <Label fx:id="IDPV" layoutX="41.0" layoutY="19.0" />
+            <Label layoutX="22.0" layoutY="75.0" text="DATE DE PV" textFill="#2bb56b">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="282.0" layoutY="75.0" prefHeight="28.0" prefWidth="145.0" text="COMMENTAIRE" textFill="#2bb56b">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="verifieritemPV" layoutX="344.0" layoutY="18.0" text="-" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="commentaireitemPV" layoutX="343.0" layoutY="148.0" text="-" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateitemPV" layoutX="81.0" layoutY="162.0" text="-" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="IDR" layoutX="51.0" layoutY="29.0" />
+          
+         </children>
+      </Pane>
+   </children>  
+</AnchorPane>

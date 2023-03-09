@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../GUI/css/body.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.HomeEntrepreneurController">
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="1038.0" stylesheets="@../GUI/css/body.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.HomeEntrepreneurController">
     <children>
       <AnchorPane fx:id="scenePaneeeEN" prefHeight="200.0" prefWidth="200.0" />
       <VBox prefHeight="618.0" prefWidth="191.0" style="-fx-background-color: #172948;">
@@ -88,7 +88,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="206.0">
                            <children>
-                              <Button fx:id="QuitterEN" mnemonicParsing="false" onAction="#QuitterEN" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #172948;" text="Quitter" textFill="WHITE">
+                              <Button fx:id="QuitterEN" mnemonicParsing="false" onAction="#QuitterEN" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #172948;" text="Retour" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

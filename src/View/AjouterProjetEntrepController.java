@@ -8,6 +8,7 @@ package View;
 import Interfaces.Interface_IService;
 import Model.Equipe;
 import Model.Projet;
+import Model.SessionManager;
 import Services.ServiceProjet;
 import java.io.IOException;
 import java.net.URL;
@@ -96,6 +97,7 @@ public class AjouterProjetEntrepController implements Initializable {
         
         try {
             Projet P=new Projet();
+            P.setId(SessionManager.getInstance().getCurrentUser());
             P.setNom_Projet(txtnomEN.getText());
             P.setDescription(txtdescriptionEN.getText());
             P.setTechnologie(txttechnologieEN.getText());

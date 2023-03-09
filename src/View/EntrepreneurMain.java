@@ -30,7 +30,7 @@ public class EntrepreneurMain extends Application {
                     Parent root;
 
         try {
-            root = FXMLLoader.load(getClass().getResource("HomeEntrepreneur.fxml"));
+            root = FXMLLoader.load(getClass().getResource("../View/SeConnecter.fxml"));
             
             Scene scene = new Scene(root);
             primaryStage.setTitle("Gestion de Produit");

@@ -62,7 +62,7 @@ public class ModifierPController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    public void getProjet(Projet P){
+        public void getProjet(Projet P){
         
         txtNomP.setText(P.getNom_Projet());
         txtDescriptionP.setText(P.getDescription());

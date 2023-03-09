@@ -212,19 +212,21 @@ public class AceuilProjetController implements Initializable {
     Stage stage;
 
     @FXML
-    private void QuitterP(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Quitter");
-        alert.setHeaderText("Vous êtes sur de quitter!");
+    private void QuitterP(ActionEvent event) throws IOException {
+        // Charger le fichier FXML de la nouvelle interface
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ADMINHOME.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
         
-        
-        if(alert.showAndWait().get()== ButtonType.OK){
-        stage = (Stage) scenePaneee.getScene().getWindow();
-        System.out.println("Quitter avec succès");
-        stage.close();
+        // Récupérer le stage actuel et changer sa scène pour la nouvelle interface
+        Stage stage = (Stage)  QuitterP.getScene().getWindow();
+         // Modifier la scène de la fenêtre pour la nouvelle scène
+        stage.setScene(scene);
+         // Afficher la nouvelle interface
+        stage.show();
         }
         
-    }
+    
 
     
     

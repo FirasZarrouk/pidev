@@ -8,6 +8,7 @@ package GUI;
 import Interfaces.Interface_IService;
 import Model.Equipe;
 import Model.Projet;
+import Model.SessionManager;
 import Services.ServiceProjet;
 import java.io.IOException;
 import java.net.URL;
@@ -99,6 +100,7 @@ public class AjouterPController implements Initializable {
                  && Validechamp(txtcategorie)){
             try {
                 Projet P=new Projet();
+                P.setId(SessionManager.getInstance().getCurrentUser());
                 P.setNom_Projet(txtnom.getText());
                 P.setDescription(txtdescription.getText());
                 P.setTechnologie(txttechnologie.getText());

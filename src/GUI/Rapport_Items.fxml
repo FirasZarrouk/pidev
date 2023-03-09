@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="378.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Rapport_ItemsController">
+   <children>
+      <Label layoutX="29.0" layoutY="51.0" text="Rapport financier :" textFill="#2bb56b">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="135.0" layoutY="131.0" text="Date de rapport:" textFill="#172948" />
+      <Label layoutX="275.0" layoutY="131.0" text="Type de rapport:" textFill="#172948" />
+      <Label layoutX="425.0" layoutY="212.0" text="Resultat:" textFill="#172948" />
+      <Label layoutX="286.0" layoutY="211.0" text="Les revenus:" textFill="#172948" />
+      <Label layoutX="411.0" layoutY="132.0" text="Les dépenses:" textFill="#172948" />
+      <DatePicker fx:id="DateRapp" layoutX="128.0" layoutY="166.0" prefHeight="26.0" prefWidth="115.0" />
+      <Button fx:id="BouttonSupp" layoutX="470.0" layoutY="282.0" mnemonicParsing="false" onAction="#SuppItems" prefHeight="26.0" prefWidth="88.0" text="Supprimer" />
+      <Button fx:id="ModifierItems" layoutX="585.0" layoutY="282.0" mnemonicParsing="false" onAction="#bouttonMod" prefHeight="26.0" prefWidth="87.0" text="Modifier" />
+      <AnchorPane fx:id="abc" layoutX="14.0" layoutY="318.0" prefHeight="76.0" prefWidth="674.0" style="-fx-background-color: #aeacac;" />
+      <TextField id="tarifPack" fx:id="RevenusRapp" layoutX="265.0" layoutY="245.0" prefHeight="28.0" prefWidth="106.0" />
+      <TextField id="tarifPack" fx:id="DepenseRapp" layoutX="395.0" layoutY="168.0" prefHeight="28.0" prefWidth="106.0" />
+      <TextField id="tarifPack" fx:id="ResultatText" layoutX="395.0" layoutY="245.0" prefHeight="28.0" prefWidth="106.0" />
+      <TextField id="tarifPack" fx:id="typeRapChoice" layoutX="266.0" layoutY="167.0" prefHeight="28.0" prefWidth="106.0" />
+      <Label fx:id="IDRap" layoutX="167.0" layoutY="386.0" text="." visible="false" />
+      <TextField id="tarifPack" fx:id="TaxesText" layoutX="527.0" layoutY="217.0" prefHeight="20.0" prefWidth="74.0" />
+      <Label layoutX="548.0" layoutY="180.0" text="Taxes:" textFill="#172948" />
+      <Separator layoutX="30.0" layoutY="110.0" prefHeight="2.0" prefWidth="658.0" />
+      <Separator layoutX="681.0" layoutY="9.0" orientation="VERTICAL" prefHeight="96.0" prefWidth="3.0" />
+      <DatePicker fx:id="date_debut_T_text" layoutX="128.0" layoutY="244.0" prefHeight="26.0" prefWidth="115.0" />
+      <Label layoutX="142.0" layoutY="211.0" text="Date de rapport:" textFill="#172948" />
+   </children>
+</AnchorPane>
