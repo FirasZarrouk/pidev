@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,9 +22,9 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.SessionManager;
-import model.User;
-import service.UserService;
+import models.SessionManager;
+import models.User;
+import services.UserService;
 /**
  * FXML Controller class
  *
